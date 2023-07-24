@@ -312,6 +312,7 @@ struct SpeciesInfo /*0x24*/
  /* 0x05 */ u8 baseSpDefense;
  /* 0x06 */ u8 types[2];
  /* 0x08 */ u8 catchRate;
+<<<<<<< HEAD
  /* 0x09 padding */
  /* 0x0A */ u16 expYield; // expYield was changed from u8 to u16 for the new Exp System.
  /* 0x0C */ u16 evYield_HP:2;
@@ -333,6 +334,34 @@ struct SpeciesInfo /*0x24*/
             u8 noFlip : 1;
  /* 0x20 */ u16 flags;
 };
+=======
+ /* 0x09 */ u8 expYield;
+ /* 0x0A */ u16 evYield_HP:2;
+ /* 0x0A */ u16 evYield_Attack:2;
+ /* 0x0A */ u16 evYield_Defense:2;
+ /* 0x0A */ u16 evYield_Speed:2;
+ /* 0x0B */ u16 evYield_SpAttack:2;
+ /* 0x0B */ u16 evYield_SpDefense:2;
+ /* 0x0C */ u16 itemCommon;
+ /* 0x0E */ u16 itemRare;
+ /* 0x10 */ u8 genderRatio;
+ /* 0x11 */ u8 eggCycles;
+ /* 0x12 */ u8 friendship;
+ /* 0x13 */ u8 growthRate;
+ /* 0x14 */ u8 eggGroups[2];
+            #ifdef BATTLE_ENGINE
+ /* 0x16 */ u8 abilities[NUM_ABILITY_SLOTS];
+            #else
+            u8 abilities[2];
+            #endif
+ /* 0x18 */ u8 safariZoneFleeRate;
+ /* 0x19 */ u8 bodyColor : 7;
+            u8 noFlip : 1;
+            #ifndef BATTLE_ENGINE
+ /* 0x1A */ u8 abilityHidden;
+            #endif
+}; /* size = 28 */
+>>>>>>> 7d010529d64b4334c11a2ebcde33b96c42fe3227
 
 struct BattleMove
 {

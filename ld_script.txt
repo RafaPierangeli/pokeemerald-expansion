@@ -342,8 +342,12 @@ SECTIONS {
         src/gym_leader_rematch.o(.text);
         src/battle_transition_frontier.o(.text);
         src/international_string_util.o(.text);
+<<<<<<< HEAD
         src/pokemon_debug.o(.text);
         src/expansion_intro.o(.text);
+=======
+		src/dexnav.o(.text);
+>>>>>>> 7d010529d64b4334c11a2ebcde33b96c42fe3227
     } =0
 
     script_data :
@@ -709,8 +713,12 @@ SECTIONS {
         data/mystery_gift.o(.rodata);
         src/m4a_tables.o(.rodata);
         data/sound_data.o(.rodata);
+<<<<<<< HEAD
         src/pokemon_debug.o(.rodata);
         src/expansion_intro.o(.rodata);
+=======
+		src/dexnav.o(.rodata);
+>>>>>>> 7d010529d64b4334c11a2ebcde33b96c42fe3227
     } =0
 
     song_data :
