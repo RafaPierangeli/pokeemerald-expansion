@@ -7193,15 +7193,6 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
             else
                 evIncrease = gSpeciesInfo[defeatedSpecies].evYield_SpDefense * multiplier;
             break;
-                #ifndef FREE_ENIGMA_BERRY
-                holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
-                #else
-                holdEffect = 0;
-                #endif
-        }
-        else
-        {
-            holdEffect = ItemId_GetHoldEffect(heldItem);
         }
 
         if (holdEffect == HOLD_EFFECT_MACHO_BRACE)

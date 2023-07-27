@@ -89,7 +89,6 @@ struct GFRomHeader
     u8 pcItemsCount;
     u32 pcItemsOffset;
     u32 giftRibbonsOffset;
-    #ifndef FREE_ENIGMA_BERRY
     u32 enigmaBerryOffset;
     u32 enigmaBerrySize;
     const u8 *moveDescriptions;
@@ -116,7 +115,6 @@ static const struct GFRomHeader sGFRomHeader = {
     .flagsOffset = offsetof(struct SaveBlock1, flags),
     .varsOffset = offsetof(struct SaveBlock1, vars),
     .pokedexOffset = offsetof(struct SaveBlock2, pokedex),
-    .seen1Offset = offsetof(struct SaveBlock1, dexSeen),
     .seen2Offset = offsetof(struct SaveBlock1, dexSeen), // dex flags are combined, just provide the same pointer
     #ifndef FREE_EXTRA_SEEN_FLAGS
     .seen1Offset = offsetof(struct SaveBlock1, seen1),
