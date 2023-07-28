@@ -641,11 +641,14 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
         else
         {
             // speed 2 is fast, same speed as running
-            PlayerWalkFast(direction);
+        if (heldKeys & B_BUTTON)
+            PlayerWalkFaster(direction);
+        else
+            PlayerWalkFast(direction); // same speed as running
         }
         return;
     }
-
+    
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON) && FlagGet(FLAG_SYS_B_DASH)
      && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0)
     {
