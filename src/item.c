@@ -35,7 +35,8 @@ EWRAM_DATA u8 sItemIconSpriteId2 = 0;
 #include "data/text/item_descriptions.h"
 #include "data/items.h"
 
-static u16 GetBagItemQuantity(u16 *quantity)
+// code
+u16 GetBagItemQuantity(u16 *quantity)
 {
     return gSaveBlock2Ptr->encryptionKey ^ *quantity;
 }
