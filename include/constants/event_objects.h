@@ -991,7 +991,7 @@
 #define OBJ_EVENT_GFX_GLACEON                    709
 #define OBJ_EVENT_GFX_GLISCOR                    710
 #define OBJ_EVENT_GFX_MAMOSWINE                  711
-#define OBJ_EVENT_GFX_PORYGON-Z                  712
+#define OBJ_EVENT_GFX_PORYGONZ                   712
 #define OBJ_EVENT_GFX_GALLADE                    713
 #define OBJ_EVENT_GFX_PROBOPASS                  714
 #define OBJ_EVENT_GFX_DUSKNOIR                   715
