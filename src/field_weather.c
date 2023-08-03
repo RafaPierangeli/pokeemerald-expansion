@@ -151,8 +151,8 @@ void StartWeather(void)
     {
         u8 index = 15;
         CpuCopy32(gFogPalette, &gPlttBufferUnfaded[0x100 + index * 16], 32);
-        BuildGammaShiftTables();
-        gWeatherPtr->altGammaSpritePalIndex = index;
+        BuildColorMaps();
+        gWeatherPtr->contrastColorMapSpritePalIndex = index;
         gWeatherPtr->rainSpriteCount = 0;
         gWeatherPtr->curRainSpriteIndex = 0;
         gWeatherPtr->cloudSpritesCreated = 0;
@@ -265,21 +265,21 @@ static u8 None_Finish(void)
 static void BuildColorMaps(void)
 {
     u16 v0;
-    u8 (*gammaTable)[32];
-    u16 v2;
-    u16 v4;
-    u16 v5;
-    u16 gammaIndex;
-    u16 v9;
-    u32 v10;
-    u16 v11;
+    u8 (*colorMaps)[32];
+    u16 colorVal;
+    u16 curBrightness;
+    u16 brightnessDelta;
+    u16 colorMapIndex;
+    u16 baseBrightness;
+    u32 remainingBrightness;
+    s16 diff;
     s16 dunno;
     u8 i;
 
     for (i = 0; i <= 12; i++)
-        sBasePaletteGammaTypes[i] = GAMMA_NORMAL;
+        sBasePaletteGammaTypes[i] = COLOR_MAP_DARK_CONTRAST;
 
-    sPaletteColorMapTypes = sBasePaletteColorMapTypes;
+    sPaletteColorMapTypes = sBasePaletteGammaTypes;
     for (i = 0; i < 2; i++)
     {
         if (i == 0)
@@ -849,7 +849,7 @@ void UpdateSpritePaletteWithWeather(u8 spritePaletteIndex)
     }
 }
 
-void ApplyWeatherColorMapToPal(u8 paletteIndex)
+void ApplyWeatherGammaShiftToPal(u8 paletteIndex)
 {
     ApplyColorMap(paletteIndex, 1, gWeatherPtr->colorMapIndex);
 }
@@ -1099,14 +1099,14 @@ void SetWeatherPalStateIdle(void)
 
 void PreservePaletteInWeather(u8 preservedPalIndex)
 {
-    CpuCopy16(sBasePaletteColorMapTypes, sFieldEffectPaletteColorMapTypes, 32);
+    CpuCopy16(sBasePaletteGammaTypes, sFieldEffectPaletteColorMapTypes, 32);
     sFieldEffectPaletteColorMapTypes[preservedPalIndex] = COLOR_MAP_NONE;
     sPaletteColorMapTypes = sFieldEffectPaletteColorMapTypes;
 }
 
 void ResetPreservedPalettesInWeather(void)
 {
-    sPaletteColorMapTypes = sBasePaletteColorMapTypes;
+    sPaletteColorMapTypes = sBasePaletteGammaTypes;
 }
 
 void UpdatePaletteGammaType(u8 index, u8 gammaType)
