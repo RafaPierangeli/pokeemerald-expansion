@@ -41,7 +41,7 @@ static u16 GetSurfMonSpecies(void)
 
     for (i = 0; i < 6; i++)
     {
-        if (MonKnowsMove(&gPlayerParty[i], MOVE_SURF))
+        if (CanLearnTeachableMove(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES), MOVE_SURF))
         {
             u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
             return species;
