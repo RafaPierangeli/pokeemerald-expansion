@@ -345,6 +345,7 @@ SECTIONS {
         src/pokemon_debug.o(.text);
         src/expansion_intro.o(.text);
 		src/dexnav.o(.text);
+        src/surfable.o(.text);
     } =0
 
     script_data :
@@ -441,6 +442,7 @@ SECTIONS {
         *libc.a:libcfunc.o(.text);
         *libc.a:lseekr.o(.text);
         *libc.a:readr.o(.text);
+        
     } =0
 
     .rodata :
@@ -713,8 +715,9 @@ SECTIONS {
         src/pokemon_debug.o(.rodata);
         src/expansion_intro.o(.rodata);
 		src/dexnav.o(.rodata);
+        src/surfable.o(.rodata);
     } =0
-
+    
     song_data :
     ALIGN(4)
     {
