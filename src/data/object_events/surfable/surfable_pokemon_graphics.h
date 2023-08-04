@@ -338,6 +338,10 @@ const u32 gSurfablePokemonPic_Azurill[] = INCBIN_U32("graphics/object_events/pic
 const u16 gSurfablePokemonPalette_Azurill[] = INCBIN_U16("graphics/object_events/pics/pokemon/surfable/0298_azurill.gbapal");
 const u16 gSurfablePokemonShinyPalette_Azurill[] = INCBIN_U16("graphics/object_events/pics/pokemon/surfable/0298_azurill_shiny.gbapal");
 
+const u32 gSurfablePokemonPic_Lairon[] = INCBIN_U32("graphics/object_events/pics/pokemon/surfable/0305_lairon.4bpp");
+const u16 gSurfablePokemonPalette_Lairon[] = INCBIN_U16("graphics/object_events/pics/pokemon/surfable/0305_lairon.gbapal");
+const u16 gSurfablePokemonShinyPalette_Lairon[] = INCBIN_U16("graphics/object_events/pics/pokemon/surfable/0305_lairon_shiny.gbapal");
+
 const u32 gSurfablePokemonPic_Aggron[] = INCBIN_U32("graphics/object_events/pics/pokemon/surfable/0306_aggron.4bpp");
 const u16 gSurfablePokemonPalette_Aggron[] = INCBIN_U16("graphics/object_events/pics/pokemon/surfable/0306_aggron.gbapal");
 const u16 gSurfablePokemonShinyPalette_Aggron[] = INCBIN_U16("graphics/object_events/pics/pokemon/surfable/0306_aggron_shiny.gbapal");
