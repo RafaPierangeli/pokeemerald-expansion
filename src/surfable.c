@@ -68,7 +68,7 @@ static void LoadSurfOverworldPalette(void)
     u8 i;
 
     for (i = 0; i < PARTY_SIZE; i++)
-        if (MonKnowsMove(&gPlayerParty[i], MOVE_SURF))
+        if (CanLearnTeachableMove(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES), MOVE_SURF))
             break;
 
     if (IsMonShiny(&gPlayerParty[i]) == TRUE)
