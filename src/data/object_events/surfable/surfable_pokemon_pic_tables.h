@@ -1484,8 +1484,15 @@ const struct SpriteFrameImage gSurfingOverworldPicTable_Aggron[] = {
     overworld_frame(gSurfablePokemonPic_Aggron, 4, 4, 3),
     overworld_frame(gSurfablePokemonPic_Aggron, 4, 4, 4),
     overworld_frame(gSurfablePokemonPic_Aggron, 4, 4, 5),
+};
+
+const struct SpriteFrameImage gSurfingOverlayPicTable_Aggron[] = {
     overworld_frame(gSurfablePokemonPic_Aggron, 4, 4, 6),
     overworld_frame(gSurfablePokemonPic_Aggron, 4, 4, 7),
+    overworld_frame(gSurfablePokemonPic_Aggron, 4, 4, 8),
+    overworld_frame(gSurfablePokemonPic_Aggron, 4, 4, 9),
+    overworld_frame(gSurfablePokemonPic_Aggron, 4, 4, 10),
+    overworld_frame(gSurfablePokemonPic_Aggron, 4, 4, 11),
 };
 
 const struct SpriteFrameImage gSurfingOverworldPicTable_Carvanha[] = {
