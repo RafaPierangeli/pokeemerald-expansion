@@ -398,6 +398,7 @@ static void UnusedEndBounceEffect(void)
 {
     EndBounceEffect(gActiveBattler, BOUNCE_HEALTHBOX);
     EndBounceEffect(gActiveBattler, BOUNCE_MON);
+    MoveSelectionDisplayMoveTypeDoubles(GetBattlerPosition(gMultiUsePlayerCursor));
     gBattlerControllerFuncs[gActiveBattler] = HandleInputChooseTarget;
 }
 
@@ -742,6 +743,7 @@ static void HandleInputChooseMove(void)
                 gMultiUsePlayerCursor = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
             else
                 gMultiUsePlayerCursor = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+                MoveSelectionDisplayMoveTypeDoubles(GetBattlerPosition(gMultiUsePlayerCursor));
 
             gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_ShowAsMoveTarget;
             break;
@@ -1841,6 +1843,7 @@ static void MoveSelectionDisplayMoveTypeDoubles(u8 targetId)
 static void MoveSelectionDisplayMoveType(void)
 {
     u8 *txtPtr;
+    u8 typeColor = IsDoubleBattle() ? B_WIN_MOVE_TYPE : GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler)));
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[gActiveBattler][4]);
 
     txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
@@ -1867,7 +1870,16 @@ static void MoveSelectionDisplayMoveType(void)
     {
         StringCopy(txtPtr, gTypeNames[gBattleMoves[moveInfo->moves[gMoveSelectionCursor[gActiveBattler]]].type]);
     }
-    BattlePutTextOnWindow(gDisplayedStringBattle, TypeEffectiveness(moveInfo, 1));
+
+        if (IsDoubleBattle() == TRUE)
+        {
+            BattlePutTextOnWindow(gDisplayedStringBattle, typeColor);
+        }
+        else 
+        {
+           BattlePutTextOnWindow(gDisplayedStringBattle, TypeEffectiveness(moveInfo, 1)); 
+        }
+    
     MoveSelectionDisplaySplitIcon();
 }
 
