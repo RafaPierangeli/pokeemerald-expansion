@@ -1843,6 +1843,14 @@ const u8 gText_PokeBalls[] = _("POKé BALLS");
 const u8 gText_Berry[] = _("BERRY");
 const u8 gText_Berries[] = _("BERRIES");
 
+// frlg_tm_case_port
+const u8 gText_TMCase[] =               _("TM CASE");
+const u8 gText_Close[] =                _("CLOSE");
+const u8 gText_TMCaseWillBePutAway[] =  _("The TM CASE will be\nput away.");
+const u8 gText_FontSmall[] =            _("{FONT_SMALL}");
+const u8 gText_FontShort[] =            _("{FONT_SHORT}");
+const u8 gText_TMCase_Blue[] =          _("{COLOR_HIGHLIGHT_SHADOW BLUE TRANSPARENT LIGHT_BLUE}{STR_VAR_2}");
+
 // move item pokemon
 const u8 gMenuText_Move[] = _("MOVE");
 const u8 gText_MoveItemWhere[] = _("Move item to where?");
