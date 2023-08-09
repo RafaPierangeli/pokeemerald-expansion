@@ -2410,7 +2410,11 @@ static void PlayerHandleSwitchInAnim(void)
     BattleLoadPlayerMonSpriteGfx(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], gActiveBattler);
     gActionSelectionCursor[gActiveBattler] = 0;
     gMoveSelectionCursor[gActiveBattler] = 0;
-    StartSendOutAnim(gActiveBattler, gBattleResources->bufferA[gActiveBattler][2]);
+    #ifdef BATTLE_ENGINE
+    StartSendOutAnim(gActiveBattler, gBattleResources->bufferA[gActiveBattler][2], FALSE);
+    #else
+    StartSendOutAnim(gActiveBattler, gBattleBufferA[gActiveBattler][2], FALSE);
+    #endif
     gBattlerControllerFuncs[gActiveBattler] = SwitchIn_TryShinyAnimShowHealthbox;
 }
 
@@ -3256,22 +3260,18 @@ static void Task_StartSendOutAnim(u8 taskId)
         if (TwoIntroMons(gActiveBattler) && !(gBattleTypeFlags & BATTLE_TYPE_MULTI))
         {
             gBattleResources->bufferA[gActiveBattler][1] = gBattlerPartyIndexes[gActiveBattler];
-            StartSendOutAnim(gActiveBattler, FALSE, ShouldDoSlideInAnim());
-        }
-        else
-        {
-            gBattleResources->bufferA[gActiveBattler][1] = gBattlerPartyIndexes[gActiveBattler];
-            StartSendOutAnim(gActiveBattler, FALSE, ShouldDoSlideInAnim());
+            StartSendOutAnim(gActiveBattler, gBattleResources->bufferA[gActiveBattler][2], FALSE);
             gActiveBattler ^= BIT_FLANK;
             gBattleResources->bufferA[gActiveBattler][1] = gBattlerPartyIndexes[gActiveBattler];
             BattleLoadPlayerMonSpriteGfx(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], gActiveBattler);
-            StartSendOutAnim(gActiveBattler, FALSE, ShouldDoSlideInAnim());
+            StartSendOutAnim(gActiveBattler, gBattleResources->bufferA[gActiveBattler][2], FALSE);
+            ShouldDoSlideInAnim();
             gActiveBattler ^= BIT_FLANK;
         }
         else
         {
             gBattleResources->bufferA[gActiveBattler][1] = gBattlerPartyIndexes[gActiveBattler];
-            StartSendOutAnim(gActiveBattler, FALSE);
+            StartSendOutAnim(gActiveBattler, gBattleResources->bufferA[gActiveBattler][2], FALSE);
         }
         gBattlerControllerFuncs[gActiveBattler] = Intro_TryShinyAnimShowHealthbox;
         gActiveBattler = savedActiveBattler;

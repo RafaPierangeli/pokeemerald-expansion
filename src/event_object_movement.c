@@ -2115,7 +2115,7 @@ bool8 ScrFunc_getfolloweraction(struct ScriptContext *ctx) // Essentially a big 
         multi = NUMBER_OF_MON_TYPES;
     }
     if (multi < NUMBER_OF_MON_TYPES) {
-        multi = GetTypeEffectiveness(mon, multi);
+        
         if (multi & (MOVE_RESULT_NOT_VERY_EFFECTIVE | MOVE_RESULT_DOESNT_AFFECT_FOE | MOVE_RESULT_NO_EFFECT))
             cond_emotes[n_choices++] = (struct SpecialEmote) {.emotion=FOLLOWER_EMOTION_HAPPY, .index=32};
         else if (multi & MOVE_RESULT_SUPER_EFFECTIVE)
