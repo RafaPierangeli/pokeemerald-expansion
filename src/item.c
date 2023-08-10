@@ -211,12 +211,6 @@ bool8 CheckBagHasSpace(u16 itemId, u16 count)
     else
         slotCapacity = MAX_BERRY_CAPACITY;
 
-    if (pocket == TMHM_POCKET)
-        {
-            if (!CheckBagHasItem(ITEM_TM_CASE, 1))
-                AddBagItem(ITEM_TM_CASE, 1);
-        }
-
     // Check space in any existing item slots that already contain this item
     for (i = 0; i < gBagPockets[pocket].capacity; i++)
     {
@@ -288,6 +282,12 @@ bool8 AddBagItem(u16 itemId, u16 count)
             slotCapacity = MAX_BAG_ITEM_CAPACITY;
         else
             slotCapacity = MAX_BERRY_CAPACITY;
+
+        if (pocket == TMHM_POCKET)
+        {
+            if (!CheckBagHasItem(ITEM_TM_CASE, 1))
+                AddBagItem(ITEM_TM_CASE, 1);
+        }
 
         for (i = 0; i < itemPocket->capacity; i++)
         {
