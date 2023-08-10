@@ -145,6 +145,7 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorialEast::
 
 PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 	addobject LOCALID_WALLY
+	followerintopokeball
 	playse SE_DOOR
 	call_if_eq VAR_0x8008, 0, PetalburgCity_Gym_EventScript_WallyArriveSouth
 	call_if_eq VAR_0x8008, 1, PetalburgCity_Gym_EventScript_WallyArriveNorth
@@ -192,6 +193,7 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 	special InitBirchState
 	warp MAP_PETALBURG_CITY, 15, 8
 	waitstate
+	updatefollowerpokemongraphic
 	release
 	end
 
