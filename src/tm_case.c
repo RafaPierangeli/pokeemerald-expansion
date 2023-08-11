@@ -1170,7 +1170,7 @@ static void TintPartyMonIcons(u8 tm)
     for (i = 0; i < gPlayerPartyCount; i++)
     {
         species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
-        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && CanLearnTeachableMove(species, tm))
+        if ( CanLearnTeachableMove(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES), tm))
         {
             gSprites[spriteIdData[i]].oam.paletteNum = spriteIdPalette[i];//gMonIconPaletteIndices[species];
         }
