@@ -36,6 +36,7 @@ static void SpriteCB_UnderwaterSurfBlob(struct Sprite *);
 static u32 ShowDisguiseFieldEffect(u8, u8);
 static void LoadFieldEffectPalette_(u8 fieldEffect, bool8 updateGammaType);
 static void LoadObjectRegularReflectionPalette(struct ObjectEvent *objectEvent, struct Sprite *sprite);
+static void LoadObjectHighBridgeReflectionPalette(struct ObjectEvent *, struct Sprite *sprite);
 
 
 void LoadSpecialReflectionPalette(struct Sprite *sprite);
@@ -99,10 +100,11 @@ static void LoadObjectReflectionPalette(struct ObjectEvent *objectEvent, struct 
         reflectionSprite->oam.paletteNum = IndexOfSpritePaletteTag(OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION);
         UpdatePaletteGammaType(reflectionSprite->oam.paletteNum, COLOR_MAP_DARK_CONTRAST);
         UpdateSpritePaletteWithWeather(reflectionSprite->oam.paletteNum);
+        LoadObjectHighBridgeReflectionPalette(objectEvent, reflectionSprite);
     }
     else
     {
-        LoadSpecialReflectionPalette(reflectionSprite);
+        LoadObjectRegularReflectionPalette(objectEvent, reflectionSprite);
     }
 }
 
