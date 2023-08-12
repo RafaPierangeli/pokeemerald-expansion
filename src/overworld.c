@@ -2160,7 +2160,9 @@ void CB2_OverworldBasic(void)
 
 void CB2_Overworld(void)
 {
+    u32 *debugPtr = (u32*) 0x0203de00;
     bool32 fading = (gPaletteFade.active != 0);
+    *debugPtr = (u32) &gTimeOfDay;
     if (fading)
         SetVBlankCallback(NULL);
     OverworldBasic();
@@ -2178,6 +2180,7 @@ void CB2_Overworld(void)
                 gSprites[gObjectEvents[gSaveBlock2Ptr->follower.objId].spriteId].x2 = 8;
                 break;
         }
+        return;
     }        
 }
 
@@ -2274,6 +2277,7 @@ static void CB2_LoadMap2(void)
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();
     SetMainCallback1(CB1_Overworld);
+    FadePalettesWithTime();
     SetMainCallback2(CB2_Overworld);
 
     // Handle placing follower after warp as determined via setfollowerwarppos macro
@@ -2334,6 +2338,7 @@ static void CB2_ReturnToFieldLocal(void)
     if (ReturnToFieldLocal(&gMain.state))
     {
         SetFieldVBlankCallback();
+        FadePalettesWithTime();
         SetMainCallback2(CB2_Overworld);
     }
 }
