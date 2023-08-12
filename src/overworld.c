@@ -75,6 +75,7 @@
 #include "constants/items.h"
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
+#include "rtc.h"
 
 struct CableClubPlayer
 {
@@ -183,6 +184,7 @@ static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *, u
 static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *, u8, u16, u8);
 static u16 GetCenterScreenMetatileBehavior(void);
 static bool8 CanLearnFlashInParty(void);
+u8 static gTimeOfDayState;
 
 static void *sUnusedOverworldCallback;
 static u8 sPlayerLinkStates[MAX_LINK_PLAYERS];
@@ -202,6 +204,8 @@ bool8 (*gFieldCallback2)(void);
 u8 gLocalLinkPlayerId; // This is our player id in a multiplayer mode.
 u8 gFieldLinkPlayerCount;
 
+u8 gTimeOfDay;
+
 EWRAM_DATA static u8 sObjectEventLoadFlag = 0;
 EWRAM_DATA struct WarpData gLastUsedWarp = {0};
 EWRAM_DATA static struct WarpData sWarpDestination = {0};  // new warp position
@@ -212,6 +216,7 @@ EWRAM_DATA static struct InitialPlayerAvatarState sInitialPlayerAvatarState = {0
 EWRAM_DATA static u16 sAmbientCrySpecies = 0;
 EWRAM_DATA static bool8 sIsAmbientCryWaterMon = FALSE;
 EWRAM_DATA struct LinkPlayerObjectEvent gLinkPlayerObjectEvents[4] = {0};
+EWRAM_DATA struct Coords16 gLightMetatiles[32] = {0};
 
 static const u8 FollowerSparkleCoords[][6] =
 {
@@ -1122,6 +1127,23 @@ static bool32 IsDummyWarp(struct WarpData *warp)
         return TRUE;
 }
 
+// Caches light metatile coordinates
+static void CacheLightMetatiles(void) { // TODO: Better way to dynamically generate lights
+  u8 i = 0;
+  s16 x, y;
+  for (x = 0; x < gBackupMapLayout.width; x++) {
+    for (y = 0; y < gBackupMapLayout.height; y++) {
+      if (MapGridGetMetatileBehaviorAt(x, y) == 0x04) {
+        gLightMetatiles[i].x = x;
+        gLightMetatiles[i].y = y;
+        i++;
+      }
+    }
+  }
+  gLightMetatiles[i].x = -1;
+  gLightMetatiles[i].y = -1;
+}
+
 struct MapHeader const *const Overworld_GetMapHeaderByGroupAndId(u16 mapGroup, u16 mapNum)
 {
     return gMapGroups[mapGroup][mapNum];
@@ -1391,6 +1413,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     Overworld_ClearSavedMusic();
     RunOnTransitionMapScript();
     InitMap();
+    CacheLightMetatiles();
     CopySecondaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
     LoadSecondaryTilesetPalette(gMapHeader.mapLayout);
 
@@ -2063,6 +2086,59 @@ void CB1_Overworld(void)
         DoCB1_Overworld(gMain.newKeys, gMain.heldKeys);
 }
 
+struct TimeOfDayBlend {
+  u8 coeff:4;
+  u16 blendColor;
+};
+
+static const struct TimeOfDayBlend sTimeOfDayBlendVars[] =
+{
+  [TIME_OF_DAY_NIGHT] = {.coeff = 10, .blendColor = 0x1400},
+  [TIME_OF_DAY_TWILIGHT] = {.coeff = 4, .blendColor = 0x155D},
+  [TIME_OF_DAY_DAY] = {.coeff = 0, .blendColor = 0},
+};
+
+u8 UpdateTimeOfDay(void) {
+  RtcCalcLocalTime();
+  if (gLocalTime.hours >= 20 || gLocalTime.hours < 4)
+    return gTimeOfDay = TIME_OF_DAY_NIGHT;
+  else if (gLocalTime.hours >= 10 && gLocalTime.hours < 20)
+    return gTimeOfDay = TIME_OF_DAY_DAY;
+  return gTimeOfDay = TIME_OF_DAY_TWILIGHT;
+}
+
+static bool8 MapHasNaturalLight(u8 mapType) { // Weather a map type is naturally lit/outside
+  return mapType == MAP_TYPE_TOWN || mapType == MAP_TYPE_CITY || mapType == MAP_TYPE_ROUTE;
+}
+
+static bool8 FadePalettesWithTime(void) {
+  gTimeOfDayState = 0;
+  gTimeOfDay = UpdateTimeOfDay();
+  if (MapHasNaturalLight(gMapHeader.mapType)) {
+    ResetPaletteFade();
+    BeginTimeOfDayPaletteFade(0xFFFFFFFF, 0, 16, sTimeOfDayBlendVars[gTimeOfDay].coeff, sTimeOfDayBlendVars[gTimeOfDay].blendColor);
+  }
+}
+
+void BlendPalettesWithTime(u32 palettes) {
+  // Only blend if not transitioning between times and the map type allows
+  if (gTimeOfDayState == 0 && MapHasNaturalLight(gMapHeader.mapType)) {
+    u8 i;
+    for (i = 0; i < 16; i++) {
+      if (GetSpritePaletteTagByPaletteNum(i) & 0x8000) // Don't blend special sprite palette tags
+        palettes &= ~(1 << (i + 16));
+    }
+    palettes &= ~0xE000; // Don't blend tile palettes [13,15]
+    gTimeOfDay = gTimeOfDay > TIME_OF_DAY_MAX ? TIME_OF_DAY_MAX : gTimeOfDay;
+    BlendPalettes(palettes, sTimeOfDayBlendVars[gTimeOfDay].coeff, sTimeOfDayBlendVars[gTimeOfDay].blendColor);
+  }
+}
+
+u8 UpdateSpritePaletteWithTime(u8 paletteNum) {
+  BlendPalettesWithTime(1 << (paletteNum + 16));
+  return paletteNum;
+}
+
 static void OverworldBasic(void)
 {
     ScriptContext_RunScript();
@@ -2365,6 +2441,7 @@ void CB2_ContinueSavedGame(void)
     }
     else
     {
+        CacheLightMetatiles();
         TryPutTodaysRivalTrainerOnAir();
         gFieldCallback = FieldCB_FadeTryShowMapPopup;
         SetMainCallback1(CB1_Overworld);
@@ -2524,6 +2601,7 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
         (*state)++;
         break;
     case 3:
+        CacheLightMetatiles();
         InitObjectEventsLocal();
         SetCameraToTrackPlayer();
         (*state)++;

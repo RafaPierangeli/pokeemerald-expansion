@@ -28,6 +28,10 @@ static const struct SpriteFrameImage sPicTable_ShadowExtraLarge[] = {
     obj_frame_tiles(gFieldEffectObjectPic_ShadowExtraLarge),
 };
 
+const struct SpriteFrameImage sPicTable_BallLight[] = {
+    obj_frame_tiles(gFieldEffectObjectPic_BallLight),
+};
+
 const struct SpriteTemplate gFieldEffectObjectTemplate_ShadowSmall = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_BRENDAN,
@@ -66,6 +70,16 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_ShadowExtraLarge = {
     .images = sPicTable_ShadowExtraLarge,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateShadowFieldEffect,
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_BallLight = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_LIGHT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .anims = sAnimTable_Shadow,
+    .images = sPicTable_BallLight,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateLightSprite,
 };
 
 static const struct SpriteFrameImage sPicTable_TallGrass[] = {

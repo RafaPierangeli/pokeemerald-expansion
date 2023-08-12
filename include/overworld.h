@@ -26,6 +26,11 @@
 
 #define SKIP_OBJECT_EVENT_LOAD  1
 
+#define TIME_OF_DAY_NIGHT 0
+#define TIME_OF_DAY_TWILIGHT 1
+#define TIME_OF_DAY_DAY 2
+#define TIME_OF_DAY_MAX TIME_OF_DAY_DAY
+
 struct InitialPlayerAvatarState
 {
     u8 transitionFlags;
@@ -43,6 +48,8 @@ struct LinkPlayerObjectEvent
 extern struct WarpData gLastUsedWarp;
 extern struct LinkPlayerObjectEvent gLinkPlayerObjectEvents[4];
 
+extern struct Coords16 gLightMetatiles[32];
+
 extern u16 *gOverworldTilemapBuffer_Bg2;
 extern u16 *gOverworldTilemapBuffer_Bg1;
 extern u16 *gOverworldTilemapBuffer_Bg3;
@@ -51,6 +58,7 @@ extern void (*gFieldCallback)(void);
 extern bool8 (*gFieldCallback2)(void);
 extern u8 gLocalLinkPlayerId;
 extern u8 gFieldLinkPlayerCount;
+extern u8 gTimeOfDay;
 
 extern const struct UCoords32 gDirectionToVectors[];
 
@@ -128,6 +136,7 @@ void CleanupOverworldWindowsAndTilemaps(void);
 bool32 IsOverworldLinkActive(void);
 void CB1_Overworld(void);
 void CB2_OverworldBasic(void);
+void BlendPalettesWithTime(u32);
 void CB2_Overworld(void);
 void SetMainCallback1(void (*cb)(void));
 void SetUnusedCallback(void *func);

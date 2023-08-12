@@ -65,6 +65,7 @@ void TransferPlttBuffer(void);
 u8 UpdatePaletteFade(void);
 void ResetPaletteFade(void);
 bool8 BeginNormalPaletteFade(u32 selectedPalettes, s8 delay, u8 startY, u8 targetY, u16 blendColor);
+bool8 BeginTimeOfDayPaletteFade(u32, s8, u8, u8, u16);
 void PaletteStruct_ResetById(u16 id);
 void ResetPaletteFadeControl(void);
 void InvertPlttBuffer(u32 selectedPalettes);
