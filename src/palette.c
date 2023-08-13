@@ -460,7 +460,7 @@ static u8 PaletteStruct_GetPalNum(u16 id)
 
 
 // Like normal palette fade, but respects sprite/tile palettes immune to time of day fading
-static u8 UpdateTimeOfDayPaletteFade(void) // Like normal, but respects sprite palettes immune to fading
+static u8 UpdateTimeOfDayPaletteFade(void) 
 {
     u8 paletteNum;
     u16 paletteOffset;
@@ -499,13 +499,13 @@ static u8 UpdateTimeOfDayPaletteFade(void) // Like normal, but respects sprite p
         if (gPaletteFade.yDec) {
           if (gPaletteFade.objPaletteToggle) { // sprite palettes
             if (gPaletteFade.y >= gPaletteFade.targetY || GetSpritePaletteTagByPaletteNum(paletteNum) & 0x8000)
-              BlendPalette(paletteOffset, 16, gPaletteFade.y, gPaletteFade.blendColor);
+              TimePalette(paletteOffset, 16, gPaletteFade.y, gPaletteFade.blendColor);
           // tile palettes
           } else if (gPaletteFade.y >= gPaletteFade.targetY || (paletteNum >= 13 && paletteNum <= 15)) {
-              BlendPalette(paletteOffset, 16, gPaletteFade.y, gPaletteFade.blendColor);
+              TimePalette(paletteOffset, 16, gPaletteFade.y, gPaletteFade.blendColor);
           }
         } else {
-          BlendPalette(paletteOffset, 16, gPaletteFade.y, gPaletteFade.blendColor);
+          TimePalette(paletteOffset, 16, gPaletteFade.y, gPaletteFade.blendColor);
         }
       }
     }
@@ -981,6 +981,46 @@ void BlendPalettes(u32 selectedPalettes, u8 coeff, u16 color)
             BlendPalette(paletteOffset, 16, coeff, color);
         selectedPalettes >>= 1;
     }
+}
+
+// Like BlendPalette, but ignores blendColor if the transparency high bit is set
+void TimePalette(u16 palOffset, u16 numEntries, u8 coeff, u16 blendColor) {
+  u16 i;
+  s8 r, g, b;
+  struct PlttData *data2 = (struct PlttData *)&blendColor;
+  struct PlttData *data3;
+  struct PlttData *blendData;
+  u16 altBlendIndices = 0;
+  for (i = 0; i < numEntries; i++) {
+    u16 index = i + palOffset;
+    struct PlttData *data1 = (struct PlttData *)&gPlttBufferUnfaded[index];
+    if (i == 0) {
+      if (data1->unused_15) { // Use transparency color to blend
+        
+        gPlttBufferFaded[index] = gPlttBufferUnfaded[index];
+        altBlendIndices = gPlttBufferUnfaded[index] & 0x7FFF;
+        data3 = (struct PlttData *)&gPlttBufferUnfaded[index+15];
+      }
+      continue;
+    }
+    r = data1->r;
+    g = data1->g;
+    b = data1->b;
+    blendData = (altBlendIndices && altBlendIndices & (1 << i)) ? data3 : data2;
+    gPlttBufferFaded[index] = RGB(r + (((blendData->r - r) * coeff) >> 4),
+                                  g + (((blendData->g - g) * coeff) >> 4),
+                                  b + (((blendData->b - b) * coeff) >> 4));
+  }
+}
+
+// Apply time effect to a series of palettes
+void TimePalettes(u32 palettes, u8 coeff, u16 color) {
+  u16 paletteOffset;
+  for (paletteOffset = 0; palettes; paletteOffset += 16) {
+    if (palettes & 1)
+      TimePalette(paletteOffset, 16, coeff, color);
+    palettes >>= 1;
+  }
 }
 
 void BlendPalettesUnfaded(u32 selectedPalettes, u8 coeff, u16 color)
