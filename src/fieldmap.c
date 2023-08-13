@@ -32,6 +32,7 @@ EWRAM_DATA static struct ConnectionFlags sMapConnectionFlags = {0};
 EWRAM_DATA static u32 sFiller = 0; // without this, the next file won't align properly
 
 struct BackupMapLayout gBackupMapLayout;
+EWRAM_DATA struct Coords16 gLightMetatiles[32] = {0};
 
 static const struct ConnectionFlags sDummyConnectionFlags = {0};
 
@@ -63,6 +64,8 @@ static bool8 IsCoordInIncomingConnectingMap(int coord, int srcMax, int destMax, 
 
 #define GetMapGridBlockAt(x, y) (AreCoordsWithinMapGridBounds(x, y) ? gBackupMapLayout.map[x + gBackupMapLayout.width * y] : GetBorderBlockAt(x, y))
 
+static void CacheLightMetatiles(void);
+
 const struct MapHeader *const GetMapHeaderFromConnection(const struct MapConnection *connection)
 {
     return Overworld_GetMapHeaderByGroupAndId(connection->mapGroup, connection->mapNum);
@@ -73,6 +76,7 @@ void InitMap(void)
     InitMapLayoutData(&gMapHeader);
     SetOccupiedSecretBaseEntranceMetatiles(gMapHeader.events);
     RunOnLoadMapScript();
+    CacheLightMetatiles();
 }
 
 void InitMapFromSavedGame(void)
@@ -82,6 +86,7 @@ void InitMapFromSavedGame(void)
     SetOccupiedSecretBaseEntranceMetatiles(gMapHeader.events);
     LoadSavedMapView();
     RunOnLoadMapScript();
+    CacheLightMetatiles();
     UpdateTVScreensOnMap(gBackupMapLayout.width, gBackupMapLayout.height);
 }
 
@@ -376,6 +381,23 @@ u32 MapGridGetMetatileBehaviorAt(int x, int y)
 {
     u16 metatile = MapGridGetMetatileIdAt(x, y);
     return GetMetatileAttributesById(metatile) & METATILE_ATTR_BEHAVIOR_MASK;
+}
+
+// Caches light metatile coordinates
+static void CacheLightMetatiles(void) { // TODO: Better way to dynamically generate lights
+  u8 i = 0;
+  s16 x, y;
+  for (x = 0; x < gBackupMapLayout.width; x++) {
+    for (y = 0; y < gBackupMapLayout.height; y++) {
+      if (MapGridGetMetatileBehaviorAt(x, y) == 0x04) {
+        gLightMetatiles[i].x = x;
+        gLightMetatiles[i].y = y;
+        i++;
+      }
+    }
+  }
+  gLightMetatiles[i].x = -1;
+  gLightMetatiles[i].y = -1;
 }
 
 u8 MapGridGetMetatileLayerTypeAt(int x, int y)

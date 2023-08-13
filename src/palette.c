@@ -999,7 +999,7 @@ void TimeBlendPalette(u16 palOffset, u16 numEntries, u8 coeff, u16 blendColor) {
       if (data1->unused_15) { // Use transparency color to blend
         
         gPlttBufferFaded[index] = gPlttBufferUnfaded[index];
-        altBlendIndices = gPlttBufferUnfaded[index] & 0x7FFF;
+        altBlendIndices = gPlttBufferUnfaded[index] << 1;
         data3 = (struct PlttData *)&gPlttBufferUnfaded[index+15];
         if (!data3->unused_15) // use default blend color instead
           data3 = (struct PlttData *)&defaultBlendColor;

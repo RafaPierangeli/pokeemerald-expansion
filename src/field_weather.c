@@ -785,7 +785,7 @@ void FadeScreen(u8 mode, s8 delay)
 
     if (fadeOut)
     {
-        if (useWeatherPal)
+        if (TRUE || useWeatherPal)
             CpuFastCopy(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
 
         BeginNormalPaletteFade(PALETTES_ALL, delay, 0, 16, fadeColor);

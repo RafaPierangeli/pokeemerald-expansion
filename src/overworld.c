@@ -216,7 +216,6 @@ EWRAM_DATA static struct InitialPlayerAvatarState sInitialPlayerAvatarState = {0
 EWRAM_DATA static u16 sAmbientCrySpecies = 0;
 EWRAM_DATA static bool8 sIsAmbientCryWaterMon = FALSE;
 EWRAM_DATA struct LinkPlayerObjectEvent gLinkPlayerObjectEvents[4] = {0};
-EWRAM_DATA struct Coords16 gLightMetatiles[32] = {0};
 
 static const u8 FollowerSparkleCoords[][6] =
 {
@@ -1127,23 +1126,6 @@ static bool32 IsDummyWarp(struct WarpData *warp)
         return TRUE;
 }
 
-// Caches light metatile coordinates
-static void CacheLightMetatiles(void) { // TODO: Better way to dynamically generate lights
-  u8 i = 0;
-  s16 x, y;
-  for (x = 0; x < gBackupMapLayout.width; x++) {
-    for (y = 0; y < gBackupMapLayout.height; y++) {
-      if (MapGridGetMetatileBehaviorAt(x, y) == 0x04) {
-        gLightMetatiles[i].x = x;
-        gLightMetatiles[i].y = y;
-        i++;
-      }
-    }
-  }
-  gLightMetatiles[i].x = -1;
-  gLightMetatiles[i].y = -1;
-}
-
 struct MapHeader const *const Overworld_GetMapHeaderByGroupAndId(u16 mapGroup, u16 mapNum)
 {
     return gMapGroups[mapGroup][mapNum];
@@ -1413,7 +1395,6 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     Overworld_ClearSavedMusic();
     RunOnTransitionMapScript();
     InitMap();
-    CacheLightMetatiles();
     CopySecondaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
     LoadSecondaryTilesetPalette(gMapHeader.mapLayout);
 
@@ -2450,7 +2431,6 @@ void CB2_ContinueSavedGame(void)
     }
     else
     {
-        CacheLightMetatiles();
         TryPutTodaysRivalTrainerOnAir();
         gFieldCallback = FieldCB_FadeTryShowMapPopup;
         SetMainCallback1(CB1_Overworld);
@@ -2610,7 +2590,6 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
         (*state)++;
         break;
     case 3:
-        CacheLightMetatiles();
         InitObjectEventsLocal();
         SetCameraToTrackPlayer();
         (*state)++;
