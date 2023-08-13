@@ -499,13 +499,13 @@ static u8 UpdateTimeOfDayPaletteFade(void)
         if (gPaletteFade.yDec) {
           if (gPaletteFade.objPaletteToggle) { // sprite palettes
             if (gPaletteFade.y >= gPaletteFade.targetY || GetSpritePaletteTagByPaletteNum(paletteNum) & 0x8000)
-              TimePalette(paletteOffset, 16, gPaletteFade.y, gPaletteFade.blendColor);
+              TimeBlendPalette(paletteOffset, 16, gPaletteFade.y, gPaletteFade.blendColor);
           // tile palettes
           } else if (gPaletteFade.y >= gPaletteFade.targetY || (paletteNum >= 13 && paletteNum <= 15)) {
-              TimePalette(paletteOffset, 16, gPaletteFade.y, gPaletteFade.blendColor);
+              TimeBlendPalette(paletteOffset, 16, gPaletteFade.y, gPaletteFade.blendColor);
           }
         } else {
-          TimePalette(paletteOffset, 16, gPaletteFade.y, gPaletteFade.blendColor);
+          TimeBlendPalette(paletteOffset, 16, gPaletteFade.y, gPaletteFade.blendColor);
         }
       }
     }
@@ -984,8 +984,9 @@ void BlendPalettes(u32 selectedPalettes, u8 coeff, u16 color)
 }
 
 // Like BlendPalette, but ignores blendColor if the transparency high bit is set
-void TimePalette(u16 palOffset, u16 numEntries, u8 coeff, u16 blendColor) {
+void TimeBlendPalette(u16 palOffset, u16 numEntries, u8 coeff, u16 blendColor) {
   u16 i;
+  u16 defaultBlendColor = 0x3f9f;
   s8 r, g, b;
   struct PlttData *data2 = (struct PlttData *)&blendColor;
   struct PlttData *data3;
@@ -1000,6 +1001,8 @@ void TimePalette(u16 palOffset, u16 numEntries, u8 coeff, u16 blendColor) {
         gPlttBufferFaded[index] = gPlttBufferUnfaded[index];
         altBlendIndices = gPlttBufferUnfaded[index] & 0x7FFF;
         data3 = (struct PlttData *)&gPlttBufferUnfaded[index+15];
+        if (!data3->unused_15) // use default blend color instead
+          data3 = (struct PlttData *)&defaultBlendColor;
       }
       continue;
     }
@@ -1014,11 +1017,11 @@ void TimePalette(u16 palOffset, u16 numEntries, u8 coeff, u16 blendColor) {
 }
 
 // Apply time effect to a series of palettes
-void TimePalettes(u32 palettes, u8 coeff, u16 color) {
+void TimeBlendPalettes(u32 palettes, u8 coeff, u16 color) {
   u16 paletteOffset;
   for (paletteOffset = 0; palettes; paletteOffset += 16) {
     if (palettes & 1)
-      TimePalette(paletteOffset, 16, coeff, color);
+      TimeBlendPalette(paletteOffset, 16, coeff, color);
     palettes >>= 1;
   }
 }

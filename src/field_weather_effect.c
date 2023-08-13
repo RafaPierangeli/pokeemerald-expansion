@@ -1135,7 +1135,7 @@ void Thunderstorm_Main(void)
             if (--gWeatherPtr->thunderShortBolts != 0)
             {
                 if (gTimeOfDay != TIME_OF_DAY_DAY)
-                BlendPalettesWithTime(0xFFFFFFFF);
+                UpdatePalettesWithTime(0xFFFFFFFF);
                 // Wait a little, then do another short bolt.
                 gWeatherPtr->thunderTimer = (Random() % 16) + 60;
                 gWeatherPtr->initStep = THUNDER_STATE_WAIT_BOLT_SHORT;
@@ -1174,7 +1174,7 @@ void Thunderstorm_Main(void)
         if (--gWeatherPtr->thunderTimer == 0)
         {
             // Fade long bolt out over time.
-            gTimeOfDay == TIME_OF_DAY_DAY ? ApplyWeatherColorMapIfIdle_Gradual(19, 3, 5) : BlendPalettesWithTime(0xFFFFFFFF); 
+            gTimeOfDay == TIME_OF_DAY_DAY ? ApplyWeatherColorMapIfIdle_Gradual(19, 3, 5) : UpdatePalettesWithTime(0xFFFFFFFF); 
             gWeatherPtr->initStep++;
         }
         break;
