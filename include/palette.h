@@ -76,12 +76,14 @@ void BeginHardwarePaletteFade(u8 blendCnt, u8 delay, u8 y, u8 targetY, u8 should
 void BlendPalettes(u32 selectedPalettes, u8 coeff, u16 color);
 void BlendPalettesUnfaded(u32 selectedPalettes, u8 coeff, u16 color);
 void BlendPalettesGradually(u32 selectedPalettes, s8 delay, u8 coeff, u8 coeffTarget, u16 color, u8 priority, u8 id);
-void TimeBlendPalette(u16 palOffset, u16 numEntries, u8 coeff, u16 blendColor);
-void TimeBlendPalettes(u32 palettes, u8 coeff, u16 color);
+void TimeBlendPalette(u16 palOffset, u32 coeff, u32 blendColor);
+void TimeBlendPalettes(u32 palettes, u32 coeff, u32 blendColor);
 void TintPalette_GrayScale(u16 *palette, u16 count);
 void TintPalette_GrayScale2(u16 *palette, u16 count);
 void TintPalette_SepiaTone(u16 *palette, u16 count);
 void TintPalette_CustomTone(u16 *palette, u16 count, u16 rTone, u16 gTone, u16 bTone);
+void TintPalette_RGB_Copy(u16 palOffset, u16 numEntries, u8 coeff, u16 blendColor);
+void AveragePalettes(u16 *palette0, u16* palette1, u16* dest, u16 weight);
 
 static inline void SetBackdropFromColor(u16 color)
 {
