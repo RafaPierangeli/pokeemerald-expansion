@@ -82,7 +82,7 @@ void TintPalette_GrayScale(u16 *palette, u16 count);
 void TintPalette_GrayScale2(u16 *palette, u16 count);
 void TintPalette_SepiaTone(u16 *palette, u16 count);
 void TintPalette_CustomTone(u16 *palette, u16 count, u16 rTone, u16 gTone, u16 bTone);
-void TintPalette_RGB_Copy(u16 palOffset, u16 numEntries, u8 coeff, u16 blendColor);
+void TintPalette_RGB_Copy(u16 palOffset, u32 blendColor);
 void AveragePalettes(u16 *palette0, u16* palette1, u16* dest, u16 weight);
 
 static inline void SetBackdropFromColor(u16 color)
