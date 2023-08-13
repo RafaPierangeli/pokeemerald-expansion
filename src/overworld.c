@@ -2135,35 +2135,21 @@ static bool8 FadePalettesWithTime(void) {
 void UpdatePalettesWithTime(u32 palettes) {
   // Only blend if not transitioning between times and the map type allows
   if (MapHasNaturalLight(gMapHeader.mapType)) {
-    u8 i, j;
+    u16 i;
     u16 tempPaletteBuffer[16];    
     for (i = 0; i < 16; i++) {
-      if (GetSpritePaletteTagByPaletteNum(i) & 0x8000) // Don't blend special sprite palette tags
+      if (GetSpritePaletteTagByPaletteNum(i) >> 15) // Don't blend special sprite palette tags
         palettes &= ~(1 << (i + 16));
     }
     palettes &= ~0xE000; // Don't blend tile palettes [13,15]
-    gTimeOfDay = min(TIME_OF_DAY_MAX, gTimeOfDay);
     if (!palettes)
       return;
-for (i = 0; palettes; i++) {
-      if (palettes & 1) {
-        if (sTimeOfDayBlendVars[currentTimeBlend.time0].isTint)
-          TintPalette_RGB_Copy(i*16, sTimeOfDayBlendVars[currentTimeBlend.time0].blendColor);
-        else
-          TimeBlendPalette(i*16, sTimeOfDayBlendVars[currentTimeBlend.time0].coeff, sTimeOfDayBlendVars[currentTimeBlend.time0].blendColor);
-        if (currentTimeBlend.weight == 256) {
-          palettes >>= 1;
-          continue;
-        }
-        CpuFastCopy(&gPlttBufferFaded[i*16], tempPaletteBuffer, 32);
-        if (sTimeOfDayBlendVars[currentTimeBlend.time1].isTint)
-          TintPalette_RGB_Copy(i*16, sTimeOfDayBlendVars[currentTimeBlend.time1].blendColor);
-        else
-          TimeBlendPalette(i*16, sTimeOfDayBlendVars[currentTimeBlend.time1].coeff, sTimeOfDayBlendVars[currentTimeBlend.time1].blendColor);
-        AveragePalettes(tempPaletteBuffer, &gPlttBufferFaded[i*16], &gPlttBufferFaded[i*16], currentTimeBlend.weight);
-      }
-      palettes >>= 1;
-      }
+      TimeMixPalettes(palettes,
+      sTimeOfDayBlendVars[currentTimeBlend.time0].coeff,
+      sTimeOfDayBlendVars[currentTimeBlend.time0].blendColor,
+      sTimeOfDayBlendVars[currentTimeBlend.time1].coeff,
+      sTimeOfDayBlendVars[currentTimeBlend.time1].blendColor,
+      currentTimeBlend.weight);
     }
 }
 
