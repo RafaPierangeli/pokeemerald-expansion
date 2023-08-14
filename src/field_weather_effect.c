@@ -486,7 +486,7 @@ void Rain_InitVars(void)
     gWeatherPtr->rainSpriteVisibleDelay = 8;
     gWeatherPtr->isDownpour = FALSE;
     gWeatherPtr->targetRainSpriteCount = 10;
-    gWeatherPtr->targetColorMapIndex = gTimeOfDay == TIME_OF_DAY_DAY ? 3 : 0;
+    gWeatherPtr->targetColorMapIndex = 3;
     gWeatherPtr->colorMapStepDelay = 20;
     SetRainStrengthFromSoundEffect(SE_RAIN);
     Weather_SetBlendCoeffs(8, 12); // preserve shadow darkness
@@ -1031,7 +1031,7 @@ void Thunderstorm_InitVars(void)
     gWeatherPtr->rainSpriteVisibleDelay = 4;
     gWeatherPtr->isDownpour = FALSE;
     gWeatherPtr->targetRainSpriteCount = 16;
-    gWeatherPtr->targetColorMapIndex = gTimeOfDay == TIME_OF_DAY_DAY ? 3 : 0;
+    gWeatherPtr->targetColorMapIndex = 3;
     gWeatherPtr->colorMapStepDelay = 20;
     gWeatherPtr->weatherGfxLoaded = FALSE;  // duplicate assignment
     gWeatherPtr->thunderEnqueued = FALSE;
@@ -1143,8 +1143,6 @@ void Thunderstorm_Main(void)
             gWeatherPtr->thunderAllowEnd = TRUE;
             if (--gWeatherPtr->thunderShortBolts != 0)
             {
-                if (gTimeOfDay != TIME_OF_DAY_DAY)
-                UpdatePalettesWithTime(0xFFFFFFFF);
                 // Wait a little, then do another short bolt.
                 gWeatherPtr->thunderTimer = (Random() % 16) + 60;
                 gWeatherPtr->initStep = THUNDER_STATE_WAIT_BOLT_SHORT;
@@ -1183,7 +1181,7 @@ void Thunderstorm_Main(void)
         if (--gWeatherPtr->thunderTimer == 0)
         {
             // Fade long bolt out over time.
-            gTimeOfDay == TIME_OF_DAY_DAY ? ApplyWeatherColorMapIfIdle_Gradual(19, 3, 5) : UpdatePalettesWithTime(0xFFFFFFFF); 
+            ApplyWeatherColorMapIfIdle_Gradual(19, 3, 5); 
             gWeatherPtr->initStep++;
         }
         break;

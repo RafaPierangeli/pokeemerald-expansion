@@ -474,18 +474,24 @@ static void ApplyColorMap(u8 startPalIndex, u8 numPalettes, s8 colorMapIndex)
     {
         colorMapIndex--;
         palOffset = PLTT_ID(startPalIndex);
+        CpuFastCopy(gPlttBufferUnfaded + palOffset, gPlttBufferFaded + palOffset, 32 * numPalettes);
         numPalettes += startPalIndex;
+        // Thunder gamma-shift looks bad on night-blended palettes, so ignore time blending in some situations
+        if (!(colorMapIndex > 3 && gWeatherPtr->currWeather == WEATHER_RAIN_THUNDERSTORM)) {
+          // Create the palette mask
+          u32 palettes = PALETTES_ALL;
+          palettes = (palettes >> startPalIndex) << startPalIndex;
+          palettes = (palettes << (32-numPalettes)) >> (32-numPalettes);
+          UpdatePalettesWithTime(palettes);
+        }
         curPalIndex = startPalIndex;
 
         // Loop through the specified palette range and apply necessary color maps.
         while (curPalIndex < numPalettes)
         {
-            CpuFastCopy(gPlttBufferUnfaded + palOffset, gPlttBufferFaded + palOffset, 16 * sizeof(u16));
-            UpdatePalettesWithTime(1 << (palOffset >> 4));
             if (sPaletteColorMapTypes[curPalIndex] == COLOR_MAP_NONE)
             {
                 // No palette change.
-                //CpuFastCopy(&gPlttBufferUnfaded[palOffset], &gPlttBufferFaded[palOffset], PLTT_SIZE_4BPP);
                 palOffset += 16;
             }
             else
@@ -542,11 +548,11 @@ static void ApplyColorMap(u8 startPalIndex, u8 numPalettes, s8 colorMapIndex)
     else
     {
     if (MapHasNaturalLight(gMapHeader.mapType)) { // Time-blend
-          u32 palettes = 0;
-          u32 mask = 1 << startPalIndex;
-          u8 i;
-          for (i = 0; i < numPalettes; i++, mask <<= 1)
-            palettes |= mask;
+          // Create the palette mask
+          u32 palettes = PALETTES_ALL;
+          numPalettes += startPalIndex;
+          palettes = (palettes >> startPalIndex) << startPalIndex;
+          palettes = (palettes << (32-numPalettes)) >> (32-numPalettes);
           UpdatePalettesWithTime(palettes);
         } else { // copy
           CpuFastCopy(gPlttBufferUnfaded + startPalIndex * 16, gPlttBufferFaded + startPalIndex * 16, numPalettes * 16 * sizeof(u16));
@@ -571,11 +577,12 @@ static void ApplyColorMapWithBlend(u8 startPalIndex, u8 numPalettes, s8 colorMap
 
     while (curPalIndex < numPalettes)
     {
+        CpuFastCopy(gPlttBufferUnfaded + palOffset, gPlttBufferFaded + palOffset, 16 * sizeof(u16));
         UpdatePalettesWithTime(1 << (palOffset >> 4)); // Apply TOD blend
         if (sPaletteColorMapTypes[curPalIndex] == COLOR_MAP_NONE)
         {
             // No color map. Simply blend the colors.
-            BlendPalettesFine(1 << (palOffset >> 4), gPlttBufferFaded, gPlttBufferFaded, blendCoeff, blendColor);
+            BlendPalettesFine(1, gPlttBufferFaded + palOffset, gPlttBufferFaded + palOffset, blendCoeff, blendColor);
             palOffset += 16;
         }
         else
@@ -880,6 +887,7 @@ void UpdateSpritePaletteWithWeather(u8 spritePaletteIndex, bool8 allowFog)
           }
         break;
     }
+}
 }
 
 void ApplyWeatherGammaShiftToPal(u8 paletteIndex)

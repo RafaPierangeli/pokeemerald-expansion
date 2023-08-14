@@ -107,7 +107,7 @@ static void LoadObjectReflectionPalette(struct ObjectEvent *objectEvent, struct 
         LoadObjectEventPalette(OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION);
         reflectionSprite->oam.paletteNum = IndexOfSpritePaletteTag(OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION);
         UpdatePaletteGammaType(reflectionSprite->oam.paletteNum, COLOR_MAP_DARK_CONTRAST);
-        UpdateSpritePaletteWithWeather(reflectionSprite->oam.paletteNum);
+        UpdateSpritePaletteWithWeather(reflectionSprite->oam.paletteNum, TRUE);
         UpdateSpritePaletteWithTime(reflectionSprite->oam.paletteNum);
         LoadObjectHighBridgeReflectionPalette(objectEvent, reflectionSprite);
     }
@@ -221,7 +221,7 @@ void LoadSpecialReflectionPalette(struct Sprite *sprite)
 	LoadSpritePalette(&reflectionPalette);
 	sprite->oam.paletteNum = IndexOfSpritePaletteTag(reflectionPalette.tag);
 	UpdatePaletteGammaType(sprite->oam.paletteNum, COLOR_MAP_CONTRAST);
-	UpdateSpritePaletteWithWeather(sprite->oam.paletteNum);
+	UpdateSpritePaletteWithWeather(sprite->oam.paletteNum, TRUE);
     UpdateSpritePaletteWithTime(sprite->oam.paletteNum);
 }
 
