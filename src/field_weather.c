@@ -17,6 +17,7 @@
 #include "trig.h"
 #include "gpu_regs.h"
 #include "field_camera.h"
+#include "overworld.h"
 
 #define DROUGHT_COLOR_INDEX(color) ((((color) >> 1) & 0xF) | (((color) >> 2) & 0xF0) | (((color) >> 3) & 0xF00))
 
@@ -479,10 +480,12 @@ static void ApplyColorMap(u8 startPalIndex, u8 numPalettes, s8 colorMapIndex)
         // Loop through the specified palette range and apply necessary color maps.
         while (curPalIndex < numPalettes)
         {
+            CpuFastCopy(gPlttBufferUnfaded + palOffset, gPlttBufferFaded + palOffset, 16 * sizeof(u16));
+            UpdatePalettesWithTime(1 << (palOffset >> 4));
             if (sPaletteColorMapTypes[curPalIndex] == COLOR_MAP_NONE)
             {
                 // No palette change.
-                CpuFastCopy(&gPlttBufferUnfaded[palOffset], &gPlttBufferFaded[palOffset], PLTT_SIZE_4BPP);
+                //CpuFastCopy(&gPlttBufferUnfaded[palOffset], &gPlttBufferFaded[palOffset], PLTT_SIZE_4BPP);
                 palOffset += 16;
             }
             else
@@ -497,7 +500,7 @@ static void ApplyColorMap(u8 startPalIndex, u8 numPalettes, s8 colorMapIndex)
                 for (i = 0; i < 16; i++)
                 {
                     // Apply color map to the original color.
-                    struct RGBColor baseColor = *(struct RGBColor *)&gPlttBufferUnfaded[palOffset];
+                    struct RGBColor baseColor = *(struct RGBColor *)&gPlttBufferFaded[palOffset];
                     r = colorMap[baseColor.r];
                     g = colorMap[baseColor.g];
                     b = colorMap[baseColor.b];
@@ -560,10 +563,11 @@ static void ApplyColorMapWithBlend(u8 startPalIndex, u8 numPalettes, s8 colorMap
 
     while (curPalIndex < numPalettes)
     {
+        UpdatePalettesWithTime(1 << (palOffset >> 4)); // Apply TOD blend
         if (sPaletteColorMapTypes[curPalIndex] == COLOR_MAP_NONE)
         {
             // No color map. Simply blend the colors.
-            BlendPalette(palOffset, 16, blendCoeff, blendColor);
+            BlendPalettesFine(1 << (palOffset >> 4), gPlttBufferFaded, gPlttBufferFaded, blendCoeff, blendColor);
             palOffset += 16;
         }
         else
@@ -577,7 +581,7 @@ static void ApplyColorMapWithBlend(u8 startPalIndex, u8 numPalettes, s8 colorMap
 
             for (i = 0; i < 16; i++)
             {
-                struct RGBColor baseColor = *(struct RGBColor *)&gPlttBufferUnfaded[palOffset];
+                struct RGBColor baseColor = *(struct RGBColor *)&gPlttBufferFaded[palOffset];
                 u8 r = colorMap[baseColor.r];
                 u8 g = colorMap[baseColor.g];
                 u8 b = colorMap[baseColor.b];
@@ -796,9 +800,18 @@ void FadeScreen(u8 mode, s8 delay)
     {
         gWeatherPtr->fadeDestColor = fadeColor;
         if (useWeatherPal)
-            gWeatherPtr->fadeScreenCounter = 0;
-        else
+            gWeatherPtr->fadeScreenCounter = 0; // Triggers gamma-shift-based fade-in
+        else {
+          UpdateTimeOfDay();
+          if (MapHasNaturalLight(gMapHeader.mapType)) {
+            BeginTimeOfDayPaletteFade(PALETTES_ALL, delay, 16, 0,
+              (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time0],
+              (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time1],
+              currentTimeBlend.weight, fadeColor);
+          } else {
             BeginNormalPaletteFade(PALETTES_ALL, delay, 16, 0, fadeColor);
+            }
+        }
 
         gWeatherPtr->palProcessingState = WEATHER_PAL_STATE_SCREEN_FADING_IN;
         gWeatherPtr->fadeInFirstFrame = TRUE;

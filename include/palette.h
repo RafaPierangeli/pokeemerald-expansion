@@ -75,7 +75,7 @@ void TransferPlttBuffer(void);
 u8 UpdatePaletteFade(void);
 void ResetPaletteFade(void);
 bool8 BeginNormalPaletteFade(u32 selectedPalettes, s8 delay, u8 startY, u8 targetY, u16 blendColor);
-bool8 BeginTimeOfDayPaletteFade(u32, s8, u8, u8, struct BlendSettings *, struct BlendSettings *, u16);
+bool8 BeginTimeOfDayPaletteFade(u32, s8, u8, u8, struct BlendSettings *, struct BlendSettings *, u16, u16);
 void PaletteStruct_ResetById(u16 id);
 void ResetPaletteFadeControl(void);
 void InvertPlttBuffer(u32 selectedPalettes);
@@ -86,6 +86,7 @@ void BeginHardwarePaletteFade(u8 blendCnt, u8 delay, u8 y, u8 targetY, u8 should
 void BlendPalettes(u32 selectedPalettes, u8 coeff, u16 color);
 void BlendPalettesUnfaded(u32 selectedPalettes, u8 coeff, u16 color);
 void BlendPalettesGradually(u32 selectedPalettes, s8 delay, u8 coeff, u8 coeffTarget, u16 color, u8 priority, u8 id);
+void BlendPalettesFine(u32 palettes, u16 *src, u16 *dst, u32 coeff, u32 color);
 void TimeBlendPalette(u16 palOffset, u32 coeff, u32 blendColor);
 void TintPalette_GrayScale(u16 *palette, u16 count);
 void TintPalette_GrayScale2(u16 *palette, u16 count);

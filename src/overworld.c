@@ -185,7 +185,6 @@ static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *, u8, u16
 static u16 GetCenterScreenMetatileBehavior(void);
 static bool8 CanLearnFlashInParty(void);
 static u16 sTimeUpdateCounter; // playTimeVBlanks will eventually overflow, so this is used to update TOD
-static struct TimeBlendSettings currentTimeBlend;
 
 static void *sUnusedOverworldCallback;
 static u8 sPlayerLinkStates[MAX_LINK_PLAYERS];
@@ -206,6 +205,7 @@ u8 gLocalLinkPlayerId; // This is our player id in a multiplayer mode.
 u8 gFieldLinkPlayerCount;
 
 u8 gTimeOfDay;
+struct TimeBlendSettings currentTimeBlend;
 
 EWRAM_DATA static u8 sObjectEventLoadFlag = 0;
 EWRAM_DATA struct WarpData gLastUsedWarp = {0};
@@ -1407,7 +1407,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     RoamerMove();
     DoCurrentWeather();
     ResetFieldTasksArgs();
-    UpdatePalettesWithTime(0xFFFFFFFF);
+    UpdatePalettesWithTime(PALETTES_ALL);
     RunOnResumeMapScript();
 
     if (gMapHeader.regionMapSectionId != sLastMapSectionId)
@@ -2069,7 +2069,7 @@ void CB1_Overworld(void)
         DoCB1_Overworld(gMain.newKeys, gMain.heldKeys);
 }
 
-static const struct BlendSettings sTimeOfDayBlendVars[] =
+const struct BlendSettings gTimeOfDayBlend[] =
 {
   [TIME_OF_DAY_NIGHT] = {.coeff = 10, .blendColor = 0x1400},
   [TIME_OF_DAY_TWILIGHT] = {.coeff = 4, .blendColor = 0x56dc, .isTint = TRUE},
@@ -2113,18 +2113,18 @@ u8 UpdateTimeOfDay(void) {
   }
 }
 
-static bool8 MapHasNaturalLight(u8 mapType) { // Weather a map type is naturally lit/outside
+bool8 MapHasNaturalLight(u8 mapType) { // Weather a map type is naturally lit/outside
   return mapType == MAP_TYPE_TOWN || mapType == MAP_TYPE_CITY || mapType == MAP_TYPE_ROUTE || mapType == MAP_TYPE_OCEAN_ROUTE;
 }
 
 static bool8 FadePalettesWithTime(void) {
-  gTimeOfDay = UpdateTimeOfDay();
+  UpdateTimeOfDay();
   if (MapHasNaturalLight(gMapHeader.mapType)) {
     ResetPaletteFade();
-    BeginTimeOfDayPaletteFade(0xFFFFFFFF, 0, 16, 0,
-      (struct BlendSettings *)&sTimeOfDayBlendVars[currentTimeBlend.time0],
-      (struct BlendSettings *)&sTimeOfDayBlendVars[currentTimeBlend.time1],
-      currentTimeBlend.weight);
+    BeginTimeOfDayPaletteFade(PALETTES_ALL, 0, 16, 0,
+      (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time0],
+      (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time1],
+      currentTimeBlend.weight, 0);
   }
 }
 
@@ -2143,8 +2143,8 @@ void UpdatePalettesWithTime(u32 palettes) {
       TimeMixPalettes(palettes,
       gPlttBufferUnfaded,
       gPlttBufferFaded,
-      (struct BlendSettings *)&sTimeOfDayBlendVars[currentTimeBlend.time0],
-      (struct BlendSettings *)&sTimeOfDayBlendVars[currentTimeBlend.time1],
+      (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time0],
+      (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time1],
       currentTimeBlend.weight);
     }
 }
@@ -2176,7 +2176,7 @@ static void OverworldBasic(void)
       if (cachedBlend.time0 != currentTimeBlend.time0
        || cachedBlend.time1 != currentTimeBlend.time1
        || cachedBlend.weight != currentTimeBlend.weight)
-         UpdatePalettesWithTime(0xFFFFFFFF);
+         UpdatePalettesWithTime(PALETTES_ALL);
     }
 }
 
@@ -2303,7 +2303,7 @@ static void CB2_LoadMap2(void)
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();
     SetMainCallback1(CB1_Overworld);
-    FadePalettesWithTime();
+    //FadePalettesWithTime();
     SetMainCallback2(CB2_Overworld);
 
     // Handle placing follower after warp as determined via setfollowerwarppos macro
@@ -2364,7 +2364,7 @@ static void CB2_ReturnToFieldLocal(void)
     if (ReturnToFieldLocal(&gMain.state))
     {
         SetFieldVBlankCallback();
-        FadePalettesWithTime();
+        //FadePalettesWithTime();
         SetMainCallback2(CB2_Overworld);
     }
 }
