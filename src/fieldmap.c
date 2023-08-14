@@ -896,6 +896,8 @@ static void ApplyGlobalTintToPaletteSlot(u8 slot, u8 count)
 static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u16 size)
 {
     u16 black = RGB_BLACK;
+    u32 low = 0;
+    u32 high = 0;
 
     if (tileset)
     {
@@ -904,24 +906,30 @@ static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u1
             LoadPalette(&black, destOffset, PLTT_SIZEOF(1));
             LoadPalette(tileset->palettes[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
             ApplyGlobalTintToPaletteEntries(destOffset + 1, (size - PLTT_SIZEOF(1)) >> 1);
+            low = 0;
+            high = NUM_PALS_IN_PRIMARY;
         }
         else if (tileset->isSecondary == TRUE)
         {
-            u8 i;
             LoadPalette(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
-            for (i = NUM_PALS_IN_PRIMARY; i < NUM_PALS_TOTAL; i++) {
-            if (tileset->lightPalettes & (1 << (i - NUM_PALS_IN_PRIMARY))) { // Mark as light palette
-                u16 index = i * 16;
-                gPlttBufferFaded[index] = gPlttBufferUnfaded[index] |= 0x8000;
-            if (tileset->customLightColor & (1 << (i - NUM_PALS_IN_PRIMARY))) // Mark as custom light color
-                  gPlttBufferFaded[index+15] = gPlttBufferUnfaded[index+15] |= 0x8000;
-              }
-            }
+            low = NUM_PALS_IN_PRIMARY;
+            high = NUM_PALS_TOTAL;
         }
         else
         {
             LoadCompressedPalette((const u32 *)tileset->palettes, destOffset, size);
             ApplyGlobalTintToPaletteEntries(destOffset, size >> 1);
+        }
+        if (tileset->isSecondary == FALSE || tileset->isSecondary == TRUE) {
+            u32 i;
+            for (i = low; i < high; i++) {
+                if (tileset->lightPalettes & (1 << (i - low))) { // Mark as light palette
+                    u32 index = i * 16;
+                    gPlttBufferFaded[index] = gPlttBufferUnfaded[index] |= 0x8000;
+                    if (tileset->customLightColor & (1 << (i - low))) // Mark as custom light color
+                        gPlttBufferFaded[index+15] = gPlttBufferUnfaded[index+15] |= 0x8000;
+                }
+            }
         }
     }
 }

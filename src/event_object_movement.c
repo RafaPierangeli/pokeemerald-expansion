@@ -2620,7 +2620,7 @@ void FreeAndReserveObjectSpritePalettes(void)
     gReservedSpritePaletteCount = OBJ_PALSLOT_COUNT;
 }
 
-void LoadObjectEventPalette(u16 paletteTag)
+u8 LoadObjectEventPalette(u16 paletteTag)
 {
     u16 i = FindObjectEventPaletteIndexByTag(paletteTag);
 
@@ -2644,11 +2644,12 @@ static void LoadObjectEventPaletteSet(u16 *paletteTags)
 
 static u8 LoadSpritePaletteIfTagExists(const struct SpritePalette *spritePalette)
 {
-    u8 paletteNum;
-    if (IndexOfSpritePaletteTag(spritePalette->tag) != 0xFF)
-        return 0xFF;
+    u8 paletteNum = IndexOfSpritePaletteTag(spritePalette->tag);
+    if (paletteNum != 0xFF) // don't load twice; return
+        return paletteNum;
 
     paletteNum = LoadSpritePalette(spritePalette);
+    if (paletteNum != 0xFF)
     UpdateSpritePaletteWithWeather(paletteNum, FALSE);
     return paletteNum;
 }

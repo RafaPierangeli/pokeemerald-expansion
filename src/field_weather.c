@@ -154,6 +154,7 @@ void StartWeather(void)
         CpuCopy32(gFogPalette, &gPlttBufferUnfaded[0x100 + index * 16], 32);
         BuildColorMaps();
         gWeatherPtr->contrastColorMapSpritePalIndex = index;
+        gWeatherPtr->weatherPicSpritePalIndex = 0xFF;
         gWeatherPtr->rainSpriteCount = 0;
         gWeatherPtr->curRainSpriteIndex = 0;
         gWeatherPtr->cloudSpritesCreated = 0;
@@ -906,6 +907,9 @@ static bool8 IsFirstFrameOfWeatherFadeIn(void)
 
 void LoadCustomWeatherSpritePalette(const struct SpritePalette *palette)
 {
+    if (gWeatherPtr->weatherPicSpritePalIndex > 16) // haven't allocated palette yet
+        if ((gWeatherPtr->weatherPicSpritePalIndex = AllocSpritePalette(PALTAG_WEATHER_2)) > 16)
+            return;
     LoadSpritePalette(palette);
     UpdateSpritePaletteWithWeather(gWeatherPtr->weatherPicSpritePalIndex, TRUE);
 }
