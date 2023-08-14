@@ -12,7 +12,9 @@ const struct Tileset gTileset_General =
 const struct Tileset gTileset_Petalburg =
 {
     .isCompressed = TRUE,
+    .swapPalettes = (9),
     .isSecondary = TRUE,
+    .lightPalettes = (6) | (7) | (9),
     .tiles = gTilesetTiles_Petalburg,
     .palettes = gTilesetPalettes_Petalburg,
     .metatiles = gMetatiles_Petalburg,
@@ -144,7 +146,10 @@ const struct Tileset gTileset_Pacifidlog =
 const struct Tileset gTileset_Sootopolis =
 {
     .isCompressed = TRUE,
+    .swapPalettes = (6),
     .isSecondary = TRUE,
+    .lightPalettes = (6) | (10),
+    .customLightColor = (6) | (10),
     .tiles = gTilesetTiles_Sootopolis,
     .palettes = gTilesetPalettes_Sootopolis,
     .metatiles = gMetatiles_Sootopolis,
