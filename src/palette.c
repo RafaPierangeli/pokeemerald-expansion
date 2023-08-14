@@ -233,12 +233,9 @@ bool8 BeginTimeOfDayPaletteFade(u32 selectedPalettes, s8 delay, u8 startY, u8 ta
         gPaletteFade.targetY = targetY;
         gPaletteFade.active = 1;
         gPaletteFade.mode = TIME_OF_DAY_FADE;
-        gPaletteFade.blendColor = bld0->blendColor;
-        gPaletteFade.coeff0 = bld0->coeff;
-        gPaletteFade.tint0 = bld0->isTint;
-        gPaletteFade.blendColor1 = bld1->blendColor;
-        gPaletteFade.coeff1 = bld1->coeff;
-        gPaletteFade.tint1 = bld1->isTint;
+        gPaletteFade.blendColor = 0;
+        gPaletteFade.bld0 = bld0;
+        gPaletteFade.bld1 = bld1;
         gPaletteFade.weight = weight;
 
         if (startY < targetY)
@@ -476,8 +473,6 @@ static u8 UpdateTimeOfDayPaletteFade(void)
     u16 copyPalettes;
     u16 * src;
     u16 * dst;
-    struct BlendSettings bld0;
-    struct BlendSettings bld1;
 
     if (!gPaletteFade.active)
         return PALETTE_FADE_STATUS_DONE;
@@ -507,14 +502,6 @@ static u8 UpdateTimeOfDayPaletteFade(void)
         paletteOffset = 256;
     }
 
-    // Extract blend settings from palette fade struct TODO: Embed struct within gPaletteFade
-    bld0.blendColor = gPaletteFade.blendColor;
-    bld0.coeff = gPaletteFade.coeff0;
-    bld0.isTint = gPaletteFade.tint0;
-    bld1.blendColor = gPaletteFade.blendColor1;
-    bld1.coeff = gPaletteFade.coeff1;
-    bld1.isTint = gPaletteFade.tint1;
-
     src = gPlttBufferUnfaded + paletteOffset;
     dst = gPlttBufferFaded + paletteOffset;
 
@@ -528,9 +515,9 @@ static u8 UpdateTimeOfDayPaletteFade(void)
       }
 
     } else { // tile palettes, don't blend [13, 15]
-      timePalettes = selectedPalettes &= ~0xE000;
+      timePalettes = selectedPalettes &= 0x1FFF;
     }
-    TimeMixPalettes(timePalettes, src, dst, &bld0, &bld1, gPaletteFade.weight);
+    TimeMixPalettes(timePalettes, src, dst, gPaletteFade.bld0, gPaletteFade.bld1, gPaletteFade.weight);
 
     // palettes that were not blended above must be copied through
     if ((copyPalettes = ~timePalettes)) {
@@ -1099,76 +1086,6 @@ void TimeBlendPalette(u16 palOffset, u32 coeff, u32 blendColor) {
     dst++;
     altBlendIndices >>= 1;
   }
-}
-
-void TimeBlendPalettes(u32 palettes, u32 coeff, u32 blendColor) {
-  s32 newR, newG, newB, defR, defG, defB, altR, altG, altB;
-  u16 * src;
-  u16 * dst;
-  u32 defaultBlendColor = DEFAULT_LIGHT_COLOR;
-
-  if (!palettes)
-    return;
-
-  coeff *= 2;
-  newR = (blendColor << 27) >> 27;
-  newG = (blendColor << 22) >> 27;
-  newB = (blendColor << 17) >> 27;
-  defR = (defaultBlendColor << 27) >> 27;
-  defG = (defaultBlendColor << 22) >> 27;
-  defB = (defaultBlendColor << 17) >> 27;
-  src = gPlttBufferUnfaded;
-  dst = gPlttBufferFaded;
-
-  do {
-    if (palettes & 1) {
-      u16 *srcEnd = src + 16;
-      u16 altBlendIndices = *dst++ = *src++; // color 0 is copied through
-      u32 altBlendColor;
-      if (altBlendIndices >> 15) { // High bit set; bitmask of which colors to alt-blend
-        // Note that bit 0 of altBlendIndices specifies color 1
-        altBlendColor = src[14]; // color 15
-        if (altBlendColor >> 15) { // Set alternate blend color
-          altR = (altBlendColor << 27) >> 27;
-          altG = (altBlendColor << 22) >> 27;
-          altB = (altBlendColor << 17) >> 27;
-        } else {
-          altBlendColor = 0;
-        }
-      } else {
-        altBlendIndices = 0;
-      }
-      while (src != srcEnd) {
-        u32 srcColor = *src;
-        s32 r = (srcColor << 27) >> 27;
-        s32 g = (srcColor << 22) >> 27;
-        s32 b = (srcColor << 17) >> 27;
-
-        if (altBlendIndices & 1) {
-          if (altBlendColor) { // Use alternate blend color
-            *dst = ((r + (((altR - r) * coeff) >> 5)) << 0)
-                        | ((g + (((altG - g) * coeff) >> 5)) << 5)
-                        | ((b + (((altB - b) * coeff) >> 5)) << 10);
-          } else { // Use default blend color
-            *dst = ((r + (((defR - r) * coeff) >> 5)) << 0)
-                        | ((g + (((defG - g) * coeff) >> 5)) << 5)
-                        | ((b + (((defB - b) * coeff) >> 5)) << 10);
-          }
-        } else { // Use provided blend color
-          *dst = ((r + (((newR - r) * coeff) >> 5)) << 0)
-                      | ((g + (((newG - g) * coeff) >> 5)) << 5)
-                      | ((b + (((newB - b) * coeff) >> 5)) << 10);
-        }
-        src++;
-        dst++;
-        altBlendIndices >>= 1;
-      }
-    } else {
-      src += 16;
-      dst += 16;
-    }
-    palettes >>= 1;
-  } while (palettes);
 }
 
 // Blends a weighted average of two blend parameters

@@ -184,7 +184,7 @@ static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *, u
 static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *, u8, u16, u8);
 static u16 GetCenterScreenMetatileBehavior(void);
 static bool8 CanLearnFlashInParty(void);
-static u8 timeCounter;
+static u16 sTimeUpdateCounter; // playTimeVBlanks will eventually overflow, so this is used to update TOD
 static struct TimeBlendSettings currentTimeBlend;
 
 static void *sUnusedOverworldCallback;
@@ -2108,7 +2108,8 @@ u8 UpdateTimeOfDay(void) {
     currentTimeBlend.weight = 256 - 256 * ((hours - 20) * 60 + minutes) / ((22-20)*60);
     return gTimeOfDay = TIME_OF_DAY_NIGHT;
   } else { // This should never occur
-    return TIME_OF_DAY_MAX;
+    currentTimeBlend.weight = 256;
+    return gTimeOfDay = currentTimeBlend.time0 = currentTimeBlend.time1 = TIME_OF_DAY_DAY;
   }
 }
 
@@ -2136,7 +2137,7 @@ void UpdatePalettesWithTime(u32 palettes) {
       if (GetSpritePaletteTagByPaletteNum(i) >> 15) // Don't blend special sprite palette tags
         palettes &= ~(1 << (i + 16));
     }
-    palettes &= ~0xE000; // Don't blend tile palettes [13,15]
+    palettes &= 0xFFFF1FFF; // Don't blend tile palettes [13,15]
     if (!palettes)
       return;
       TimeMixPalettes(palettes,
@@ -2164,13 +2165,13 @@ static void OverworldBasic(void)
     UpdatePaletteFade();
     UpdateTilesetAnimations();
     DoScheduledBgTilemapCopiesToVram();
-    if (!(gPaletteFade.active || (timeCounter++ % 60))) {
+    if (!(gPaletteFade.active || (++sTimeUpdateCounter % 3600))) {
       struct TimeBlendSettings cachedBlend = {
         .time0 = currentTimeBlend.time0,
         .time1 = currentTimeBlend.time1,
         .weight = currentTimeBlend.weight,
       };
-      timeCounter = 0;
+      sTimeUpdateCounter = 0;
       UpdateTimeOfDay();
       if (cachedBlend.time0 != currentTimeBlend.time0
        || cachedBlend.time1 != currentTimeBlend.time1
