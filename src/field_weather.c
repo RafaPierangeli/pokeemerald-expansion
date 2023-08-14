@@ -128,15 +128,15 @@ EWRAM_DATA u8 sBasePaletteGammaTypes[32] =
     // sprite palettes
     COLOR_MAP_CONTRAST,
     COLOR_MAP_DARK_CONTRAST,
-    COLOR_MAP_CONTRAST,
-    COLOR_MAP_CONTRAST,
-    COLOR_MAP_CONTRAST,
-    COLOR_MAP_CONTRAST,
     COLOR_MAP_DARK_CONTRAST,
     COLOR_MAP_DARK_CONTRAST,
     COLOR_MAP_DARK_CONTRAST,
     COLOR_MAP_DARK_CONTRAST,
-    COLOR_MAP_CONTRAST,
+    COLOR_MAP_DARK_CONTRAST,
+    COLOR_MAP_DARK_CONTRAST,
+    COLOR_MAP_DARK_CONTRAST,
+    COLOR_MAP_DARK_CONTRAST,
+    COLOR_MAP_DARK_CONTRAST,
     COLOR_MAP_DARK_CONTRAST,
     COLOR_MAP_DARK_CONTRAST,
     COLOR_MAP_DARK_CONTRAST,
@@ -502,7 +502,10 @@ static void ApplyColorMap(u8 startPalIndex, u8 numPalettes, s8 colorMapIndex)
             {
                 u8 r, g, b;
 
-                if (sPaletteColorMapTypes[curPalIndex] == COLOR_MAP_CONTRAST || curPalIndex - 16 == gWeatherPtr->contrastColorMapSpritePalIndex)
+                // don't blend special sprite palette tags
+                if (sPaletteColorMapTypes[curPalIndex] == COLOR_MAP_CONTRAST ||
+                    (curPalIndex >= 16 && (curPalIndex - 16 == gWeatherPtr->contrastColorMapSpritePalIndex ||
+                        GetSpritePaletteTagByPaletteNum(curPalIndex - 16) >> 15)))
                     colorMap = gWeatherPtr->contrastColorMaps[colorMapIndex];
                 else
                     colorMap = gWeatherPtr->darkenedContrastColorMaps[colorMapIndex];
