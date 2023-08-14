@@ -2169,7 +2169,7 @@ static u8 UpdateSpritePalette(const struct SpritePalette * spritePalette, struct
   sprite->inUse = TRUE;
   if (IndexOfSpritePaletteTag(spritePalette->tag) == 0xFF) {
     sprite->oam.paletteNum = LoadSpritePalette(spritePalette);
-    UpdateSpritePaletteWithWeather(sprite->oam.paletteNum);
+    UpdateSpritePaletteWithWeather(sprite->oam.paletteNum, FALSE);
     UpdateSpritePaletteWithTime(sprite->oam.paletteNum);
   } else {
     sprite->oam.paletteNum = LoadSpritePalette(spritePalette);
@@ -2649,7 +2649,7 @@ static u8 LoadSpritePaletteIfTagExists(const struct SpritePalette *spritePalette
         return 0xFF;
 
     paletteNum = LoadSpritePalette(spritePalette);
-    UpdateSpritePaletteWithTime(paletteNum);
+    UpdateSpritePaletteWithWeather(paletteNum, FALSE);
     return paletteNum;
 }
 

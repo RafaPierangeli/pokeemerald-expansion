@@ -1407,7 +1407,6 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     RoamerMove();
     DoCurrentWeather();
     ResetFieldTasksArgs();
-    UpdatePalettesWithTime(PALETTES_ALL);
     RunOnResumeMapScript();
 
     if (gMapHeader.regionMapSectionId != sLastMapSectionId)
@@ -2117,17 +2116,6 @@ bool8 MapHasNaturalLight(u8 mapType) { // Weather a map type is naturally lit/ou
   return mapType == MAP_TYPE_TOWN || mapType == MAP_TYPE_CITY || mapType == MAP_TYPE_ROUTE || mapType == MAP_TYPE_OCEAN_ROUTE;
 }
 
-static bool8 FadePalettesWithTime(void) {
-  UpdateTimeOfDay();
-  if (MapHasNaturalLight(gMapHeader.mapType)) {
-    ResetPaletteFade();
-    BeginTimeOfDayPaletteFade(PALETTES_ALL, 0, 16, 0,
-      (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time0],
-      (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time1],
-      currentTimeBlend.weight, 0);
-  }
-}
-
 void UpdatePalettesWithTime(u32 palettes) {
   // Only blend if not transitioning between times and the map type allows
   if (MapHasNaturalLight(gMapHeader.mapType)) {
@@ -2150,7 +2138,18 @@ void UpdatePalettesWithTime(u32 palettes) {
 }
 
 u8 UpdateSpritePaletteWithTime(u8 paletteNum) {
-  UpdatePalettesWithTime(1 << (paletteNum + 16));
+  if (MapHasNaturalLight(gMapHeader.mapType)) {
+    u16 offset;
+    if (GetSpritePaletteTagByPaletteNum(paletteNum) >> 15)
+      return paletteNum;
+    offset = (paletteNum + 16) * 16;
+    TimeMixPalettes(1,
+      gPlttBufferUnfaded + offset,
+      gPlttBufferFaded + offset,
+      (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time0],
+      (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time1],
+      currentTimeBlend.weight);
+  }
   return paletteNum;
 }
 
@@ -2303,7 +2302,6 @@ static void CB2_LoadMap2(void)
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();
     SetMainCallback1(CB1_Overworld);
-    //FadePalettesWithTime();
     SetMainCallback2(CB2_Overworld);
 
     // Handle placing follower after warp as determined via setfollowerwarppos macro
@@ -2364,7 +2362,6 @@ static void CB2_ReturnToFieldLocal(void)
     if (ReturnToFieldLocal(&gMain.state))
     {
         SetFieldVBlankCallback();
-        //FadePalettesWithTime();
         SetMainCallback2(CB2_Overworld);
     }
 }

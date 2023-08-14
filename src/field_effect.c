@@ -805,8 +805,7 @@ void FieldEffectScript_LoadFadedPalette(u8 **script)
     struct SpritePalette *palette = (struct SpritePalette *)FieldEffectScript_ReadWord(script);
     LoadSpritePalette(palette);
     UpdatePaletteGammaType(IndexOfSpritePaletteTag(palette->tag), COLOR_MAP_DARK_CONTRAST);
-    UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(palette->tag));
-    UpdateSpritePaletteWithTime(IndexOfSpritePaletteTag(palette->tag)); // Ensure field effects are blended
+    UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(palette->tag), FALSE);
     (*script) += 4;
 }
 
