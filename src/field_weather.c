@@ -819,8 +819,10 @@ void FadeScreen(u8 mode, s8 delay)
 
     if (fadeOut)
     {
-        if (TRUE || useWeatherPal)
-            CpuFastCopy(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
+         // Note: Copying faded -> unfaded like this works fine, except if the screen is faded back in
+        // without transitioning to a different screen
+        // For cases like that, use fadescreenswapbuffers
+        CpuFastCopy(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_BUFFER_SIZE * 2);
 
         BeginNormalPaletteFade(PALETTES_ALL, delay, 0, 16, fadeColor);
         gWeatherPtr->palProcessingState = WEATHER_PAL_STATE_SCREEN_FADING_OUT;
