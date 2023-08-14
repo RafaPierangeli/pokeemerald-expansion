@@ -892,6 +892,8 @@
 
 #endif
 
+#define OBJ_EVENT_GFX_LIGHT_SPRITE OBJ_EVENT_GFX_QUINTY_PLUMP
+
 #define NUM_OBJ_EVENT_GFX                        681
 
 

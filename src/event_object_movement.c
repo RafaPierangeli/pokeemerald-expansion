@@ -1218,6 +1218,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_CherishBall,           OBJ_EVENT_PAL_TAG_CHERISH_BALL},
     {gFieldEffectPal_SmallSparkle,          FLDEFF_PAL_TAG_SMALL_SPARKLE},
     {gObjectEventPaletteLight,              OBJ_EVENT_PAL_TAG_LIGHT},
+    {gObjectEventPaletteLight2,             OBJ_EVENT_PAL_TAG_LIGHT_2},
+    {gObjectEventPaletteNeonLight,          OBJ_EVENT_PAL_TAG_NEON_LIGHT},
 #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else
@@ -2190,82 +2192,120 @@ u8 UpdateSpritePaletteByTemplate(const struct SpriteTemplate * template, struct 
 // Callback for light sprites
 void UpdateLightSprite(struct Sprite *sprite) {
   s16 left =   gSaveBlock1Ptr->pos.x - 2;
-  s16 right =  gSaveBlock1Ptr->pos.x + 17;
-  s16 top =    gSaveBlock1Ptr->pos.y;
-  s16 bottom = gSaveBlock1Ptr->pos.y + 15;
-  s16 x = sprite->data[6];
-  s16 y = sprite->data[7];
-  u16 sheetTileStart;
-  u32 paletteNum;
-  bool8 finished = TRUE;
-  // Ripped from RemoveObjectEventIfOutsideView
-  if (x >= left && x <= right
-   && y >= top && y <= bottom)
-      finished = FALSE;
-  finished = finished ? finished : gTimeOfDay != TIME_OF_DAY_NIGHT;
-  if (finished) {
-    sheetTileStart = sprite->sheetTileStart;
-    paletteNum = sprite->oam.paletteNum;
-    DestroySprite(sprite);
-    FieldEffectFreeTilesIfUnused(sheetTileStart);
-    FieldEffectFreePaletteIfUnused(paletteNum);
-    Weather_SetBlendCoeffs(7, 12); // TODO: Restore original blend coeffs at dawn
-    return;
-  }
+    s16 right =  gSaveBlock1Ptr->pos.x + 17;
+    s16 top =    gSaveBlock1Ptr->pos.y;
+    s16 bottom = gSaveBlock1Ptr->pos.y + 15;
+    s16 x = sprite->data[6];
+    s16 y = sprite->data[7];
+    u16 sheetTileStart;
+    u32 paletteNum;
+    // Ripped from RemoveObjectEventIfOutsideView
+    if (!(x >= left && x <= right && y >= top && y <= bottom)) {
+        sheetTileStart = sprite->sheetTileStart;
+        paletteNum = sprite->oam.paletteNum;
+        DestroySprite(sprite);
+        FieldEffectFreeTilesIfUnused(sheetTileStart);
+        FieldEffectFreePaletteIfUnused(paletteNum);
+        Weather_SetBlendCoeffs(7, 12); // TODO: Restore original blend coeffs at dawn
+        return;
+    }
 
-  if (gPlayerAvatar.tileTransitionState) {
-    Weather_SetBlendCoeffs(7, 12);
-    sprite->invisible = FALSE;
-  } else {
-    Weather_SetBlendCoeffs(12, 12);
-    sprite->invisible = gSaveBlock2Ptr->playTimeVBlanks & 1;
-  }
+  if (gTimeOfDay != TIME_OF_DAY_NIGHT) {
+        sprite->invisible = TRUE;
+        return;
+    }
+
+    switch (sprite->data[5]) { // lightType
+    case 0:
+        if (gPaletteFade.active) { // if palette fade is active, don't flicker since the timer won't be updated
+            Weather_SetBlendCoeffs(7, 12);
+            sprite->invisible = FALSE;
+        } else if (gPlayerAvatar.tileTransitionState) {
+            Weather_SetBlendCoeffs(7, 12); // As long as the second coefficient stays 12, shadows will not change
+            sprite->invisible = FALSE;
+            if (GetSpritePaletteTagByPaletteNum(sprite->oam.paletteNum) == OBJ_EVENT_PAL_TAG_LIGHT_2)
+                LoadSpritePaletteInSlot(&sObjectEventSpritePalettes[FindObjectEventPaletteIndexByTag(OBJ_EVENT_PAL_TAG_LIGHT)], sprite->oam.paletteNum);
+        } else if ((sprite->invisible = gTimeUpdateCounter & 1)) {
+            Weather_SetBlendCoeffs(12, 12);
+            if (GetSpritePaletteTagByPaletteNum(sprite->oam.paletteNum) == OBJ_EVENT_PAL_TAG_LIGHT)
+                LoadSpritePaletteInSlot(&sObjectEventSpritePalettes[FindObjectEventPaletteIndexByTag(OBJ_EVENT_PAL_TAG_LIGHT_2)], sprite->oam.paletteNum);
+        }
+        break;
+    case 1 ... 2:
+        Weather_SetBlendCoeffs(12, 12);
+        sprite->invisible = FALSE;
+        break;
+    }
 }
 
-// Spawn a light at a map coordinate based on metatile behavior
-static void SpawnLightSprite(s16 x, s16 y, s16 camX, s16 camY, u32 behavior) {
-  struct Sprite *sprite;
-  u8 i;
-  for (i = 0; i < MAX_SPRITES; i++) {
-    sprite = &gSprites[i];
-    if (sprite->inUse && sprite->callback == UpdateLightSprite && sprite->data[6] == x && sprite->data[7] == y)
-      return;
-  }
-  sprite = &gSprites[CreateSprite(&gFieldEffectObjectTemplate_BallLight, 0, 0, 0)];
-  UpdateSpritePaletteByTemplate(&gFieldEffectObjectTemplate_BallLight, sprite);
-  GetMapCoordsFromSpritePos(x + camX, y + camY, &sprite->x, &sprite->y);
-  sprite->data[6] = x;
-  sprite->data[7] = y;
-  sprite->affineAnims = gDummySpriteAffineAnimTable;
-  sprite->affineAnimBeginning = TRUE;
-  sprite->centerToCornerVecX = -(32 >> 1);
-  sprite->centerToCornerVecY = -(32 >> 1);
-  sprite->oam.priority = 1;
-  sprite->oam.objMode = 1; // BLEND
-  sprite->oam.affineMode = ST_OAM_AFFINE_NORMAL;
-  sprite->coordOffsetEnabled = TRUE;
-  sprite->x += 8;
-  sprite->y += 22 + sprite->centerToCornerVecY;
+// Spawn a light at a map coordinate
+static void SpawnLightSprite(s16 x, s16 y, s16 camX, s16 camY, u32 lightType) {
+    struct Sprite *sprite;
+    const struct SpriteTemplate *template;
+    u8 i;
+    for (i = 0; i < MAX_SPRITES; i++) {
+        sprite = &gSprites[i];
+        if (sprite->inUse && sprite->callback == UpdateLightSprite && sprite->data[6] == x && sprite->data[7] == y)
+            return;
+    }
+    lightType = min(lightType, ARRAY_COUNT(gFieldEffectLightTemplates) - 1); // bounds checking
+    template = gFieldEffectLightTemplates[lightType];
+    LoadSpriteSheetByTemplate(template, 0);
+    sprite = &gSprites[CreateSprite(template, 0, 0, 0)];
+    if (lightType == 0 && (i = IndexOfSpritePaletteTag(template->paletteTag + 1)) < 16)
+        sprite->oam.paletteNum = i;
+    else
+        UpdateSpritePaletteByTemplate(template, sprite);
+    GetMapCoordsFromSpritePos(x + camX, y + camY, &sprite->x, &sprite->y);
+    sprite->data[5] = lightType;
+    sprite->data[6] = x;
+    sprite->data[7] = y;
+    sprite->affineAnims = gDummySpriteAffineAnimTable;
+    sprite->affineAnimBeginning = TRUE;
+    sprite->coordOffsetEnabled = TRUE;
+    switch (lightType) {
+    case 0: // Rustboro lanterns
+        sprite->centerToCornerVecX = -(32 >> 1);
+        sprite->centerToCornerVecY = -(32 >> 1);
+        sprite->oam.priority = 1;
+        sprite->oam.objMode = 1; // BLEND
+        sprite->oam.affineMode = ST_OAM_AFFINE_NORMAL;
+        sprite->x += 8;
+        sprite->y += 22 + sprite->centerToCornerVecY;
+        break;
+    case 1 ... 2: // Pokemon Center & mart
+        sprite->centerToCornerVecX = -(16 >> 1);
+        sprite->centerToCornerVecY = -(16 >> 1);
+        sprite->oam.priority = 2;
+        sprite->subpriority = 0xFF;
+        sprite->oam.objMode = 1; // BLEND
+    }
 }
 
 void TrySpawnLightSprites(s16 camX, s16 camY) {
-  s16 left = gSaveBlock1Ptr->pos.x - 2;
-  s16 right = gSaveBlock1Ptr->pos.x + 17;
-  s16 top = gSaveBlock1Ptr->pos.y;
-  s16 bottom = gSaveBlock1Ptr->pos.y + 16;
-  u8 i = 0;
-  s16 x, y;
-  u32 behavior;
-  if (gTimeOfDay != TIME_OF_DAY_NIGHT)
-    return;
-  for (i = 0; gLightMetatiles[i].x > 0; i++) {
-    x = gLightMetatiles[i].x;
-    y = gLightMetatiles[i].y;
-    if (x >= left && x <= right && y >= top && y <= bottom) {
-      behavior = MapGridGetMetatileBehaviorAt(x, y);
-      if (behavior == 0x04) // TODO: Use an actual constant
-        SpawnLightSprite(x, y, camX, camY, behavior);
-    }
+  u8 i;
+    u8 objectCount;
+    s16 left = gSaveBlock1Ptr->pos.x - 2;
+    s16 right = gSaveBlock1Ptr->pos.x + MAP_OFFSET_W + 2;
+    s16 top = gSaveBlock1Ptr->pos.y;
+    s16 bottom = gSaveBlock1Ptr->pos.y + MAP_OFFSET_H + 2;
+    if (gMapHeader.events == NULL)
+        return;
+
+    if (InBattlePyramid())
+        objectCount = GetNumBattlePyramidObjectEvents();
+    else if (InTrainerHill())
+        objectCount = 2;
+    else
+        objectCount = gMapHeader.events->objectEventCount;
+
+    for (i = 0; i < objectCount; i++) {
+        struct ObjectEventTemplate *template = &gSaveBlock1Ptr->objectEventTemplates[i];
+        s16 npcX = template->x + MAP_OFFSET;
+        s16 npcY = template->y + MAP_OFFSET;
+        if (top <= npcY && bottom >= npcY && left <= npcX && right >= npcX && !FlagGet(template->flagId))
+            if (template->graphicsId == OBJ_EVENT_GFX_LIGHT_SPRITE)  // event is light sprite instead
+                SpawnLightSprite(npcX, npcY, camX, camY, template->trainerRange_berryTreeId);
   }
 }
 
@@ -2294,12 +2334,14 @@ void TrySpawnObjectEvents(s16 cameraX, s16 cameraY)
             s16 npcX = template->x + MAP_OFFSET;
             s16 npcY = template->y + MAP_OFFSET;
 
-            if (top <= npcY && bottom >= npcY && left <= npcX && right >= npcX
-                && !FlagGet(template->flagId))
-                TrySpawnObjectEventTemplate(template, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, cameraX, cameraY);
+            if (top <= npcY && bottom >= npcY && left <= npcX && right >= npcX && !FlagGet(template->flagId)) {
+                if (template->graphicsId == OBJ_EVENT_GFX_LIGHT_SPRITE) {  // light sprite instead
+                    SpawnLightSprite(npcX, npcY, cameraX, cameraY, template->trainerRange_berryTreeId);
+                } else
+                    TrySpawnObjectEventTemplate(template, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, cameraX, cameraY);
+            }
         }
     }
-    TrySpawnLightSprites(cameraX, cameraY);
 }
 
 void RemoveObjectEventsOutsideView(void)

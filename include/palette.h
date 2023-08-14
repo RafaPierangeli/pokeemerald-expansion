@@ -97,6 +97,7 @@ void TintPalette_CustomTone(u16 *palette, u16 count, u16 rTone, u16 gTone, u16 b
 void TintPalette_RGB_Copy(u16 palOffset, u32 blendColor);
 void AveragePalettes(u16 *palette0, u16* palette1, u16* dest, u16 weight);
 void TimeMixPalettes(u32, u16 *, u16 *, struct BlendSettings *, struct BlendSettings *, u16);
+void AvgPaletteWeighted(u16 *src0, u16 *src1, u16 *dst, u16 weight0);
 
 static inline void SetBackdropFromColor(u16 color)
 {

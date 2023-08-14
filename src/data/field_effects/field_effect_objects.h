@@ -72,14 +72,48 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_ShadowExtraLarge = {
     .callback = UpdateShadowFieldEffect,
 };
 
+const struct SpriteFrameImage sPicTable_PokeCenterLight[] = {
+    obj_frame_tiles(gFieldEffectObjectPic_PokeCenterLight),
+};
+
+const struct SpriteFrameImage sPicTable_MartLight[] = {
+    obj_frame_tiles(gFieldEffectObjectPic_MartLight),
+};
+
 const struct SpriteTemplate gFieldEffectObjectTemplate_BallLight = {
-    .tileTag = TAG_NONE,
+    .tileTag = OBJ_EVENT_PAL_TAG_LIGHT,
     .paletteTag = OBJ_EVENT_PAL_TAG_LIGHT,
     .oam = &gObjectEventBaseOam_32x32,
     .anims = sAnimTable_Inanimate,
     .images = sPicTable_BallLight,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateLightSprite,
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_PokeCenterLight = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NEON_LIGHT,
+    .oam = &gObjectEventBaseOam_16x16,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_PokeCenterLight,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateLightSprite,
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_MartLight = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NEON_LIGHT,
+    .oam = &gObjectEventBaseOam_16x16,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_MartLight,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateLightSprite,
+};
+
+const struct SpriteTemplate *const gFieldEffectLightTemplates[] = {
+    &gFieldEffectObjectTemplate_BallLight,
+    &gFieldEffectObjectTemplate_PokeCenterLight,
+    &gFieldEffectObjectTemplate_MartLight,
 };
 
 static const struct SpriteFrameImage sPicTable_TallGrass[] = {
