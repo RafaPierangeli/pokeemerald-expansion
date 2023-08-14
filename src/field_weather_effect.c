@@ -1365,6 +1365,17 @@ static void DestroyFogHorizontalSprites(void);
 // Within the weather palette, shadow sprites' color index
 #define SHADOW_COLOR_INDEX 9
 
+// Updates just the color of shadows to match special weather blending
+static u8 UpdateShadowColor(u16 color) {
+  u8 paletteNum = IndexOfSpritePaletteTag(TAG_WEATHER_START);
+  if (paletteNum != 0xFF) {
+    u16 index = (paletteNum+16)*16+SHADOW_COLOR_INDEX;
+    gPlttBufferUnfaded[index] = gPlttBufferFaded[index] = color;
+    UpdateSpritePaletteWithTime(paletteNum);
+  }
+  return paletteNum;
+}
+
 void FogHorizontal_InitVars(void)
 {
     gWeatherPtr->initStep = 0;
@@ -1405,10 +1416,7 @@ void FogHorizontal_Main(void)
         if (gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL) {
           u8 paletteNum = IndexOfSpritePaletteTag(TAG_WEATHER_START);
           Weather_SetTargetBlendCoeffs(12, 8, 3);
-          if (paletteNum != 0xFF) { // Lighten shadow color to match
-            u16 index = (paletteNum+16)*16+SHADOW_COLOR_INDEX; // Shadow color index
-            gPlttBufferUnfaded[index] = gPlttBufferFaded[index] = 0x3DEF; // Gray
-          }
+          UpdateShadowColor(0x3DEF); // Gray
         } else
             Weather_SetTargetBlendCoeffs(4, 16, 0);
         gWeatherPtr->initStep++;
@@ -1425,7 +1433,6 @@ void FogHorizontal_Main(void)
 
 bool8 FogHorizontal_Finish(void)
 {
-    u8 paletteNum = IndexOfSpritePaletteTag(TAG_WEATHER_START);
     gWeatherPtr->fogHScrollPosX = (gSpriteCoordOffsetX - gWeatherPtr->fogHScrollOffset) & 0xFF;
     if (++gWeatherPtr->fogHScrollCounter > 3)
     {
@@ -1448,10 +1455,7 @@ bool8 FogHorizontal_Finish(void)
         gWeatherPtr->finishStep++;
         break;
     default:
-    if (paletteNum != 0xFF) { // Change shadow color back to black
-          u16 index = (paletteNum+16)*16+SHADOW_COLOR_INDEX;
-          gPlttBufferUnfaded[index] = gPlttBufferFaded[index] = RGB_BLACK;
-        }
+    UpdateShadowColor(RGB_BLACK);
         return FALSE;
     }
     return TRUE;
@@ -1979,7 +1983,7 @@ void Sandstorm_InitVars(void)
 
         Weather_SetBlendCoeffs(0, 16);
     }
-    gWeatherPtr->noShadows = TRUE; // TODO: Can fog be made compatible with shadows?
+    gWeatherPtr->noShadows = FALSE;
 }
 
 void Sandstorm_InitAll(void)
@@ -2005,6 +2009,7 @@ void Sandstorm_Main(void)
         break;
     case 1:
         Weather_SetTargetBlendCoeffs(16, 2, 0);
+        UpdateShadowColor(0x3DEF);
         gWeatherPtr->initStep++;
         break;
     case 2:
@@ -2030,9 +2035,12 @@ bool8 Sandstorm_Finish(void)
     case 1:
         if (Weather_UpdateBlend())
             gWeatherPtr->finishStep++;
+            if (gWeatherPtr->currBlendEVB == 12)
+          UpdateShadowColor(RGB_BLACK);
         break;
     case 2:
         DestroySandstormSprites();
+        UpdateShadowColor(RGB_BLACK);
         gWeatherPtr->finishStep++;
         break;
     default:
