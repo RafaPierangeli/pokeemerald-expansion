@@ -360,8 +360,8 @@ u32 FldEff_Shadow(void)
     const struct ObjectEventGraphicsInfo *graphicsInfo;
     u8 spriteId;
 
-    u8 i;
-    for (i = 0; i < MAX_SPRITES; i++) {
+    s32 i;
+    for (i = MAX_SPRITES - 1; i > -1; i--) { // Search backwards, because of CreateSpriteAtEnd
       // Return early if a shadow sprite already exists
       if (gSprites[i].data[0] == gFieldEffectArguments[0] && gSprites[i].callback == UpdateShadowFieldEffect)
         return 0;
@@ -370,6 +370,7 @@ u32 FldEff_Shadow(void)
     objectEventId = GetObjectEventIdByLocalIdAndMap(gFieldEffectArguments[0], gFieldEffectArguments[1], gFieldEffectArguments[2]);
     graphicsInfo = GetObjectEventGraphicsInfo(gObjectEvents[objectEventId].graphicsId);
     LoadFieldEffectPalette_(sShadowEffectTemplateIds[graphicsInfo->shadowSize], FALSE);
+    LoadSpriteSheetByTemplate(gFieldEffectObjectTemplatePointers[sShadowEffectTemplateIds[graphicsInfo->shadowSize]], 0);
     spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[sShadowEffectTemplateIds[graphicsInfo->shadowSize]], 0, 0, 0x94);
     if (spriteId != MAX_SPRITES)
     {
@@ -401,8 +402,9 @@ void UpdateShadowFieldEffect(struct Sprite *sprite)
         sprite->x = linkedSprite->x;
         sprite->y = linkedSprite->y + sprite->data[3];
         sprite->invisible = linkedSprite->invisible;
-        if (!objectEvent->active || !objectEvent->noShadow || gWeatherPtr->noShadows || objectEvent->inHotSprings
+        if (!objectEvent->active || !objectEvent->noShadow || gWeatherPtr->noShadows || objectEvent->inHotSprings || objectEvent->inSandPile
          || MetatileBehavior_IsPokeGrass(objectEvent->currentMetatileBehavior)
+         || MetatileBehavior_IsPuddle(objectEvent->currentMetatileBehavior)
          || MetatileBehavior_IsSurfableWaterOrUnderwater(objectEvent->currentMetatileBehavior)
          || MetatileBehavior_IsSurfableWaterOrUnderwater(objectEvent->previousMetatileBehavior))
         {
