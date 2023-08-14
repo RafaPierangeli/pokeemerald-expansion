@@ -9079,6 +9079,7 @@ static void DoFlaggedGroundEffects(struct ObjectEvent *objEvent, struct Sprite *
     for (i = 0; i < ARRAY_COUNT(sGroundEffectFuncs); i++, flags >>= 1)
         if (flags & 1)
             sGroundEffectFuncs[i](objEvent, sprite);
+            if (!gWeatherPtr->noShadows)
             GroundEffect_Shadow(objEvent, sprite);
 }
 
