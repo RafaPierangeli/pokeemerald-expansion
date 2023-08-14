@@ -2069,7 +2069,7 @@ void CB1_Overworld(void)
         DoCB1_Overworld(gMain.newKeys, gMain.heldKeys);
 }
 
-static const struct TimeOfDayBlend sTimeOfDayBlendVars[] =
+static const struct BlendSettings sTimeOfDayBlendVars[] =
 {
   [TIME_OF_DAY_NIGHT] = {.coeff = 10, .blendColor = 0x1400},
   [TIME_OF_DAY_TWILIGHT] = {.coeff = 4, .blendColor = 0x56dc, .isTint = TRUE},
@@ -2120,7 +2120,10 @@ static bool8 FadePalettesWithTime(void) {
   gTimeOfDay = UpdateTimeOfDay();
   if (MapHasNaturalLight(gMapHeader.mapType)) {
     ResetPaletteFade();
-    BeginTimeOfDayPaletteFade(0xFFFFFFFF, 0, 16, sTimeOfDayBlendVars[gTimeOfDay].coeff, sTimeOfDayBlendVars[gTimeOfDay].blendColor);
+    BeginTimeOfDayPaletteFade(0xFFFFFFFF, 0, 16, 0,
+      (struct BlendSettings *)&sTimeOfDayBlendVars[currentTimeBlend.time0],
+      (struct BlendSettings *)&sTimeOfDayBlendVars[currentTimeBlend.time1],
+      currentTimeBlend.weight);
   }
 }
 
