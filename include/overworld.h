@@ -66,7 +66,6 @@ extern u8 gTimeOfDay;
 extern struct TimeBlendSettings currentTimeBlend;
 
 extern const struct UCoords32 gDirectionToVectors[];
-extern const struct BlendSettings gTimeOfDayBlend[];
 
 void DoWhiteOut(void);
 void Overworld_ResetStateAfterFly(void);

@@ -9817,7 +9817,7 @@ static void DoShadowFieldEffect(struct ObjectEvent *objectEvent)
 {
     if (!objectEvent->noShadow)
     {
-        objectEvent->noShadow = TRUE;
+        objectEvent->noShadow = FALSE;
         StartFieldEffectForObjectEvent(FLDEFF_SHADOW, objectEvent);
     }
 }
