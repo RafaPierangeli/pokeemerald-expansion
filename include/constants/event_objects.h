@@ -892,7 +892,7 @@
 
 #endif
 
-#define OBJ_EVENT_GFX_LIGHT_SPRITE OBJ_EVENT_GFX_QUINTY_PLUMP
+#define OBJ_EVENT_GFX_LIGHT_SPRITE               OBJ_EVENT_GFX_QUINTY_PLUMP
 
 #define NUM_OBJ_EVENT_GFX                        681
 
@@ -921,7 +921,8 @@
 #define SHADOW_SIZE_S   0
 #define SHADOW_SIZE_M   1
 #define SHADOW_SIZE_L   2
-#define SHADOW_SIZE_XL  3
+#define SHADOW_SIZE_XL  3 // unused; repurposed to mean no shadow
+#define SHADOW_SIZE_NONE 3
 
 #define F_INANIMATE                        (1 << 6)
 #define F_DISABLE_REFLECTION_PALETTE_LOAD  (1 << 7)

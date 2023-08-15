@@ -33,8 +33,8 @@ const struct SpriteFrameImage sPicTable_BallLight[] = {
 };
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_ShadowSmall = {
-    .tileTag = TAG_NONE,
-    .paletteTag = FLDEFF_TILE_TAG_SHADOW_SMALL,
+    .tileTag = FLDEFF_TILE_TAG_SHADOW_SMALL,
+    .paletteTag = TAG_WEATHER_START,
     .oam = &gObjectEventBaseOam_8x8,
     .anims = sAnimTable_Shadow,
     .images = sPicTable_ShadowSmall,
@@ -43,8 +43,8 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_ShadowSmall = {
 };
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_ShadowMedium = {
-    .tileTag = TAG_NONE,
-    .paletteTag = FLDEFF_TILE_TAG_SHADOW_MEDIUM,
+    .tileTag = FLDEFF_TILE_TAG_SHADOW_MEDIUM,
+    .paletteTag = TAG_WEATHER_START,
     .oam = &gObjectEventBaseOam_16x8,
     .anims = sAnimTable_Shadow,
     .images = sPicTable_ShadowMedium,
@@ -53,8 +53,8 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_ShadowMedium = {
 };
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_ShadowLarge = {
-    .tileTag = TAG_NONE,
-    .paletteTag = FLDEFF_TILE_TAG_SHADOW_LARGE,
+    .tileTag = FLDEFF_TILE_TAG_SHADOW_LARGE,
+    .paletteTag = TAG_WEATHER_START,
     .oam = &gObjectEventBaseOam_32x8,
     .anims = sAnimTable_Shadow,
     .images = sPicTable_ShadowLarge,
@@ -63,8 +63,8 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_ShadowLarge = {
 };
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_ShadowExtraLarge = {
-    .tileTag = TAG_NONE,
-    .paletteTag = FLDEFF_TILE_TAG_SHADOW_EXTRA_LARGE,
+    .tileTag = FLDEFF_TILE_TAG_SHADOW_EXTRA_LARGE,
+    .paletteTag = TAG_WEATHER_START,
     .oam = &gObjectEventBaseOam_64x32,
     .anims = sAnimTable_Shadow,
     .images = sPicTable_ShadowExtraLarge,
@@ -258,7 +258,7 @@ static const union AnimCmd *const sAnimTable_SurfBlob[] =
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_SurfBlob = {
     .tileTag = TAG_NONE,
-    .paletteTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MAY,
     .oam = &gObjectEventBaseOam_32x32,
     .anims = sAnimTable_SurfBlob,
     .images = sPicTable_SurfBlob,
