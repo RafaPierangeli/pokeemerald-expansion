@@ -97,7 +97,6 @@ u32 CreateSurfablePokemonSprite(void)
     else
     {
         // Create default surf blob
-        LoadFieldEffectPalette(FLDEFFOBJ_SURF_BLOB);
         spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_SURF_BLOB], gFieldEffectArguments[0], gFieldEffectArguments[1], 0x96);
     }
 
