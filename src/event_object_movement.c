@@ -2389,8 +2389,8 @@ void UpdateLightSprite(struct Sprite *sprite) {
         return;
     }
 
-    /*switch (sprite->data[5]) { // lightType
-    case 0:
+    switch (sprite->data[5]) { // lightType
+    /*case 0:
         if (gPaletteFade.active) { // if palette fade is active, don't flicker since the timer won't be updated
             Weather_SetBlendCoeffs(7, 12);
             sprite->invisible = FALSE;
@@ -2404,12 +2404,12 @@ void UpdateLightSprite(struct Sprite *sprite) {
             if (GetSpritePaletteTagByPaletteNum(sprite->oam.paletteNum) == OBJ_EVENT_PAL_TAG_LIGHT)
                 LoadSpritePaletteInSlot(&sObjectEventSpritePalettes[FindObjectEventPaletteIndexByTag(OBJ_EVENT_PAL_TAG_LIGHT_2)], sprite->oam.paletteNum);
         }
-        break;
+        break;*/
     case 1 ... 2:
         Weather_SetBlendCoeffs(12, 12);
         sprite->invisible = FALSE;
         break;
-    }*/
+    }
 }
 
 // Spawn a light at a map coordinate
@@ -2429,8 +2429,8 @@ static void SpawnLightSprite(s16 x, s16 y, s16 camX, s16 camY, u32 lightType) {
     if (lightType == 0 && (i = IndexOfSpritePaletteTag(template->paletteTag + 1)) < 16)
         sprite->oam.paletteNum = i;
     else
-        LoadObjectEventPalette(template->paletteTag);
-        
+
+    LoadObjectEventPalette(template->paletteTag);   
     GetMapCoordsFromSpritePos(x + camX, y + camY, &sprite->x, &sprite->y);
     sprite->data[5] = lightType;
     sprite->data[6] = x;
