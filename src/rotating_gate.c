@@ -750,7 +750,6 @@ static u8 RotatingGate_CreateGate(u8 gateId, s16 deltaX, s16 deltaY)
     }
 
     sprite = &gSprites[spriteId];
-    UpdateSpritePaletteByTemplate(&template, sprite);
     sprite->data[0] = gateId;
     sprite->coordOffsetEnabled = 1;
     sprite->oam.paletteNum = IndexOfSpritePaletteTag(template.paletteTag);

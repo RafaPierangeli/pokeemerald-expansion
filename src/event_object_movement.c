@@ -21,6 +21,7 @@
 #include "palette.h"
 #include "pokemon.h"
 #include "random.h"
+#include "region_map.h"
 #include "script.h"
 #include "sprite.h"
 #include "task.h"
@@ -36,6 +37,7 @@
 #include "constants/trainer_types.h"
 #include "constants/union_room.h"
 #include "constants/metatile_behaviors.h"
+#include "constants/weather.h"
 #include "bike.h"
 
 // this file was known as evobjmv.c in Game Freak's original source
@@ -2427,7 +2429,8 @@ static void SpawnLightSprite(s16 x, s16 y, s16 camX, s16 camY, u32 lightType) {
     if (lightType == 0 && (i = IndexOfSpritePaletteTag(template->paletteTag + 1)) < 16)
         sprite->oam.paletteNum = i;
     else
-        UpdateSpritePaletteByTemplate(template, sprite);
+        LoadObjectEventPalette(template->paletteTag);
+        
     GetMapCoordsFromSpritePos(x + camX, y + camY, &sprite->x, &sprite->y);
     sprite->data[5] = lightType;
     sprite->data[6] = x;
@@ -2435,6 +2438,7 @@ static void SpawnLightSprite(s16 x, s16 y, s16 camX, s16 camY, u32 lightType) {
     sprite->affineAnims = gDummySpriteAffineAnimTable;
     sprite->affineAnimBeginning = TRUE;
     sprite->coordOffsetEnabled = TRUE;
+    sprite->oam.paletteNum = IndexOfSpritePaletteTag(template->paletteTag);
     switch (lightType) {
     case 0: // Rustboro lanterns
         sprite->centerToCornerVecX = -(32 >> 1);
