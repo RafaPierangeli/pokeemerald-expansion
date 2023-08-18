@@ -10463,7 +10463,7 @@ BattleScript_MagicianActivates::
 	return
 
 BattleScript_ItemDropped::
-	playse SE_BALL_BOUNCE_1
+	playse MUS_OBTAIN_ITEM
 	printfromtable gItemDroppedStringIds
 	return
 	
