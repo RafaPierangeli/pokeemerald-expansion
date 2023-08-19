@@ -4652,3 +4652,204 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh = {
     .images = sPicTable_HoOh,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+
+// Costumes
+
+#define EVENT_OBJ_32x32(name, tag1, disableReflection, tracksType, animTable, imageTable) const struct ObjectEventGraphicsInfo name = { \
+    .tileTag = 0xFFFF,\
+    .paletteTag1 = tag1,\
+    .size = 512,\
+    .width = 32,\
+    .height = 32,\
+    .paletteSlot = 0,\
+    .shadowSize = SHADOW_SIZE_M,\
+    .inanimate = FALSE,\
+    .disableReflectionPaletteLoad = disableReflection,\
+    .tracks = tracksType,\
+    .oam = &gObjectEventBaseOam_32x32,\
+    .subspriteTables = gObjectEventSpriteOamTables_32x32,\
+    .anims = animTable,\
+    .images = imageTable,\
+    .affineAnims = gDummySpriteAffineAnimTable,\
+}
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Placeholder, OBJ_EVENT_PAL_RED, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Red);
+
+// Main characters
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Red,          OBJ_EVENT_PAL_RED, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Red);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_RedBike,      OBJ_EVENT_PAL_RED, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_RedBike);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_RedSurfing,   OBJ_EVENT_PAL_RED, TRUE,  TRACKS_FOOT,      sAnimTable_Surfing,   sPicTable_RedSurfing);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_RedFieldMove, OBJ_EVENT_PAL_RED, FALSE, TRACKS_FOOT,      sAnimTable_FieldMove, sPicTable_RedFieldMove);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_RedFishing,   OBJ_EVENT_PAL_RED, FALSE, TRACKS_FOOT,      sAnimTable_Fishing,   sPicTable_RedFishing);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_RedWatering,  OBJ_EVENT_PAL_RED, FALSE, TRACKS_FOOT,      sAnimTable_Standard,  sPicTable_RedWatering);
+
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Leaf,          OBJ_EVENT_PAL_LEAF, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Leaf);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LeafBike,      OBJ_EVENT_PAL_LEAF, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_LeafBike);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LeafSurfing,   OBJ_EVENT_PAL_LEAF, TRUE,  TRACKS_FOOT,      sAnimTable_Surfing,   sPicTable_LeafSurfing);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LeafFieldMove, OBJ_EVENT_PAL_LEAF, FALSE, TRACKS_FOOT,      sAnimTable_FieldMove, sPicTable_LeafFieldMove);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LeafFishing,   OBJ_EVENT_PAL_LEAF, FALSE, TRACKS_FOOT,      sAnimTable_Fishing,   sPicTable_LeafFishing);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LeafWatering,  OBJ_EVENT_PAL_LEAF, FALSE, TRACKS_FOOT,      sAnimTable_Standard,  sPicTable_LeafWatering);
+
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Ethan,          OBJ_EVENT_PAL_ETHAN, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Ethan);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_EthanBike,      OBJ_EVENT_PAL_ETHAN, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_EthanBike);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_EthanSurfing,   OBJ_EVENT_PAL_ETHAN, TRUE,  TRACKS_FOOT,      sAnimTable_Surfing,   sPicTable_EthanSurfing);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_EthanFieldMove, OBJ_EVENT_PAL_ETHAN, FALSE, TRACKS_FOOT,      sAnimTable_FieldMove, sPicTable_EthanFieldMove);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_EthanFishing,   OBJ_EVENT_PAL_ETHAN, FALSE, TRACKS_FOOT,      sAnimTable_Fishing,   sPicTable_EthanFishing);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_EthanWatering,  OBJ_EVENT_PAL_ETHAN, FALSE, TRACKS_FOOT,      sAnimTable_Standard,  sPicTable_EthanWatering);
+
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Kris,          OBJ_EVENT_PAL_KRIS, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Kris);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_KrisBike,      OBJ_EVENT_PAL_KRIS, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_KrisBike);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_KrisSurfing,   OBJ_EVENT_PAL_KRIS, TRUE,  TRACKS_FOOT,      sAnimTable_Surfing,   sPicTable_KrisSurfing);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_KrisFieldMove, OBJ_EVENT_PAL_KRIS, FALSE, TRACKS_FOOT,      sAnimTable_FieldMove, sPicTable_KrisFieldMove);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_KrisFishing,   OBJ_EVENT_PAL_KRIS, FALSE, TRACKS_FOOT,      sAnimTable_Fishing,   sPicTable_KrisFishing);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_KrisWatering,  OBJ_EVENT_PAL_KRIS, FALSE, TRACKS_FOOT,      sAnimTable_Standard,  sPicTable_KrisWatering);
+
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Lyra,          OBJ_EVENT_PAL_LYRA, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Lyra);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LyraBike,      OBJ_EVENT_PAL_LYRA, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_LyraBike);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LyraSurfing,   OBJ_EVENT_PAL_LYRA, TRUE,  TRACKS_FOOT,      sAnimTable_Surfing,   sPicTable_LyraSurfing);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LyraFieldMove, OBJ_EVENT_PAL_LYRA, FALSE, TRACKS_FOOT,      sAnimTable_FieldMove, sPicTable_LyraFieldMove);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LyraFishing,   OBJ_EVENT_PAL_LYRA, FALSE, TRACKS_FOOT,      sAnimTable_Fishing,   sPicTable_LyraFishing);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LyraWatering,  OBJ_EVENT_PAL_LYRA, FALSE, TRACKS_FOOT,      sAnimTable_Standard,  sPicTable_LyraWatering);
+
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Lucas,          OBJ_EVENT_PAL_LUCAS, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Lucas);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LucasBike,      OBJ_EVENT_PAL_LUCAS, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_LucasBike);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LucasSurfing,   OBJ_EVENT_PAL_LUCAS, TRUE,  TRACKS_FOOT,      sAnimTable_Surfing,   sPicTable_LucasSurfing);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LucasFieldMove, OBJ_EVENT_PAL_LUCAS, FALSE, TRACKS_FOOT,      sAnimTable_FieldMove, sPicTable_LucasFieldMove);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LucasFishing,   OBJ_EVENT_PAL_LUCAS, FALSE, TRACKS_FOOT,      sAnimTable_Fishing,   sPicTable_LucasFishing);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LucasWatering,  OBJ_EVENT_PAL_LUCAS, FALSE, TRACKS_FOOT,      sAnimTable_Standard,  sPicTable_LucasWatering);
+
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Dawn,          OBJ_EVENT_PAL_DAWN, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Dawn);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_DawnBike,      OBJ_EVENT_PAL_DAWN, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_DawnBike);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_DawnSurfing,   OBJ_EVENT_PAL_DAWN, TRUE,  TRACKS_FOOT,      sAnimTable_Surfing,   sPicTable_DawnSurfing);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_DawnFieldMove, OBJ_EVENT_PAL_DAWN, FALSE, TRACKS_FOOT,      sAnimTable_FieldMove, sPicTable_DawnFieldMove);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_DawnFishing,   OBJ_EVENT_PAL_DAWN, FALSE, TRACKS_FOOT,      sAnimTable_Fishing,   sPicTable_DawnFishing);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_DawnWatering,  OBJ_EVENT_PAL_DAWN, FALSE, TRACKS_FOOT,      sAnimTable_Standard,  sPicTable_DawnWatering);
+
+// Professors
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_ProfOak,   OBJ_EVENT_PAL_PROF_OAK,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_ProfOak);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_ProfElm,   OBJ_EVENT_PAL_PROF_ELM,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_ProfElm);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_ProfBirch, OBJ_EVENT_PAL_PROF_BIRCH, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_ProfBirch);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_ProfRowan, OBJ_EVENT_PAL_PROF_ROWAN, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_ProfRowan);
+
+// Rivals
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Blue,   OBJ_EVENT_PAL_BLUE,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Blue);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Silver, OBJ_EVENT_PAL_SILVER, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Silver);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Wally,  OBJ_EVENT_PAL_WALLY,  FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Wally);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Barry,  OBJ_EVENT_PAL_BARRY,  FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Barry);
+
+// Team Rocket
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_RocketGruntM, OBJ_EVENT_PAL_ROCKET_M, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_RocketGruntM);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_RocketGruntF, OBJ_EVENT_PAL_ROCKET_F, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_RocketGruntF);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Archer,       OBJ_EVENT_PAL_ARCHER,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Archer);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Ariana,       OBJ_EVENT_PAL_ARIANA,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Ariana);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Petrel,       OBJ_EVENT_PAL_PETREL,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Petrel);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Proton,       OBJ_EVENT_PAL_PROTON,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Proton);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Giovanni,     OBJ_EVENT_PAL_GIOVANNI, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Giovanni);
+
+// Team Aqua
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_AquaGruntM, OBJ_EVENT_PAL_AQUA_M,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_AquaGruntM);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_AquaGruntF, OBJ_EVENT_PAL_AQUA_F,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_AquaGruntF);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Matt,       OBJ_EVENT_PAL_MATT,     FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Matt);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Shelley,    OBJ_EVENT_PAL_SHELLEY,  FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Shelley);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Archie,     OBJ_EVENT_PAL_ARCHIE,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Archie);
+
+// Team Magma
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_MagmaGruntM, OBJ_EVENT_PAL_MAGMA_M,   FALSE, TRACKS_FOOT, sAnimTable_WalkRun, sPicTable_MagmaGruntM);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_MagmaGruntF, OBJ_EVENT_PAL_MAGMA_F,   FALSE, TRACKS_FOOT, sAnimTable_WalkRun, sPicTable_MagmaGruntF);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Courtney,    OBJ_EVENT_PAL_COURTNEY,  FALSE, TRACKS_FOOT, sAnimTable_WalkRun, sPicTable_Courtney);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Tabitha,     OBJ_EVENT_PAL_TABITHA,   FALSE, TRACKS_FOOT, sAnimTable_WalkRun, sPicTable_Tabitha);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Maxie,       OBJ_EVENT_PAL_MAXIE,     FALSE, TRACKS_FOOT, sAnimTable_WalkRun, sPicTable_Maxie);
+
+// Team Galactic
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_GalacticGruntM, OBJ_EVENT_PAL_GALACTIC_M, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_GalacticGruntM);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_GalacticGruntF, OBJ_EVENT_PAL_GALACTIC_F, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_GalacticGruntF);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Saturn,         OBJ_EVENT_PAL_SATURN,     FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Saturn);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Mars,           OBJ_EVENT_PAL_MARS,       FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Mars);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Jupiter,        OBJ_EVENT_PAL_JUPITER,    FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Jupiter);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Charon,         OBJ_EVENT_PAL_CHARON,     FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Charon);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Cyrus,          OBJ_EVENT_PAL_CYRUS,      FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Cyrus);
+
+// Standard Trainers
+// Gym Leaders - Kanto
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Brock, OBJ_EVENT_PAL_BROCK, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Brock);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Misty, OBJ_EVENT_PAL_MISTY, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Misty);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LtSurge, OBJ_EVENT_PAL_LT_SURGE, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_LtSurge);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Erika, OBJ_EVENT_PAL_ERIKA, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Erika);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Koga, OBJ_EVENT_PAL_KOGA, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Koga);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Janine, OBJ_EVENT_PAL_JANINE, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Janine);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Sabrina, OBJ_EVENT_PAL_SABRINA, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Sabrina);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Blaine, OBJ_EVENT_PAL_BLAINE, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Blaine);
+
+// Elite Four
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Lorelei, OBJ_EVENT_PAL_LORELEI, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Lorelei);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Bruno, OBJ_EVENT_PAL_BRUNO, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Bruno);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Agatha, OBJ_EVENT_PAL_AGATHA, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Agatha);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Lance, OBJ_EVENT_PAL_LANCE, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Lance);
+
+// Gym Leaders - Johto
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Falkner, OBJ_EVENT_PAL_FALKNER, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Falkner);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Bugsy, OBJ_EVENT_PAL_BUGSY, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Bugsy);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Whitney, OBJ_EVENT_PAL_WHITNEY, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Whitney);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Morty, OBJ_EVENT_PAL_MORTY, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Morty);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Chuck, OBJ_EVENT_PAL_CHUCK, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Chuck);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Jasmine, OBJ_EVENT_PAL_JASMINE, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Jasmine);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Pryce, OBJ_EVENT_PAL_PRYCE, FALSE, TRACKS_FOOT, sAnimTable_Standard_Asymmetric, sPicTable_Pryce);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Clair, OBJ_EVENT_PAL_CLAIR, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Clair);
+
+// Elite Four
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Will, OBJ_EVENT_PAL_WILL, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Will);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Karen, OBJ_EVENT_PAL_KAREN, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Karen);
+/*
+// Gym Leaders - Hoenn
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Roxanne, OBJ_EVENT_PAL_ROXANNE, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Roxanne);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Brawly, OBJ_EVENT_PAL_BRAWLY, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Brawly);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Wattson, OBJ_EVENT_PAL_WATTSON, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Wattson);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Flannery, OBJ_EVENT_PAL_FLANNERY, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Flannery);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Norman, OBJ_EVENT_PAL_NORMAN, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Norman);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Winona, OBJ_EVENT_PAL_WINONA, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Winona);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Liza, OBJ_EVENT_PAL_LIZA, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Liza);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Tate, OBJ_EVENT_PAL_TATE, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Tate);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Juan, OBJ_EVENT_PAL_JUAN, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Juan);
+
+// Elite Four
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Sidney, OBJ_EVENT_PAL_SIDNEY, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Sidney);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Phoebe, OBJ_EVENT_PAL_PHOEBE, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Phoebe);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Glacia, OBJ_EVENT_PAL_GLACIA, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Glacia);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Drake, OBJ_EVENT_PAL_DRAKE, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Drake);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Wallace, OBJ_EVENT_PAL_WALLACE, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Wallace);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Steven, OBJ_EVENT_PAL_STEVEN, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Steven);
+*/
+// Gym Leaders - Sinnoh
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Roark, OBJ_EVENT_PAL_ROARK, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Roark);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Gardenia, OBJ_EVENT_PAL_GARDENIA, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Gardenia);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Maylene, OBJ_EVENT_PAL_MAYLENE, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Maylene);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_CrasherWake, OBJ_EVENT_PAL_CRASHER_WAKE, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_CrasherWake);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Fantina, OBJ_EVENT_PAL_FANTINA, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Fantina);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Byron, OBJ_EVENT_PAL_BYRON, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Byron);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Candice, OBJ_EVENT_PAL_CANDICE, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Candice);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Volkner, OBJ_EVENT_PAL_VOLKNER, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Volkner);
+
+// Elite Four
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Aaron, OBJ_EVENT_PAL_AARON, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Aaron);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Bertha, OBJ_EVENT_PAL_BERTHA, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Bertha);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Flint, OBJ_EVENT_PAL_FLINT, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Flint);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Lucian, OBJ_EVENT_PAL_LUCIAN, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Lucian);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Cynthia, OBJ_EVENT_PAL_CYNTHIA, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Cynthia);
+/*
+// Frontier Brains - Hoenn
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Anabel, OBJ_EVENT_PAL_ANABEL, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Anabel);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Brandon, OBJ_EVENT_PAL_BRANDON, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Brandon);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Greta, OBJ_EVENT_PAL_GRETA, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Greta);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Lucy, OBJ_EVENT_PAL_LUCY, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Lucy);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Noland, OBJ_EVENT_PAL_NOLAND, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Noland);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Spenser, OBJ_EVENT_PAL_SPENSER, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Spenser);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Tucker, OBJ_EVENT_PAL_TUCKER, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Tucker);
+*/
+// Frontier Brains - Sinnoh/Johto
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Argenta, OBJ_EVENT_PAL_ARGENTA, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Argenta);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Caitlin, OBJ_EVENT_PAL_CAITLIN, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Caitlin);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Dahlia, OBJ_EVENT_PAL_DAHLIA, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Dahlia);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Darach, OBJ_EVENT_PAL_DARACH, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Darach);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Palmer, OBJ_EVENT_PAL_PALMER, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Palmer);
+    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Thorton, OBJ_EVENT_PAL_THORTON, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Thorton);
+    

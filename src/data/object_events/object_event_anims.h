@@ -1175,3 +1175,4 @@ static const struct StepAnimTable sStepAnimTables[] = {
     },
     {},
 };
+

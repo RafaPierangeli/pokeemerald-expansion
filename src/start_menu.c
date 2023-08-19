@@ -65,6 +65,7 @@ enum
     MENU_ACTION_RETIRE_FRONTIER,
     MENU_ACTION_PYRAMID_BAG,
     MENU_ACTION_DEBUG,
+    MENU_ACTION_COSTUME,
 };
 
 // Save status
@@ -106,6 +107,7 @@ static bool8 StartMenuLinkModePlayerNameCallback(void);
 static bool8 StartMenuBattlePyramidRetireCallback(void);
 static bool8 StartMenuBattlePyramidBagCallback(void);
 static bool8 StartMenuDebugCallback(void);
+static bool8 StartMenuCostumeCallback(void);
 
 // Menu callbacks
 static bool8 SaveStartCallback(void);
@@ -139,6 +141,9 @@ static void SaveGameTask(u8 taskId);
 static void Task_SaveAfterLinkBattle(u8 taskId);
 static void Task_WaitForBattleTowerLinkSave(u8 taskId);
 static bool8 FieldCB_ReturnToFieldStartMenu(void);
+
+extern void CB2_CostumeMenu(void);
+const u8 gText_Costume[] = _("Costume");
 
 static const struct WindowTemplate sSafariBallsWindowTemplate = {0, 1, 1, 9, 4, 0xF, 8};
 
@@ -175,6 +180,7 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_RETIRE_FRONTIER] = {gText_MenuRetire,  {.u8_void = StartMenuBattlePyramidRetireCallback}},
     [MENU_ACTION_PYRAMID_BAG]     = {gText_MenuBag,     {.u8_void = StartMenuBattlePyramidBagCallback}},
     [MENU_ACTION_DEBUG]           = {gText_MenuDebug,   {.u8_void = StartMenuDebugCallback}},
+    [MENU_ACTION_COSTUME]         = {gText_Costume,     {.u8_void = StartMenuCostumeCallback}},
 };
 
 static const struct BgTemplate sBgTemplates_LinkBattleSave[] =
@@ -301,6 +307,8 @@ static void AddStartMenuAction(u8 action)
 
 static void BuildNormalStartMenu(void)
 {
+    AddStartMenuAction(MENU_ACTION_COSTUME);
+
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
     {
         AddStartMenuAction(MENU_ACTION_POKEDEX);
@@ -822,6 +830,21 @@ static bool8 StartMenuBattlePyramidBagCallback(void)
         RemoveExtraStartMenuWindows();
         CleanupOverworldWindowsAndTilemaps();
         SetMainCallback2(CB2_PyramidBagMenuFromStartMenu);
+
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static bool8 StartMenuCostumeCallback(void)
+{
+    if (!gPaletteFade.active)
+    {
+        PlayRainStoppingSoundEffect();
+        RemoveExtraStartMenuWindows();
+        CleanupOverworldWindowsAndTilemaps();
+        SetMainCallback2(CB2_CostumeMenu);
 
         return TRUE;
     }
