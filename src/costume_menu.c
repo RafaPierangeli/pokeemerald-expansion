@@ -419,7 +419,7 @@ static void CreateOverworldScrollBar(void)
     {
         xPos = xPos_initial + (slot * slotSize);
         displayedCostume = gCostumes[gDisplayList[selection + slot]].overworld;
-        spriteId = AddPseudoEventObject(displayedCostume, UpdateSlotNumbers, xPos, yPos, 0);
+        spriteId = CreateObjectGraphicsSprite(displayedCostume, UpdateSlotNumbers, xPos, yPos, 0);
         gSprites[spriteId].slotId = slot;
         gSprites[spriteId].costumeId = gDisplayList[selection + slot];
         if (gSprites[spriteId].slotId == 0)
@@ -443,7 +443,7 @@ static void CreateNewScrollBarSlot(s8 slot)
     u8 index;
 
     displayedCostume = gCostumes[gDisplayList[selection + slot]].overworld;
-    spriteId = AddPseudoEventObject(displayedCostume, UpdateSlotNumbers, xPos_initial + slot*slotSize, yPos, 0);
+    spriteId = CreateObjectGraphicsSprite(displayedCostume, UpdateSlotNumbers, xPos_initial + slot*slotSize, yPos, 0);
     gSprites[spriteId].slotId = slot;
     gSprites[spriteId].costumeId = gDisplayList[selection + slot];
 
@@ -537,7 +537,7 @@ static void CreateTrainerSprite(void)
     sSpriteTemplateBase.paletteTag = gTrainerFrontPicPaletteTable[displayedCostume].tag;
 
     LoadCompressedObjectPaletteWithGreyscale(&gTrainerFrontPicPaletteTable[displayedCostume]);
-    LoadCompressedObjectPic(&gTrainerFrontPicTable[displayedCostume]);
+    LoadCompressedSpriteSheet(&gTrainerFrontPicTable[displayedCostume]);
     spriteId = CreateSprite(&sSpriteTemplateBase, 200, 40, 0);
     gSprites[spriteId].costumeId = gDisplayList[selection];
 }
@@ -619,7 +619,7 @@ static void UpdateCostumeNameAndDescription(void)
 static void CreateConfirmationMenu(void)
 {
     FillWindowPixelBuffer(CONFIRMATION_WINDOW, 0);
-    SetWindowBorderStyle(CONFIRMATION_WINDOW, FALSE, 211, 14);
+    DrawStdFrameWithCustomTileAndPalette(CONFIRMATION_WINDOW, FALSE, 211, 14);
     AddTextPrinterParameterized(CONFIRMATION_WINDOW, 1, gText_ChangeCostume, 0, 1, 0, NULL);
     PutWindowTilemap(CONFIRMATION_WINDOW);
     CopyWindowToVram(CONFIRMATION_WINDOW, 3);
@@ -650,7 +650,7 @@ static void GetUnableToChangeText(void)
 static void CreateUnableToChangeTextbox(void)
 {
     FillWindowPixelBuffer(COSTUME_CHANGE_WINDOW, 0);
-    SetWindowBorderStyle(COSTUME_CHANGE_WINDOW, FALSE, 211, 14);
+    DrawStdFrameWithCustomTileAndPalette(COSTUME_CHANGE_WINDOW, FALSE, 211, 14);
     GetUnableToChangeText();
     AddTextPrinterParameterized(COSTUME_CHANGE_WINDOW, 1, gStringVar4, 0, 1, 0, NULL);
     PutWindowTilemap(COSTUME_CHANGE_WINDOW);
@@ -662,7 +662,7 @@ static void DestroyTextBox(u8 taskId)
     if (gMain.newKeys & (A_BUTTON | B_BUTTON))
     {
         PlaySE(SE_SELECT);
-        sub_8198070(COSTUME_CHANGE_WINDOW, TRUE);
+        ClearStdWindowAndFrameToTransparent(COSTUME_CHANGE_WINDOW, TRUE);
         ClearWindowTilemap(COSTUME_CHANGE_WINDOW);
         gTasks[taskId].func = HandleKeyPresses;
     }
@@ -684,7 +684,7 @@ static void SanitiseCostumeId(void)
 
 static void ProcessYesNoMenu(u8 taskId)
 {
-    switch (Menu_ProcessInputNoWrap_())
+    switch (Menu_ProcessInputNoWrapClearOnChoose())
     {
         case 0: // Yes
             if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
@@ -692,7 +692,7 @@ static void ProcessYesNoMenu(u8 taskId)
                 PlayFanfare(MUS_SLOTS_WIN);
                 SanitiseCostumeId();
                 PlayFieldMoveAnimation(gCostumes[gDisplayList[selection]].fieldMove);
-                sub_8198070(CONFIRMATION_WINDOW, FALSE); //from menu.c
+                ClearStdWindowAndFrameToTransparent(CONFIRMATION_WINDOW, FALSE); //from menu.c
                 ClearWindowTilemap(CONFIRMATION_WINDOW);
                 gTasks[taskId].func = HandleKeyPresses;
             }
@@ -705,7 +705,7 @@ static void ProcessYesNoMenu(u8 taskId)
         case 1:
         case -1: // No
             PlaySE(SE_SELECT);
-            sub_8198070(CONFIRMATION_WINDOW, FALSE);
+            ClearStdWindowAndFrameToTransparent(CONFIRMATION_WINDOW, FALSE);
             ClearWindowTilemap(CONFIRMATION_WINDOW);
             gTasks[taskId].func = HandleKeyPresses;
             break;
@@ -845,7 +845,7 @@ static void CreateListModeIndicator(void)
 {
     u8 spriteId;
 
-    LoadCompressedObjectPalette(&sListModeIndicatorsPalette);
-    LoadCompressedObjectPic(&ListModeIndicators[ListMode - 1]);
+    LoadCompressedSpritePalette(&sListModeIndicatorsPalette);
+    LoadCompressedSpriteSheet(&ListModeIndicators[ListMode - 1]);
     spriteId = CreateSprite(&sSpriteTemplate_ListModeIndicators[ListMode - 1], 202 + ListMode*8, 7, 0);
 }
