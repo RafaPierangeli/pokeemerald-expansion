@@ -452,13 +452,13 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_LUGIA                   0x1121
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
+#define OBJ_EVENT_PAL_RED                         0x1124
+#define OBJ_EVENT_PAL_LEAF                        0x1125
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 enum EventObjectPalettes
 {
-    OBJ_EVENT_PAL_RED = 0x1124,
-    OBJ_EVENT_PAL_LEAF,
-    OBJ_EVENT_PAL_ETHAN,
+    OBJ_EVENT_PAL_ETHAN = 0x1125,
     OBJ_EVENT_PAL_KRIS,
     OBJ_EVENT_PAL_LYRA,
     OBJ_EVENT_PAL_BRENDAN,
@@ -473,7 +473,6 @@ enum EventObjectPalettes
 //Rivals
     OBJ_EVENT_PAL_BLUE,
     OBJ_EVENT_PAL_SILVER,
-    OBJ_EVENT_PAL_WALLY,
     OBJ_EVENT_PAL_BARRY,
 // Team Rocket
     OBJ_EVENT_PAL_ROCKET_M,
@@ -693,7 +692,6 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
 // Rivals
     {gObjectEventPal_Blue, OBJ_EVENT_PAL_BLUE},
     {gObjectEventPal_Silver, OBJ_EVENT_PAL_SILVER},
-    {gObjectEventPal_Wally, OBJ_EVENT_PAL_WALLY},
     {gObjectEventPal_Barry, OBJ_EVENT_PAL_BARRY},
 // Team Rocket
     {gObjectEventPal_RocketGruntM, OBJ_EVENT_PAL_ROCKET_M},

@@ -205,7 +205,7 @@ static const struct SpriteTemplate sSpriteTemplate_ListModeIndicators[3] =
 static const struct WindowTemplate sWindowTemplate_CostumeMenu[] = 
 {
     { // NAME_WINDOW
-        .priority = 1,                    // bg layer
+        .bg = 1,                    // bg layer
         .tilemapLeft = 1,                 // x position, in no. of tiles (8x8 pixels)
         .tilemapTop = 2,                  // y position
         .width = 14,
@@ -214,7 +214,7 @@ static const struct WindowTemplate sWindowTemplate_CostumeMenu[] =
         .baseBlock = 1,                   // initial tile number in vram? relative to .charBaseIndex of bgTemplate?
     },
     {// DESCRIPTION_WINDOW
-        .priority = 1,
+        .bg = 1,
         .tilemapLeft = 1,
         .tilemapTop = 9,
         .width = 29,
@@ -223,7 +223,7 @@ static const struct WindowTemplate sWindowTemplate_CostumeMenu[] =
         .baseBlock = 36,
     },
     {// YES_NO_WINDOW
-        .priority = 2,
+        .bg = 2,
         .tilemapLeft = 22,
         .tilemapTop = 10,
         .width = 6,
@@ -232,7 +232,7 @@ static const struct WindowTemplate sWindowTemplate_CostumeMenu[] =
         .baseBlock = 220,
     },
     {// CONFIRMATION_WINDOW
-        .priority = 2,
+        .bg = 2,
         .tilemapLeft = 2,
         .tilemapTop = 10,
         .width = 15,
@@ -241,7 +241,7 @@ static const struct WindowTemplate sWindowTemplate_CostumeMenu[] =
         .baseBlock = 260,
     },
     {// COSTUME_CHANGE_WINDOW
-        .priority = 2,
+        .bg = 2,
         .tilemapLeft = 2,
         .tilemapTop = 10,
         .width = 26,
@@ -363,7 +363,7 @@ static void HandleKeyPresses(u8 taskId)
         }
         if (gMain.newKeys & SELECT_BUTTON)
         {
-            PlaySE(SE_T_KAMI);
+            PlaySE(SE_THUNDER);
 //            UnlockCostumesByGender(MALE); //for debug purposes
 //            UnlockCostumesByGender(FEMALE); //for debug purposes
             ResetSpriteData();
@@ -376,7 +376,7 @@ static void HandleKeyPresses(u8 taskId)
         }
         else if (gMain.newKeys & (DPAD_LEFT | DPAD_RIGHT | A_BUTTON))
         {
-            PlaySE(SE_HAZURE);
+            PlaySE(SE_FAILURE);
         }
     }
 }
@@ -689,7 +689,7 @@ static void ProcessYesNoMenu(u8 taskId)
         case 0: // Yes
             if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
             {
-                PlayFanfare(MUS_ME_B_SMALL);
+                PlayFanfare(MUS_SLOTS_WIN);
                 SanitiseCostumeId();
                 PlayFieldMoveAnimation(gCostumes[gDisplayList[selection]].fieldMove);
                 sub_8198070(CONFIRMATION_WINDOW, FALSE); //from menu.c
@@ -727,11 +727,11 @@ static u8 GetSpriteIdByXY(s16 x, s16 y)
 
 static void PlayFieldMoveAnimation(u16 graphicsId)
 {
-    const struct EventObjectGraphicsInfo *graphicsInfo;
+    const struct ObjectEventGraphicsInfo *graphicsInfo;
     struct Sprite *sprite;
     u8 spriteId = GetSpriteIdByXY(xPos_initial, yPos);
 
-    graphicsInfo = GetEventObjectGraphicsInfo(graphicsId);
+    graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
     sprite = &gSprites[spriteId];
     sprite->images = graphicsInfo->images;
     sprite->anims = graphicsInfo->anims;

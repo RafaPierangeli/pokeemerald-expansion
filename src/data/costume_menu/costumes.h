@@ -31,7 +31,7 @@ const struct Costume gCostumes[] =
         .description = gText_CostumeDescription_Ethan,
         .overworld = OBJ_EVENT_GFX_ETHAN,
         .fieldMove = OBJ_EVENT_GFX_ETHAN_FIELD_MOVE,
-        .trainerFront = TRAINER_PIC_RUBY_SAPPHIRE_BRENDAN,
+        .trainerFront = TRAINER_PIC_RS_BRENDAN,
         .trainerBack = TRAINER_BACK_PIC_RED,
     },
     [COSTUME_KRIS] = {
@@ -41,7 +41,7 @@ const struct Costume gCostumes[] =
         .description = gText_CostumeDescription_Kris,
         .overworld = OBJ_EVENT_GFX_KRIS,
         .fieldMove = OBJ_EVENT_GFX_KRIS,
-        .trainerFront = TRAINER_PIC_RUBY_SAPPHIRE_MAY,
+        .trainerFront = TRAINER_PIC_RS_MAY,
         .trainerBack = TRAINER_BACK_PIC_RED,
     },
     [COSTUME_LYRA] = {
@@ -51,7 +51,7 @@ const struct Costume gCostumes[] =
         .description = gText_CostumeDescription_Lyra,
         .overworld = OBJ_EVENT_GFX_LYRA,
         .fieldMove = OBJ_EVENT_GFX_LYRA_FIELD_MOVE,
-        .trainerFront = TRAINER_PIC_RUBY_SAPPHIRE_MAY,
+        .trainerFront = TRAINER_PIC_RS_MAY,
         .trainerBack = TRAINER_BACK_PIC_RED,
     },
     [COSTUME_BRENDAN] = {

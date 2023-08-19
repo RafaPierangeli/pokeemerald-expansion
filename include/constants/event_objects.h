@@ -404,13 +404,13 @@
 #define OBJ_EVENT_GFX_THORTON                    373
                    
 // Non-trainer NPCs
-#define OBJ_EVENT_GFX_MART_EMPLOYEE_F            374
-#define OBJ_EVENT_GFX_MART_EMPLOYEE_M            375
+#define OBJ_EVENT_GFX_BRENDAN                    374
+#define OBJ_EVENT_GFX_MAY                        375
 #define OBJ_EVENT_GFX_OLD_MAN_2                  376
 #define OBJ_EVENT_GFX_OLD_WOMAN_2                377
 
 // Unique NPCs - Hoenn
-#define OBJ_EVENT_GFX_MR_STONE                   278
+#define OBJ_EVENT_GFX_MR_STONE                   378
 
 
 
@@ -423,7 +423,7 @@
 // object graphics that can be removed. If more graphics are needed, anything that
 // stores graphics ids will need to be increased in size. See wiki entry below:
 // https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion
-#define NUM_OBJ_EVENT_GFX                        279
+#define NUM_OBJ_EVENT_GFX                        379
 
 
 // These are dynamic object gfx ids.
