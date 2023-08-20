@@ -406,13 +406,11 @@
 // Non-trainer NPCs
 #define OBJ_EVENT_GFX_BRENDAN                    374
 #define OBJ_EVENT_GFX_MAY                        375
-#define OBJ_EVENT_GFX_OLD_MAN_2                  376
-#define OBJ_EVENT_GFX_OLD_WOMAN_2                377
+#define OBJ_EVENT_GFX_BRENDAN_BIKE               376
+#define OBJ_EVENT_GFX_MAY_BIKE                   377
 
 // Unique NPCs - Hoenn
 #define OBJ_EVENT_GFX_MR_STONE                   378
-
-
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
@@ -500,3 +498,4 @@
 
 
 #endif  // GUARD_CONSTANTS_EVENT_OBJECTS_H
+

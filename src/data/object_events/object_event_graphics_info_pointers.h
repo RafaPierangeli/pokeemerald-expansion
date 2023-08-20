@@ -1,4 +1,3 @@
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanNormal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanMachBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanSurfing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanFieldMove;
@@ -87,7 +86,6 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Teala;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreakableRock;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PushableBoulder;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MrBrineysBoat;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayNormal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayMachBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayAcroBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MaySurfing;
@@ -291,39 +289,39 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnFieldMo
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnFishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnWatering;
 // Professors
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfOak;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfElm;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfRowan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfOak;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfElm;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfRowan;
 // Rivals
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blue;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Silver;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Barry;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blue;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Silver;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Barry;
 // Team Rocket
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntM;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntF;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Archer;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ariana;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Petrel;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Proton;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giovanni;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Archer;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ariana;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Petrel;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Proton;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giovanni;
 // Team Aqua
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AquaGruntM;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AquaGruntF;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Matt;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shelley;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AquaGruntM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AquaGruntF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Matt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shelley;
 // Team Magma
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MagmaGruntM;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MagmaGruntF;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Courtney;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tabitha;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MagmaGruntM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MagmaGruntF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Courtney;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tabitha;
 // Team Galactic
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GalacticGruntM;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GalacticGruntF;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jupiter;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mars;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Saturn;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Charon;
-    extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cyrus;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GalacticGruntM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GalacticGruntF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jupiter;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mars;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Saturn;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Charon;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cyrus;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Janine;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Placeholder;
@@ -382,7 +380,6 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Thorton;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
-    [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
     [OBJ_EVENT_GFX_BRENDAN_MACH_BIKE] =        &gObjectEventGraphicsInfo_BrendanMachBike,
     [OBJ_EVENT_GFX_BRENDAN_SURFING] =          &gObjectEventGraphicsInfo_BrendanSurfing,
     [OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE] =       &gObjectEventGraphicsInfo_BrendanFieldMove,
@@ -471,7 +468,6 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BREAKABLE_ROCK] =           &gObjectEventGraphicsInfo_BreakableRock,
     [OBJ_EVENT_GFX_PUSHABLE_BOULDER] =         &gObjectEventGraphicsInfo_PushableBoulder,
     [OBJ_EVENT_GFX_MR_BRINEYS_BOAT] =          &gObjectEventGraphicsInfo_MrBrineysBoat,
-    [OBJ_EVENT_GFX_MAY_NORMAL] =               &gObjectEventGraphicsInfo_MayNormal,
     [OBJ_EVENT_GFX_MAY_MACH_BIKE] =            &gObjectEventGraphicsInfo_MayMachBike,
     [OBJ_EVENT_GFX_MAY_ACRO_BIKE] =            &gObjectEventGraphicsInfo_MayAcroBike,
     [OBJ_EVENT_GFX_MAY_SURFING] =              &gObjectEventGraphicsInfo_MaySurfing,
@@ -656,6 +652,13 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LYRA_FISHING] = &gObjectEventGraphicsInfo_LyraFishing,
     [OBJ_EVENT_GFX_LYRA_WATERING] = &gObjectEventGraphicsInfo_LyraWatering,
 //    [] = &gObjectEventGraphicsInfo_LyraUnderwater,
+
+    [OBJ_EVENT_GFX_BRENDAN] = &gObjectEventGraphicsInfo_Brendan,
+    [OBJ_EVENT_GFX_BRENDAN_BIKE] = &gObjectEventGraphicsInfo_BrendanBike,
+
+    [OBJ_EVENT_GFX_MAY] = &gObjectEventGraphicsInfo_May,
+    [OBJ_EVENT_GFX_MAY_BIKE] = &gObjectEventGraphicsInfo_MayBike,
+
     [OBJ_EVENT_GFX_LUCAS] = &gObjectEventGraphicsInfo_Lucas,
     [OBJ_EVENT_GFX_LUCAS_BIKE] = &gObjectEventGraphicsInfo_LucasBike,
     [OBJ_EVENT_GFX_LUCAS_SURFING] = &gObjectEventGraphicsInfo_LucasSurfing,

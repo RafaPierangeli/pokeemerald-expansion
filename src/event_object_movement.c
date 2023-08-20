@@ -441,7 +441,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 
 enum EventObjectPalettes
 {
-    OBJ_EVENT_PAL_ETHAN = 0x1125,
+    OBJ_EVENT_PAL_ETHAN = 0x1126,
     OBJ_EVENT_PAL_KRIS,
     OBJ_EVENT_PAL_LYRA,
     OBJ_EVENT_PAL_BRENDAN,
@@ -456,6 +456,7 @@ enum EventObjectPalettes
 //Rivals
     OBJ_EVENT_PAL_BLUE,
     OBJ_EVENT_PAL_SILVER,
+    OBJ_EVENT_PAL_WALLY,
     OBJ_EVENT_PAL_BARRY,
 // Team Rocket
     OBJ_EVENT_PAL_ROCKET_M,
@@ -675,6 +676,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
 // Rivals
     {gObjectEventPal_Blue, OBJ_EVENT_PAL_BLUE},
     {gObjectEventPal_Silver, OBJ_EVENT_PAL_SILVER},
+    {gObjectEventPal_Wally, OBJ_EVENT_PAL_WALLY},
     {gObjectEventPal_Barry, OBJ_EVENT_PAL_BARRY},
 // Team Rocket
     {gObjectEventPal_RocketGruntM, OBJ_EVENT_PAL_ROCKET_M},
@@ -1929,7 +1931,7 @@ static void SetPlayerAvatarObjectEventIdAndObjectId(u8 objectEventId, u8 spriteI
 {
     gPlayerAvatar.objectEventId = objectEventId;
     gPlayerAvatar.spriteId = spriteId;
-    gPlayerAvatar.gender = GetPlayerAvatarGenderByGraphicsId(gObjectEvents[objectEventId].graphicsId);
+    gPlayerAvatar.gender = gSaveBlock2Ptr->playerGender;
     SetPlayerAvatarExtraStateTransition(gObjectEvents[objectEventId].graphicsId, PLAYER_AVATAR_FLAG_CONTROLLABLE);
 }
 
