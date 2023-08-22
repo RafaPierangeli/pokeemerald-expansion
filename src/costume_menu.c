@@ -364,8 +364,8 @@ static void HandleKeyPresses(u8 taskId)
         if (gMain.newKeys & SELECT_BUTTON)
         {
             PlaySE(SE_THUNDER);
-//            UnlockCostumesByGender(MALE); //for debug purposes
-//            UnlockCostumesByGender(FEMALE); //for debug purposes
+            UnlockCostumesByGender(MALE); //for debug purposes
+            UnlockCostumesByGender(FEMALE); //for debug purposes
             ResetSpriteData();
             FreeAllSpritePalettes();
             UpdateDisplayMode();

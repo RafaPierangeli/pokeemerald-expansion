@@ -241,7 +241,7 @@ static const u16 sRivalAvatarGfxIds[][2] =
     [PLAYER_AVATAR_STATE_UNDERWATER] = {OBJ_EVENT_GFX_BRENDAN_SURFING,       OBJ_EVENT_GFX_MAY_SURFING},
     [PLAYER_AVATAR_STATE_FIELD_MOVE] = {OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE, OBJ_EVENT_GFX_MAY_FIELD_MOVE},
     [PLAYER_AVATAR_STATE_FISHING]    = {OBJ_EVENT_GFX_BRENDAN_FISHING,          OBJ_EVENT_GFX_MAY_FISHING},
-    [PLAYER_AVATAR_STATE_WATERING]   = {OBJ_EVENT_GFX_BRENDAN_FISHING,         OBJ_EVENT_GFX_MAY_FISHING}
+    [PLAYER_AVATAR_STATE_WATERING]   = {OBJ_EVENT_GFX_BRENDAN_WATERING,         OBJ_EVENT_GFX_MAY_WATERING}
 };
 
 const u16 sPlayerAvatarGfxIds[][8] =
@@ -338,13 +338,13 @@ const u16 sPlayerAvatarGfxIds[][8] =
     },
 };
 
-static const u16 sFRLGAvatarGfxIds[GENDER_COUNT] =
+static const u16 sFRLGAvatarGfxIds[] =
 {
     [MALE]   = OBJ_EVENT_GFX_RED,
     [FEMALE] = OBJ_EVENT_GFX_LEAF
 };
 
-static const u16 sRSAvatarGfxIds[GENDER_COUNT] =
+static const u16 sRSAvatarGfxIds[] =
 {
     [MALE]   = OBJ_EVENT_GFX_LINK_RS_BRENDAN,
     [FEMALE] = OBJ_EVENT_GFX_LINK_RS_MAY
@@ -1446,7 +1446,6 @@ u16 GetPlayerAvatarGraphicsIdByCurrentState(void)
 void SetPlayerAvatarExtraStateTransition(u16 graphicsId, u8 transitionFlag)
 {
     u8 costumeId = gSaveBlock2Ptr->costume;
-
     u8 stateFlag = GetPlayerAvatarStateTransitionByGraphicsId(graphicsId, costumeId);
 
     gPlayerAvatar.transitionFlags |= stateFlag | transitionFlag;

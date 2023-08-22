@@ -1,7 +1,7 @@
 #ifndef GUARD_DATA_COSTUME_MENU_TEXT_H
 #define GUARD_DATA_COSTUME_MENU_TEXT_H
 
-const u8 gText_CostumeName_Locked[] = _("?????");
+const u8 gText_CostumeName_Locked[] = _("Locked");
 const u8 gText_CostumeDescription_Locked[] = _("??????????");
 // Main characters
 const u8 gText_CostumeName_Red[] = _("Red");

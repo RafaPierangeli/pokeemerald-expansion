@@ -1,3 +1,21 @@
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brendan = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_BRENDAN,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION,
+    .size = 512,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = 0,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_WalkRun,
+    .images = sPicTable_Brendan,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanMachBike = {
     .tileTag = TAG_NONE,
@@ -205,6 +223,25 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Girl2 = {
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Standard,
     .images = sPicTable_Girl2,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wally = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_WALLY,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = 0,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Wally,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
@@ -1196,6 +1233,25 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BerryTreeLateStage
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfBirch = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_PROF_BIRCH,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = 0,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_ProfBirch,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man4 = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,
@@ -1649,6 +1705,25 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MrBrineysBoat = {
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
     .images = sPicTable_MrBrineysBoat,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_May = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MAY,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION,
+    .size = 512,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = 0,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_WalkRun,
+    .images = sPicTable_May,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
@@ -4560,10 +4635,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh = {
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LyraFishing,   OBJ_EVENT_PAL_LYRA, FALSE, TRACKS_FOOT,      sAnimTable_Fishing,   sPicTable_LyraFishing);
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LyraWatering,  OBJ_EVENT_PAL_LYRA, FALSE, TRACKS_FOOT,      sAnimTable_Standard,  sPicTable_LyraWatering);
 
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Brendan,          OBJ_EVENT_PAL_BRENDAN, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Brendan);
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_BrendanBike,      OBJ_EVENT_PAL_BRENDAN, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_BrendanBike);
 
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_May,          OBJ_EVENT_PAL_MAY, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_May);
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_MayBike,      OBJ_EVENT_PAL_MAY, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_MayBike);
 
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Lucas,          OBJ_EVENT_PAL_LUCAS, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Lucas);
@@ -4583,13 +4656,11 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh = {
 // Professors
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_ProfOak,   OBJ_EVENT_PAL_PROF_OAK,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_ProfOak);
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_ProfElm,   OBJ_EVENT_PAL_PROF_ELM,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_ProfElm);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_ProfBirch, OBJ_EVENT_PAL_PROF_BIRCH, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_ProfBirch);
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_ProfRowan, OBJ_EVENT_PAL_PROF_ROWAN, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_ProfRowan);
 
 // Rivals
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Blue,   OBJ_EVENT_PAL_BLUE,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Blue);
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Silver, OBJ_EVENT_PAL_SILVER, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Silver);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Wally, OBJ_EVENT_PAL_WALLY, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Wally);
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Barry,  OBJ_EVENT_PAL_BARRY,  FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Barry);
 
 // Team Rocket
