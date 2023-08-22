@@ -1142,39 +1142,6 @@ static const union AffineAnimCmd *const sAffineAnimTable_KyogreGroudon[] = {
     sAffineAnim_KyogreGroudon_DipEast,      // Unused
 };
 
-// For animations with alternating steps
-static const struct StepAnimTable sStepAnimTables[] = {
-    {
-        .anims = sAnimTable_QuintyPlump,
-        .animPos = {1, 3, 0, 2},
-    },
-    {
-        .anims = sAnimTable_Standard,
-        .animPos = {1, 3, 0, 2},
-    },
-    {
-        .anims = sAnimTable_WalkRun,
-        .animPos = {1, 3, 0, 2},
-    },
-    {
-        .anims = sAnimTable_AcroBike,
-        .animPos = {1, 3, 0, 2},
-    },
-    {
-        .anims = sAnimTable_Surfing,
-        .animPos = {1, 3, 0, 2},
-    },
-    {
-        .anims = sAnimTable_Nurse,
-        .animPos = {1, 3, 0, 2},
-    },
-    {
-        .anims = sAnimTable_Fishing,
-        .animPos = {1, 3, 0, 2},
-    },
-    {},
-};
-
 static const union AnimCmd sAnim_FaceEast_Asymmetric[] =
 {
     ANIMCMD_FRAME(9, 16),
@@ -1239,3 +1206,41 @@ static const union AnimCmd *const sAnimTable_Standard_Asymmetric[] = {
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_GoFastestWest,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast_Asymmetric,
 };
+
+// For animations with alternating steps
+static const struct StepAnimTable sStepAnimTables[] = {
+    {
+        .anims = sAnimTable_QuintyPlump,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = sAnimTable_Standard,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = sAnimTable_WalkRun,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = sAnimTable_AcroBike,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = sAnimTable_Surfing,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = sAnimTable_Nurse,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = sAnimTable_Fishing,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = sAnimTable_Standard_Asymmetric,
+        .animPos = {1, 3, 0, 2},
+    },
+    {},
+};
+

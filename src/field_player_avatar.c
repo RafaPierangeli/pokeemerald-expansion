@@ -334,20 +334,18 @@ const u16 sPlayerAvatarGfxIds[][8] =
         OBJ_EVENT_GFX_DAWN_SURFING, // Underwater
         OBJ_EVENT_GFX_DAWN_FIELD_MOVE,
         OBJ_EVENT_GFX_DAWN_FISHING,
-        OBJ_EVENT_GFX_DAWN_WATERING,
-    },
+        OBJ_EVENT_GFX_DAWN_WATERING, 
+    }
 };
 
 static const u16 sFRLGAvatarGfxIds[] =
 {
-    [MALE]   = OBJ_EVENT_GFX_RED,
-    [FEMALE] = OBJ_EVENT_GFX_LEAF
+    OBJ_EVENT_GFX_RED, OBJ_EVENT_GFX_LEAF
 };
 
 static const u16 sRSAvatarGfxIds[] =
 {
-    [MALE]   = OBJ_EVENT_GFX_LINK_RS_BRENDAN,
-    [FEMALE] = OBJ_EVENT_GFX_LINK_RS_MAY
+    OBJ_EVENT_GFX_LINK_RS_BRENDAN, OBJ_EVENT_GFX_LINK_RS_MAY
 };
 
 static const u16 sPlayerAvatarGfxToStateFlag[][5][2] =
@@ -414,7 +412,7 @@ static const u16 sPlayerAvatarGfxToStateFlag[][5][2] =
         {OBJ_EVENT_GFX_DAWN_BIKE, 4}, //acro
         {OBJ_EVENT_GFX_DAWN_SURFING, 8},
         {OBJ_EVENT_GFX_DAWN_SURFING, 16}, //underwater
-    },
+    }
 };
 
 static bool8 (*const sArrowWarpMetatileBehaviorChecks2[])(u8) =  //Duplicate of sArrowWarpMetatileBehaviorChecks
