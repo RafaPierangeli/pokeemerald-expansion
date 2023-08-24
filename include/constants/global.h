@@ -127,6 +127,17 @@
 #define FEMALE 1
 #define GENDER_COUNT 2
 
+#define STYLE_BRENDAN       0
+#define STYLE_MAY           1
+#define STYLE_RED           2
+#define STYLE_LEAF          3
+#define STYLE_ETHAN         4
+#define STYLE_LYRA          5
+#define STYLE_LUCAS         6
+#define STYLE_DAWN          7
+#define STYLE_KRIS          8
+#define PLAYER_STYLE_COUNT  9
+
 #define BARD_SONG_LENGTH       6
 #define NUM_STORYTELLER_TALES  4
 #define NUM_TRADER_ITEMS       4

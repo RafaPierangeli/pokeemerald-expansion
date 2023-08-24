@@ -242,59 +242,61 @@
 #define OBJ_EVENT_GFX_HOOH                       238
 
 // Main characters
-#define OBJ_EVENT_GFX_RED_BIKE                   239
-#define OBJ_EVENT_GFX_RED_SURFING                240
-#define OBJ_EVENT_GFX_RED_FIELD_MOVE             241
-#define OBJ_EVENT_GFX_RED_FISHING                242
-#define OBJ_EVENT_GFX_RED_WATERING               243
-#define OBJ_EVENT_GFX_LEAF_BIKE                  244
-#define OBJ_EVENT_GFX_LEAF_SURFING               245
-#define OBJ_EVENT_GFX_LEAF_FIELD_MOVE            246
-#define OBJ_EVENT_GFX_LEAF_FISHING               247
-#define OBJ_EVENT_GFX_LEAF_WATERING              248
-#define OBJ_EVENT_GFX_ETHAN                      249
-#define OBJ_EVENT_GFX_ETHAN_BIKE                 250
-#define OBJ_EVENT_GFX_ETHAN_SURFING              251
-#define OBJ_EVENT_GFX_ETHAN_FIELD_MOVE           252
-#define OBJ_EVENT_GFX_ETHAN_FISHING              253
-#define OBJ_EVENT_GFX_ETHAN_WATERING             254
-#define OBJ_EVENT_GFX_KRIS                       255
-#define OBJ_EVENT_GFX_KRIS_BIKE                  256
-#define OBJ_EVENT_GFX_KRIS_SURFING               257
-#define OBJ_EVENT_GFX_KRIS_FIELD_MOVE            258
-#define OBJ_EVENT_GFX_KRIS_FISHING               259
-#define OBJ_EVENT_GFX_KRIS_WATERING              260
-#define OBJ_EVENT_GFX_LYRA                       261
-#define OBJ_EVENT_GFX_LYRA_BIKE                  262
-#define OBJ_EVENT_GFX_LYRA_SURFING               263
-#define OBJ_EVENT_GFX_LYRA_FIELD_MOVE            264
-#define OBJ_EVENT_GFX_LYRA_FISHING               265
-#define OBJ_EVENT_GFX_LYRA_WATERING              266
-#define OBJ_EVENT_GFX_LUCAS                      267
-#define OBJ_EVENT_GFX_LUCAS_BIKE                 268
-#define OBJ_EVENT_GFX_LUCAS_SURFING              269
-#define OBJ_EVENT_GFX_LUCAS_FIELD_MOVE           270
-#define OBJ_EVENT_GFX_LUCAS_FISHING              271
-#define OBJ_EVENT_GFX_LUCAS_WATERING             272
-#define OBJ_EVENT_GFX_DAWN                       273
-#define OBJ_EVENT_GFX_DAWN_BIKE                  274
-#define OBJ_EVENT_GFX_DAWN_SURFING               275
-#define OBJ_EVENT_GFX_DAWN_FIELD_MOVE            276
-#define OBJ_EVENT_GFX_DAWN_FISHING               277
-#define OBJ_EVENT_GFX_DAWN_WATERING              278
+#define OBJ_EVENT_GFX_RED_MACH_BIKE              239
+#define OBJ_EVENT_GFX_RED_ACRO_BIKE              240
+#define OBJ_EVENT_GFX_RED_SURFING                241
+#define OBJ_EVENT_GFX_RED_FIELD_MOVE             242
+#define OBJ_EVENT_GFX_RED_FISHING                243
+#define OBJ_EVENT_GFX_RED_WATERING               244
 
-// Professors
-#define OBJ_EVENT_GFX_PROF_OAK                   279
-#define OBJ_EVENT_GFX_PROF_ELM                   280
-#define OBJ_EVENT_GFX_PROF_ROWAN                 281
+#define OBJ_EVENT_GFX_LEAF_MACH_BIKE             245
+#define OBJ_EVENT_GFX_LEAF_ACRO_BIKE             246
+#define OBJ_EVENT_GFX_LEAF_SURFING               247
+#define OBJ_EVENT_GFX_LEAF_FIELD_MOVE            248
+#define OBJ_EVENT_GFX_LEAF_FISHING               249
+#define OBJ_EVENT_GFX_LEAF_WATERING              250
 
-// Rivals
-#define OBJ_EVENT_GFX_BLUE                       282
-#define OBJ_EVENT_GFX_SILVER                     283
-#define OBJ_EVENT_GFX_BARRY                      284
+#define OBJ_EVENT_GFX_ETHAN                      251
+#define OBJ_EVENT_GFX_ETHAN_MACH_BIKE            252
+#define OBJ_EVENT_GFX_ETHAN_ACRO_BIKE            253
+#define OBJ_EVENT_GFX_ETHAN_SURFING              254
+#define OBJ_EVENT_GFX_ETHAN_FIELD_MOVE           255
+#define OBJ_EVENT_GFX_ETHAN_FISHING              256
+#define OBJ_EVENT_GFX_ETHAN_WATERING             257
+
+#define OBJ_EVENT_GFX_KRIS                       258
+#define OBJ_EVENT_GFX_KRIS_MACH_BIKE             259
+#define OBJ_EVENT_GFX_KRIS_ACRO_BIKE             260
+#define OBJ_EVENT_GFX_KRIS_SURFING               261
+#define OBJ_EVENT_GFX_KRIS_FIELD_MOVE            262
+#define OBJ_EVENT_GFX_KRIS_FISHING               263
+#define OBJ_EVENT_GFX_KRIS_WATERING              264
+
+#define OBJ_EVENT_GFX_LYRA                       265
+#define OBJ_EVENT_GFX_LYRA_MACH_BIKE             266
+#define OBJ_EVENT_GFX_LYRA_ACRO_BIKE             267
+#define OBJ_EVENT_GFX_LYRA_SURFING               268
+#define OBJ_EVENT_GFX_LYRA_FIELD_MOVE            269
+#define OBJ_EVENT_GFX_LYRA_FISHING               270
+#define OBJ_EVENT_GFX_LYRA_WATERING              271
+
+#define OBJ_EVENT_GFX_LUCAS                      272
+#define OBJ_EVENT_GFX_LUCAS_MACH_BIKE            273
+#define OBJ_EVENT_GFX_LUCAS_ACRO_BIKE            274
+#define OBJ_EVENT_GFX_LUCAS_SURFING              275
+#define OBJ_EVENT_GFX_LUCAS_FIELD_MOVE           276
+#define OBJ_EVENT_GFX_LUCAS_FISHING              277
+#define OBJ_EVENT_GFX_LUCAS_WATERING             278
+
+#define OBJ_EVENT_GFX_DAWN                       279
+#define OBJ_EVENT_GFX_DAWN_MACH_BIKE             280
+#define OBJ_EVENT_GFX_DAWN_ACRO_BIKE             281
+#define OBJ_EVENT_GFX_DAWN_SURFING               282
+#define OBJ_EVENT_GFX_DAWN_FIELD_MOVE            283
+#define OBJ_EVENT_GFX_DAWN_FISHING               284
+#define OBJ_EVENT_GFX_DAWN_WATERING              285
 
 // Team Rocket
-#define OBJ_EVENT_GFX_ROCKET_GRUNT_M             285
 #define OBJ_EVENT_GFX_ROCKET_GRUNT_F             286
 #define OBJ_EVENT_GFX_ARCHER                     287
 #define OBJ_EVENT_GFX_ARIANA                     288
@@ -402,12 +404,12 @@
 #define OBJ_EVENT_GFX_DARACH                     371
 #define OBJ_EVENT_GFX_PALMER                     372
 #define OBJ_EVENT_GFX_THORTON                    373
-                   
-// Non-trainer NPCs
-#define OBJ_EVENT_GFX_BRENDAN                    374
-#define OBJ_EVENT_GFX_MAY                        375
-#define OBJ_EVENT_GFX_BRENDAN_BIKE               376
-#define OBJ_EVENT_GFX_MAY_BIKE                   377
+
+// Professors
+#define OBJ_EVENT_GFX_PROF_OAK                   374
+#define OBJ_EVENT_GFX_PROF_ELM                   375
+#define OBJ_EVENT_GFX_PROF_ROWAN                 376
+#define OBJ_EVENT_GFX_ROCKET_GRUNT_M             377
 
 // Unique NPCs - Hoenn
 #define OBJ_EVENT_GFX_MR_STONE                   378

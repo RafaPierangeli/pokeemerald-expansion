@@ -727,12 +727,15 @@ graphics/door_anims/battle_tower_multi_corridor.4bpp: %.4bpp: %.png
 
 
 $(OBJEVENTGFXDIR)/people/red/walking.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 4 -mheight 4
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/red/running.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/red/mach_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/red/bike.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/red/acro_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/red/surfing.4bpp: %.4bpp: %.png
@@ -749,12 +752,15 @@ $(OBJEVENTGFXDIR)/people/red/watering.4bpp: %.4bpp: %.png
 
 
 $(OBJEVENTGFXDIR)/people/leaf/walking.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 4 -mheight 4
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/leaf/running.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/leaf/mach_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/leaf/bike.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/leaf/acro_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/leaf/surfing.4bpp: %.4bpp: %.png
@@ -771,12 +777,15 @@ $(OBJEVENTGFXDIR)/people/leaf/watering.4bpp: %.4bpp: %.png
 
 
 $(OBJEVENTGFXDIR)/people/ethan/walking.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 4 -mheight 4
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/ethan/running.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/ethan/mach_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/ethan/bike.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/ethan/acro_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/ethan/surfing.4bpp: %.4bpp: %.png
@@ -798,7 +807,10 @@ $(OBJEVENTGFXDIR)/people/kris/walking.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/kris/running.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/kris/bike.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/kris/mach_bike.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/kris/acro_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/kris/surfing.4bpp: %.4bpp: %.png
@@ -815,12 +827,15 @@ $(OBJEVENTGFXDIR)/people/kris/watering.4bpp: %.4bpp: %.png
 
 
 $(OBJEVENTGFXDIR)/people/lyra/walking.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 4 -mheight 4
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/lyra/running.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/lyra/mach_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/lyra/bike.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/lyra/acro_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/lyra/surfing.4bpp: %.4bpp: %.png
@@ -835,19 +850,16 @@ $(OBJEVENTGFXDIR)/people/lyra/fishing.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/lyra/watering.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/brendan/bike.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 4 -mheight 4
-
-$(OBJEVENTGFXDIR)/people/may/bike.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 4 -mheight 4
-
 $(OBJEVENTGFXDIR)/people/lucas/walking.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/lucas/running.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/lucas/bike.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/lucas/mach_bike.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/lucas/acro_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/lucas/surfing.4bpp: %.4bpp: %.png
@@ -869,7 +881,10 @@ $(OBJEVENTGFXDIR)/people/dawn/walking.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/dawn/running.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/dawn/bike.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/dawn/mach_bike.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/dawn/acro_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/dawn/surfing.4bpp: %.4bpp: %.png
@@ -903,19 +918,8 @@ $(OBJEVENTGFXDIR)/people/professors/prof_rowan.4bpp: %.4bpp: %.png
 
 # Rivals
 
-
-$(OBJEVENTGFXDIR)/people/rivals/blue.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 4 -mheight 4
-
-$(OBJEVENTGFXDIR)/people/rivals/silver.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 4 -mheight 4
-
 $(OBJEVENTGFXDIR)/people/incomplete/wally.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
-
-$(OBJEVENTGFXDIR)/people/rivals/barry.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 4 -mheight 4
-
 
 # Team Rocket
 

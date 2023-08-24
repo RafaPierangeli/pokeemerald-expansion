@@ -453,11 +453,8 @@ enum EventObjectPalettes
     OBJ_EVENT_PAL_PROF_ELM,
     OBJ_EVENT_PAL_PROF_BIRCH,
     OBJ_EVENT_PAL_PROF_ROWAN,
-//Rivals
-    OBJ_EVENT_PAL_BLUE,
-    OBJ_EVENT_PAL_SILVER,
     OBJ_EVENT_PAL_WALLY,
-    OBJ_EVENT_PAL_BARRY,
+
 // Team Rocket
     OBJ_EVENT_PAL_ROCKET_M,
     OBJ_EVENT_PAL_ROCKET_F,
@@ -674,10 +671,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_ProfBirch, OBJ_EVENT_PAL_PROF_BIRCH},
     {gObjectEventPal_ProfRowan, OBJ_EVENT_PAL_PROF_ROWAN},
 // Rivals
-    {gObjectEventPal_Blue, OBJ_EVENT_PAL_BLUE},
-    {gObjectEventPal_Silver, OBJ_EVENT_PAL_SILVER},
     {gObjectEventPal_Wally, OBJ_EVENT_PAL_WALLY},
-    {gObjectEventPal_Barry, OBJ_EVENT_PAL_BARRY},
 // Team Rocket
     {gObjectEventPal_RocketGruntM, OBJ_EVENT_PAL_ROCKET_M},
     {gObjectEventPal_RocketGruntF, OBJ_EVENT_PAL_ROCKET_F},

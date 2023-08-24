@@ -4576,6 +4576,63 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh = {
     .images = sPicTable_HoOh,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+ 
+//Red
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Red              = {TAG_NONE, OBJ_EVENT_PAL_RED,   OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 16, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_WalkRun,    sPicTable_Red,            gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedMachBike      = {TAG_NONE, OBJ_EVENT_PAL_RED,   OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_BIKE_TIRE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard,   sPicTable_RedMachBike,    gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedAcroBike      = {TAG_NONE, OBJ_EVENT_PAL_RED,   OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_BIKE_TIRE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_AcroBike,   sPicTable_RedAcroBike,    gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedSurfing       = {TAG_NONE, OBJ_EVENT_PAL_RED,   OBJ_EVENT_PAL_TAG_NONE,              512, 32, 32, 0, SHADOW_SIZE_M, FALSE, TRUE,  TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Surfing,    sPicTable_RedSurfing,     gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedFieldMove     = {TAG_NONE, OBJ_EVENT_PAL_RED,   OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_FieldMove,  sPicTable_RedFieldMove,   gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedFishing       = {TAG_NONE, OBJ_EVENT_PAL_RED,   OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Fishing,    sPicTable_RedFishing,     gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedWatering      = {TAG_NONE, OBJ_EVENT_PAL_RED,   OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard,   sPicTable_RedWatering,    gDummySpriteAffineAnimTable};
+//Leaf
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Leaf             = {TAG_NONE, OBJ_EVENT_PAL_LEAF,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 16, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_WalkRun,    sPicTable_Leaf,           gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafMachBike     = {TAG_NONE, OBJ_EVENT_PAL_LEAF,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_BIKE_TIRE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard,   sPicTable_LeafMachBike,   gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafAcroBike     = {TAG_NONE, OBJ_EVENT_PAL_LEAF,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_BIKE_TIRE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_AcroBike,   sPicTable_LeafAcroBike,   gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafSurfing      = {TAG_NONE, OBJ_EVENT_PAL_LEAF,  OBJ_EVENT_PAL_TAG_NONE,              512, 32, 32, 0, SHADOW_SIZE_M, FALSE, TRUE,  TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Surfing,    sPicTable_LeafSurfing,    gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafFieldMove    = {TAG_NONE, OBJ_EVENT_PAL_LEAF,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_FieldMove,  sPicTable_LeafFieldMove,  gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafFishing      = {TAG_NONE, OBJ_EVENT_PAL_LEAF,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Fishing,    sPicTable_LeafFishing,    gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafWatering     = {TAG_NONE, OBJ_EVENT_PAL_LEAF,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard,   sPicTable_RedWatering,    gDummySpriteAffineAnimTable};
+//Ethan
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ethan            = {TAG_NONE, OBJ_EVENT_PAL_ETHAN, OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 16, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_WalkRun,    sPicTable_Ethan,          gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanMachBike    = {TAG_NONE, OBJ_EVENT_PAL_ETHAN, OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_BIKE_TIRE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard,   sPicTable_EthanMachBike,  gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanAcroBike    = {TAG_NONE, OBJ_EVENT_PAL_ETHAN, OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_BIKE_TIRE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_AcroBike,   sPicTable_EthanAcroBike,  gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanSurfing     = {TAG_NONE, OBJ_EVENT_PAL_ETHAN, OBJ_EVENT_PAL_TAG_NONE,              512, 32, 32, 0, SHADOW_SIZE_M, FALSE, TRUE,  TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Surfing,    sPicTable_EthanSurfing,   gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanFieldMove   = {TAG_NONE, OBJ_EVENT_PAL_ETHAN, OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_FieldMove,  sPicTable_EthanFieldMove, gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanFishing     = {TAG_NONE, OBJ_EVENT_PAL_ETHAN, OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Fishing,    sPicTable_EthanFishing,   gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanWatering    = {TAG_NONE, OBJ_EVENT_PAL_ETHAN, OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard,   sPicTable_EthanWatering,  gDummySpriteAffineAnimTable};
+//Lyra
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lyra             = {TAG_NONE, OBJ_EVENT_PAL_LYRA,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 16, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_WalkRun,    sPicTable_Lyra,           gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LyraMachBike     = {TAG_NONE, OBJ_EVENT_PAL_LYRA,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_BIKE_TIRE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard,   sPicTable_LyraMachBike,   gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LyraAcroBike     = {TAG_NONE, OBJ_EVENT_PAL_LYRA,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_BIKE_TIRE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_AcroBike,   sPicTable_LyraAcroBike,   gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LyraSurfing      = {TAG_NONE, OBJ_EVENT_PAL_LYRA,  OBJ_EVENT_PAL_TAG_NONE,              512, 32, 32, 0, SHADOW_SIZE_M, FALSE, TRUE,  TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Surfing,    sPicTable_LyraSurfing,    gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LyraFieldMove    = {TAG_NONE, OBJ_EVENT_PAL_LYRA,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_FieldMove,  sPicTable_LyraFieldMove,  gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LyraFishing      = {TAG_NONE, OBJ_EVENT_PAL_LYRA,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Fishing,    sPicTable_LyraFishing,    gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LyraWatering     = {TAG_NONE, OBJ_EVENT_PAL_LYRA,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard,   sPicTable_LyraWatering,   gDummySpriteAffineAnimTable};
+//Kris
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kris             = {TAG_NONE, OBJ_EVENT_PAL_KRIS,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 16, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_16x32, sOamTables_32x32, sAnimTable_WalkRun,    sPicTable_Kris,           gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisMachBike     = {TAG_NONE, OBJ_EVENT_PAL_KRIS,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_BIKE_TIRE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard,   sPicTable_KrisMachBike,   gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisAcroBike     = {TAG_NONE, OBJ_EVENT_PAL_KRIS,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_BIKE_TIRE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_AcroBike,   sPicTable_KrisAcroBike,   gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisSurfing      = {TAG_NONE, OBJ_EVENT_PAL_KRIS,  OBJ_EVENT_PAL_TAG_NONE,              512, 32, 32, 0, SHADOW_SIZE_M, FALSE, TRUE,  TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Surfing,    sPicTable_KrisSurfing,    gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisFieldMove    = {TAG_NONE, OBJ_EVENT_PAL_KRIS,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_FieldMove,  sPicTable_KrisFieldMove,  gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisFishing      = {TAG_NONE, OBJ_EVENT_PAL_KRIS,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Fishing,    sPicTable_KrisFishing,    gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisWatering     = {TAG_NONE, OBJ_EVENT_PAL_KRIS,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard,   sPicTable_KrisWatering,   gDummySpriteAffineAnimTable};
+//Lucas
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lucas            = {TAG_NONE, OBJ_EVENT_PAL_LUCAS, OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 16, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_16x32, sOamTables_32x32, sAnimTable_WalkRun,    sPicTable_Lucas,          gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasMachBike    = {TAG_NONE, OBJ_EVENT_PAL_LUCAS, OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_BIKE_TIRE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard,   sPicTable_LucasMachBike,  gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasAcroBike    = {TAG_NONE, OBJ_EVENT_PAL_LUCAS, OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_BIKE_TIRE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_AcroBike,   sPicTable_LucasAcroBike,  gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasSurfing     = {TAG_NONE, OBJ_EVENT_PAL_LUCAS, OBJ_EVENT_PAL_TAG_NONE,              512, 32, 32, 0, SHADOW_SIZE_M, FALSE, TRUE,  TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Surfing,    sPicTable_LucasSurfing,   gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasFieldMove   = {TAG_NONE, OBJ_EVENT_PAL_LUCAS, OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_FieldMove,  sPicTable_LucasFieldMove, gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasFishing     = {TAG_NONE, OBJ_EVENT_PAL_LUCAS, OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Fishing,    sPicTable_LucasFishing,   gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasWatering    = {TAG_NONE, OBJ_EVENT_PAL_LUCAS, OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard,   sPicTable_LucasWatering,  gDummySpriteAffineAnimTable};
+//Dawn
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dawn             = {TAG_NONE, OBJ_EVENT_PAL_DAWN,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 16, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_16x32, sOamTables_32x32, sAnimTable_WalkRun,    sPicTable_Dawn,           gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnMachBike     = {TAG_NONE, OBJ_EVENT_PAL_DAWN,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_BIKE_TIRE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard,   sPicTable_DawnMachBike,   gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnAcroBike     = {TAG_NONE, OBJ_EVENT_PAL_DAWN,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_BIKE_TIRE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_AcroBike,   sPicTable_DawnAcroBike,   gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnSurfing      = {TAG_NONE, OBJ_EVENT_PAL_DAWN,  OBJ_EVENT_PAL_TAG_NONE,              512, 32, 32, 0, SHADOW_SIZE_M, FALSE, TRUE,  TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Surfing,    sPicTable_DawnSurfing,    gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnFieldMove    = {TAG_NONE, OBJ_EVENT_PAL_DAWN,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_FieldMove,  sPicTable_DawnFieldMove,  gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnFishing      = {TAG_NONE, OBJ_EVENT_PAL_DAWN,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Fishing,    sPicTable_DawnFishing,    gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnWatering     = {TAG_NONE, OBJ_EVENT_PAL_DAWN,  OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,      &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard,   sPicTable_DawnWatering,   gDummySpriteAffineAnimTable};
 
 
 // Costumes
@@ -4600,68 +4657,11 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh = {
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Placeholder, OBJ_EVENT_PAL_RED, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Red);
 
 // Main characters
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Red,          OBJ_EVENT_PAL_RED, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Red);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_RedBike,      OBJ_EVENT_PAL_RED, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_RedBike);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_RedSurfing,   OBJ_EVENT_PAL_RED, TRUE,  TRACKS_FOOT,      sAnimTable_Surfing,   sPicTable_RedSurfing);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_RedFieldMove, OBJ_EVENT_PAL_RED, FALSE, TRACKS_FOOT,      sAnimTable_FieldMove, sPicTable_RedFieldMove);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_RedFishing,   OBJ_EVENT_PAL_RED, FALSE, TRACKS_FOOT,      sAnimTable_Fishing,   sPicTable_RedFishing);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_RedWatering,  OBJ_EVENT_PAL_RED, FALSE, TRACKS_FOOT,      sAnimTable_Standard,  sPicTable_RedWatering);
-
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Leaf,          OBJ_EVENT_PAL_LEAF, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Leaf);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LeafBike,      OBJ_EVENT_PAL_LEAF, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_LeafBike);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LeafSurfing,   OBJ_EVENT_PAL_LEAF, TRUE,  TRACKS_FOOT,      sAnimTable_Surfing,   sPicTable_LeafSurfing);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LeafFieldMove, OBJ_EVENT_PAL_LEAF, FALSE, TRACKS_FOOT,      sAnimTable_FieldMove, sPicTable_LeafFieldMove);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LeafFishing,   OBJ_EVENT_PAL_LEAF, FALSE, TRACKS_FOOT,      sAnimTable_Fishing,   sPicTable_LeafFishing);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LeafWatering,  OBJ_EVENT_PAL_LEAF, FALSE, TRACKS_FOOT,      sAnimTable_Standard,  sPicTable_LeafWatering);
-
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Ethan,          OBJ_EVENT_PAL_ETHAN, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Ethan);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_EthanBike,      OBJ_EVENT_PAL_ETHAN, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_EthanBike);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_EthanSurfing,   OBJ_EVENT_PAL_ETHAN, TRUE,  TRACKS_FOOT,      sAnimTable_Surfing,   sPicTable_EthanSurfing);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_EthanFieldMove, OBJ_EVENT_PAL_ETHAN, FALSE, TRACKS_FOOT,      sAnimTable_FieldMove, sPicTable_EthanFieldMove);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_EthanFishing,   OBJ_EVENT_PAL_ETHAN, FALSE, TRACKS_FOOT,      sAnimTable_Fishing,   sPicTable_EthanFishing);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_EthanWatering,  OBJ_EVENT_PAL_ETHAN, FALSE, TRACKS_FOOT,      sAnimTable_Standard,  sPicTable_EthanWatering);
-
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Kris,          OBJ_EVENT_PAL_KRIS, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Kris);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_KrisBike,      OBJ_EVENT_PAL_KRIS, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_KrisBike);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_KrisSurfing,   OBJ_EVENT_PAL_KRIS, TRUE,  TRACKS_FOOT,      sAnimTable_Surfing,   sPicTable_KrisSurfing);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_KrisFieldMove, OBJ_EVENT_PAL_KRIS, FALSE, TRACKS_FOOT,      sAnimTable_FieldMove, sPicTable_KrisFieldMove);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_KrisFishing,   OBJ_EVENT_PAL_KRIS, FALSE, TRACKS_FOOT,      sAnimTable_Fishing,   sPicTable_KrisFishing);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_KrisWatering,  OBJ_EVENT_PAL_KRIS, FALSE, TRACKS_FOOT,      sAnimTable_Standard,  sPicTable_KrisWatering);
-
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Lyra,          OBJ_EVENT_PAL_LYRA, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Lyra);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LyraBike,      OBJ_EVENT_PAL_LYRA, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_LyraBike);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LyraSurfing,   OBJ_EVENT_PAL_LYRA, TRUE,  TRACKS_FOOT,      sAnimTable_Surfing,   sPicTable_LyraSurfing);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LyraFieldMove, OBJ_EVENT_PAL_LYRA, FALSE, TRACKS_FOOT,      sAnimTable_FieldMove, sPicTable_LyraFieldMove);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LyraFishing,   OBJ_EVENT_PAL_LYRA, FALSE, TRACKS_FOOT,      sAnimTable_Fishing,   sPicTable_LyraFishing);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LyraWatering,  OBJ_EVENT_PAL_LYRA, FALSE, TRACKS_FOOT,      sAnimTable_Standard,  sPicTable_LyraWatering);
-
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_BrendanBike,      OBJ_EVENT_PAL_BRENDAN, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_BrendanBike);
-
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_MayBike,      OBJ_EVENT_PAL_MAY, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_MayBike);
-
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Lucas,          OBJ_EVENT_PAL_LUCAS, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Lucas);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LucasBike,      OBJ_EVENT_PAL_LUCAS, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_LucasBike);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LucasSurfing,   OBJ_EVENT_PAL_LUCAS, TRUE,  TRACKS_FOOT,      sAnimTable_Surfing,   sPicTable_LucasSurfing);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LucasFieldMove, OBJ_EVENT_PAL_LUCAS, FALSE, TRACKS_FOOT,      sAnimTable_FieldMove, sPicTable_LucasFieldMove);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LucasFishing,   OBJ_EVENT_PAL_LUCAS, FALSE, TRACKS_FOOT,      sAnimTable_Fishing,   sPicTable_LucasFishing);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_LucasWatering,  OBJ_EVENT_PAL_LUCAS, FALSE, TRACKS_FOOT,      sAnimTable_Standard,  sPicTable_LucasWatering);
-
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Dawn,          OBJ_EVENT_PAL_DAWN, FALSE, TRACKS_FOOT,      sAnimTable_WalkRun,   sPicTable_Dawn);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_DawnBike,      OBJ_EVENT_PAL_DAWN, FALSE, TRACKS_BIKE_TIRE, sAnimTable_Standard,  sPicTable_DawnBike);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_DawnSurfing,   OBJ_EVENT_PAL_DAWN, TRUE,  TRACKS_FOOT,      sAnimTable_Surfing,   sPicTable_DawnSurfing);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_DawnFieldMove, OBJ_EVENT_PAL_DAWN, FALSE, TRACKS_FOOT,      sAnimTable_FieldMove, sPicTable_DawnFieldMove);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_DawnFishing,   OBJ_EVENT_PAL_DAWN, FALSE, TRACKS_FOOT,      sAnimTable_Fishing,   sPicTable_DawnFishing);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_DawnWatering,  OBJ_EVENT_PAL_DAWN, FALSE, TRACKS_FOOT,      sAnimTable_Standard,  sPicTable_DawnWatering);
 
 // Professors
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_ProfOak,   OBJ_EVENT_PAL_PROF_OAK,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_ProfOak);
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_ProfElm,   OBJ_EVENT_PAL_PROF_ELM,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_ProfElm);
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_ProfRowan, OBJ_EVENT_PAL_PROF_ROWAN, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_ProfRowan);
-
-// Rivals
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Blue,   OBJ_EVENT_PAL_BLUE,   FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Blue);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Silver, OBJ_EVENT_PAL_SILVER, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Silver);
-    EVENT_OBJ_32x32(gObjectEventGraphicsInfo_Barry,  OBJ_EVENT_PAL_BARRY,  FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_Barry);
 
 // Team Rocket
     EVENT_OBJ_32x32(gObjectEventGraphicsInfo_RocketGruntM, OBJ_EVENT_PAL_ROCKET_M, FALSE, TRACKS_FOOT, sAnimTable_Standard, sPicTable_RocketGruntM);
