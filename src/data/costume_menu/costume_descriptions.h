@@ -27,30 +27,16 @@ const u8 gText_CostumeName_Barry[] = _("Barry");
 // Villainous team
 const u8 gText_CostumeName_RocketGruntM[] = _("Rocket Grunt M");
 const u8 gText_CostumeName_RocketGruntF[] = _("Rocket Grunt F");
-const u8 gText_CostumeName_Archer[] = _("Archer");
-const u8 gText_CostumeName_Ariana[] = _("Ariana");
-const u8 gText_CostumeName_Petrel[] = _("Petrel");
-const u8 gText_CostumeName_Proton[] = _("Proton");
 const u8 gText_CostumeName_Giovanni[] = _("Giovanni");
 const u8 gText_CostumeName_AquaGruntM[] = _("Aqua Grunt M");
 const u8 gText_CostumeName_AquaGruntF[] = _("Aqua Grunt F");
-const u8 gText_CostumeName_Matt[] = _("Matt");
-const u8 gText_CostumeName_Shelley[] = _("Shelley");
 const u8 gText_CostumeName_Archie[] = _("Archie");
 const u8 gText_CostumeName_MagmaGruntM[] = _("MagmaGruntM");
 const u8 gText_CostumeName_MagmaGruntF[] = _("MagmaGruntF");
-const u8 gText_CostumeName_Courtney[] = _("Courtney");
-const u8 gText_CostumeName_Tabitha[] = _("Tabitha");
 const u8 gText_CostumeName_Maxie[] = _("Maxie");
-const u8 gText_CostumeName_GalacticGruntM[] = _("GalacticGruntM");
-const u8 gText_CostumeName_GalacticGruntF[] = _("GalacticGruntF");
-const u8 gText_CostumeName_Saturn[] = _("Saturn");
-const u8 gText_CostumeName_Mars[] = _("Mars");
-const u8 gText_CostumeName_Jupiter[] = _("Jupiter");
-const u8 gText_CostumeName_Charon[] = _("Charon");
-const u8 gText_CostumeName_Cyrus[] = _("Cyrus");
 // Gym Leaders
 // Elite 4 + champion
+const u8 gText_CostumeName_Steven[] = _("Steven");
 // Misc characters
 
 // Main characters
@@ -58,58 +44,123 @@ const u8 gText_CostumeDescription_Red[] = _(
     "Red, the champion of the Kanto region now\n"
     "resides atop Mt. Silver where he hones his\n"
     "skills in order to become a Pokemon master.");
-const u8 gText_CostumeDescription_Leaf[] =    _("Leaf description");
-const u8 gText_CostumeDescription_Ethan[] =   _("Ethan description");
-const u8 gText_CostumeDescription_Kris[] =    _("Kris description");
-const u8 gText_CostumeDescription_Lyra[] =    _("Lyra description");
-const u8 gText_CostumeDescription_Brendan[] = _("Brendan description");
-const u8 gText_CostumeDescription_May[] =     _("May description");
-const u8 gText_CostumeDescription_Lucas[] =   _("Lucas description");
-const u8 gText_CostumeDescription_Dawn[] =    _("Dawn description");
+
+const u8 gText_CostumeDescription_Leaf[] =    _(
+    "Leaf is the female player character in Pokémon\n"
+    "FireRed and LeafGreen. Her male counterpart is\n"
+    "Red.");
+
+const u8 gText_CostumeDescription_Ethan[] =   _(
+    "Ethan is a Pokémon trainer who started his\n"
+    "journey in Johto. He has even traversed the\n"
+    "Kanto region and even battled Ash.");
+
+const u8 gText_CostumeDescription_Kris[] =    _(
+    "Kris is the female playable character in\n"
+    "Pokémon Crystal. Her counterpart is Ethan.\n"
+    "In Pokémon GenIV, she is replaced by Lyra");
+
+const u8 gText_CostumeDescription_Lyra[] =    _(
+    "Lyra is a character that Generation IV.\n"
+    "She is the playable female protagonist in\n"
+    "HeartGold and SoulSilver, and Ethan rivals.");
+
+const u8 gText_CostumeDescription_Brendan[] = _(
+    "Brendan is a kind-hearted, friendly, and\n"
+    "humble person. He is respectful to the\n"
+    "players and a good Trainer to his Pokémon.");
+
+const u8 gText_CostumeDescription_May[] =     _(
+    "May is a sweet, cheerful, kind-hearted,\n"
+    "friendly, and humble person. She is kind\n"
+    "to the players and is more passive rivals.");
+
+const u8 gText_CostumeDescription_Lucas[] =   _(
+    "Lucas is the male player character of\n"
+    "Pokémon Diamond, Pearl, and Platinum.\n"
+    "lives in Twinleaf Town with his mother.");
+
+const u8 gText_CostumeDescription_Dawn[] =    _(
+    "Dawn lives in Sandgem Town with her father,\n"
+    "grandfather, and her younger sister. She\n"
+    "works as Professor Rowan's assistant");
+
 // Professors
 const u8 gText_CostumeDescription_ProfessorOak[] = _(
     "Once a top class trainer, Professor Oak is\n"
     "now a prominent researcher and is known as\n"
     "the authority on Pokemon-Human relations");
+
 const u8 gText_CostumeDescription_ProfessorElm[] =   _("Professor Elm description");
-const u8 gText_CostumeDescription_ProfessorBirch[] = _("Professor Birch description");
+
+const u8 gText_CostumeDescription_ProfessorBirch[] = _(
+    "Professor Birch is a very outgoing and\n"
+    "friendly person. He's very active and\n"
+    " often researches outside.");
+
 const u8 gText_CostumeDescription_ProfessorRowan[] = _("Professor Rowan description");
+
 // Rivals
 const u8 gText_CostumeDescription_GarryOak[] = _("Garry Oak description");
+
 const u8 gText_CostumeDescription_Silver[] =   _("Silver description");
-const u8 gText_CostumeDescription_Wally[] =    _("Wally description");
-const u8 gText_CostumeDescription_Barry[] =    _("Barry description");
-// Standard Trainers
+
+const u8 gText_CostumeDescription_Wally[] =    _(
+    "Wally is sickly young boy who first appears\n"
+    "in Petalburg City, asking Norman, the Petal-\n"
+    "burg Gym Leader, to help him catch a Pokémon.");
+
+// Elite 4 + champion
+const u8 gText_CostumeDescription_Steven[] =    _(
+    "is a skilled Trainer who specializes in\n"
+    "Steel-type Pokémon. He is the Champion of\n"
+    "the Hoenn region's Pokémon League.");
+
 // Villainous team
-const u8 gText_CostumeDescription_RocketGruntM[] = _("Rocket Grunt M description");
-const u8 gText_CostumeDescription_RocketGruntF[] = _("Rocket Grunt F description");
-const u8 gText_CostumeDescription_Archer[] =       _("Archer description");
-const u8 gText_CostumeDescription_Ariana[] =       _("Ariana description");
-const u8 gText_CostumeDescription_Petrel[] =       _("Petrel description");
-const u8 gText_CostumeDescription_Proton[] =       _("Proton description");
+const u8 gText_CostumeDescription_RocketGruntM[] = _(
+    "Rocket members act as fodder, enforcers,\n"
+    "soldiers, workmen, crooks, and backup for\n"
+    "various leaders in the criminal organization.");
+
+const u8 gText_CostumeDescription_RocketGruntF[] = _(
+    "Rocket members act as fodder, enforcers,\n"
+    "soldiers, workmen, crooks, and backup for\n"
+    "various leaders in the criminal organization.");
+
 const u8 gText_CostumeDescription_Giovanni[] = _(
     "As the leader of the infamous Team Rocket\n"
     "Giovanni will do whatever it takes to hunt\n"
     "rare Pokemon to sell to the highest bidder");
-const u8 gText_CostumeDescription_AquaGruntM[] =   _("Aqua Grunt M description");
-const u8 gText_CostumeDescription_AquaGruntF[] =   _("Aqua Grunt F description");
-const u8 gText_CostumeDescription_Matt[] =         _("Matt description");
-const u8 gText_CostumeDescription_Shelley[] =      _("Shelley description");
-const u8 gText_CostumeDescription_Archie[] =       _("Archie description");
-const u8 gText_CostumeDescription_MagmaGruntM[] =  _("MagmaGruntM description");
-const u8 gText_CostumeDescription_MagmaGruntF[] =  _("MagmaGruntF description");
-const u8 gText_CostumeDescription_Courtney[] =     _("Courtney description");
-const u8 gText_CostumeDescription_Tabitha[] =      _("Tabitha description");
-const u8 gText_CostumeDescription_Maxie[] =        _("Maxie description");
-const u8 gText_CostumeDescription_GalacticGruntM[] = _("GalacticGruntM description");
-const u8 gText_CostumeDescription_GalacticGruntF[] = _("GalacticGruntF description");
-const u8 gText_CostumeDescription_Saturn[] =       _("Saturn description");
-const u8 gText_CostumeDescription_Mars[] =         _("Mars description");
-const u8 gText_CostumeDescription_Jupiter[] =      _("Jupiter description");
-const u8 gText_CostumeDescription_Charon[] =       _("Charon description");
-const u8 gText_CostumeDescription_Cyrus[] =        _("Cyrus description");
-// Gym Leaders
-// Elite 4 + champion
-// Misc characters
+
+const u8 gText_CostumeDescription_AquaGruntM[] =   _(
+    "All member of Team Aqua dresses sailor\n"
+    "uniforms, and they prefer to use poison/dark\n"
+    "and water-type Pokémon, Zubat and Poochyena.");
+
+const u8 gText_CostumeDescription_AquaGruntF[] =   _(
+    "All member of Team Aqua dresses sailor\n"
+    "uniforms, and they prefer to use poison/dark\n"
+    "and water-type Pokémon, Zubat and Poochyena.");
+
+const u8 gText_CostumeDescription_Archie[] =       _(
+    "Archie  is the head of Team Aqua. He is the\n"
+    "only character in the games to have the\n"
+    "Trainer classes Aqua Leader");
+
+const u8 gText_CostumeDescription_MagmaGruntM[] =  _(
+    "All member of Team Magma dresses red\n"
+    "uniforms, and they prefer to use poison/dark\n"
+    "and fire-type Pokémon, Numel and Poochyena.");
+
+const u8 gText_CostumeDescription_MagmaGruntF[] =  _(
+    "All member of Team Magma dresses red\n"
+    "uniforms, and they prefer to use poison/dark\n"
+    "and fire-type Pokémon, Numel and Poochyena.");
+
+const u8 gText_CostumeDescription_Maxie[] =        _(
+    "Maxie is the head of Team Magma. He is the\n"
+    "only character in the games to have the\n"
+    "Trainer classes Magma Leader");
+
 
 #endif //GUARD_DATA_COSTUME_MENU_TEXT_H

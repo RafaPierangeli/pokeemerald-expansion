@@ -8073,10 +8073,28 @@ u16 FacilityClassToPicIndex(u16 facilityClass)
 
 u16 PlayerGenderToFrontTrainerPicId(u8 playerGender)
 {
-    if (playerGender != MALE)
-        return FacilityClassToPicIndex(FACILITY_CLASS_MAY);
-    else
-        return FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN);
+    switch(playerGender)
+    {
+        case STYLE_BRENDAN:
+            return gFacilityClassToPicIndex[FACILITY_CLASS_BRENDAN];
+
+        case STYLE_MAY:
+            return gFacilityClassToPicIndex[FACILITY_CLASS_MAY];
+
+        case STYLE_RED:
+            return TRAINER_PIC_RED;
+
+        case STYLE_LEAF:
+            return TRAINER_PIC_LEAF;
+
+        case STYLE_ETHAN:
+            return TRAINER_PIC_ETHAN;
+
+        case STYLE_LYRA:
+            return TRAINER_PIC_LYRA;
+    };
+
+    return gFacilityClassToPicIndex[FACILITY_CLASS_WALLY];
 }
 
 void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)

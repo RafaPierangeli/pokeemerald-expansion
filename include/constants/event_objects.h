@@ -298,132 +298,27 @@
 
 // Team Rocket
 #define OBJ_EVENT_GFX_ROCKET_GRUNT_F             286
-#define OBJ_EVENT_GFX_ARCHER                     287
-#define OBJ_EVENT_GFX_ARIANA                     288
-#define OBJ_EVENT_GFX_PETREL                     289
-#define OBJ_EVENT_GFX_PROTON                     290
-#define OBJ_EVENT_GFX_GIOVANNI                   291
-
-// Team Aqua
-#define OBJ_EVENT_GFX_AQUA_GRUNT_M               292
-#define OBJ_EVENT_GFX_AQUA_GRUNT_F               293
-#define OBJ_EVENT_GFX_MATT                       294
-#define OBJ_EVENT_GFX_SHELLEY                    295
-
-// Team Magma
-#define OBJ_EVENT_GFX_MAGMA_GRUNT_M              296
-#define OBJ_EVENT_GFX_MAGMA_GRUNT_F              297
-#define OBJ_EVENT_GFX_COURTNEY                   298
-#define OBJ_EVENT_GFX_TABITHA                    299
-
-// Team Galactic
-#define OBJ_EVENT_GFX_GALACTIC_GRUNT_M           300
-#define OBJ_EVENT_GFX_GALACTIC_GRUNT_F           301
-#define OBJ_EVENT_GFX_JUPITER                    302
-#define OBJ_EVENT_GFX_MARS                       303
-#define OBJ_EVENT_GFX_SATURN                     304
-#define OBJ_EVENT_GFX_CHARON                     305
-#define OBJ_EVENT_GFX_CYRUS                      306
-
-// Standard Hoenn trainers
-#define OBJ_EVENT_GFX_AROMA_LADY                 307
-#define OBJ_EVENT_GFX_BATTLE_GIRL                308
-#define OBJ_EVENT_GFX_BIRD_KEEPER                309
-#define OBJ_EVENT_GFX_BUG_MANIAC                 310
-#define OBJ_EVENT_GFX_COLLECTOR                  311
-#define OBJ_EVENT_GFX_COOLTRAINER_F              312
-#define OBJ_EVENT_GFX_COOLTRAINER_M              313
-#define OBJ_EVENT_GFX_DRAGON_TAMER               314
-#define OBJ_EVENT_GFX_GUITARIST                  315
-#define OBJ_EVENT_GFX_KINDLER                    316
-#define OBJ_EVENT_GFX_LADY                       317
-#define OBJ_EVENT_GFX_PARASOL_LADY               318
-#define OBJ_EVENT_GFX_POKEKID                    319
-#define OBJ_EVENT_GFX_POKEMANIAC                 320
-#define OBJ_EVENT_GFX_POKEMON_BREEDER_F          321
-#define OBJ_EVENT_GFX_POKEMON_BREEDER_M          322
-#define OBJ_EVENT_GFX_POKEMON_RANGER_F           323
-#define OBJ_EVENT_GFX_POKEMON_RANGER_M           324
-#define OBJ_EVENT_GFX_PSYCHIC_F                  325
-#define OBJ_EVENT_GFX_RUIN_MANIAC                326
-#define OBJ_EVENT_GFX_SCHOOL_KID_F               327
-#define OBJ_EVENT_GFX_SWIMMING_TRIATHLETE_F      328
-#define OBJ_EVENT_GFX_SWIMMING_TRIATHLETE_M      329               
-#define OBJ_EVENT_GFX_TUBER_M_2                  330
-#define OBJ_EVENT_GFX_YOUNG_COUPLE_F             331
-#define OBJ_EVENT_GFX_YOUNG_COUPLE_M             332
-
-// Gym leaders - Kanto
-#define OBJ_EVENT_GFX_BROCK                      333
-#define OBJ_EVENT_GFX_MISTY                      334
-#define OBJ_EVENT_GFX_LT_SURGE                   335
-#define OBJ_EVENT_GFX_ERIKA                      336
-#define OBJ_EVENT_GFX_KOGA                       337
-#define OBJ_EVENT_GFX_JANINE                     338
-#define OBJ_EVENT_GFX_SABRINA                    339
-#define OBJ_EVENT_GFX_BLAINE                     340
-// Elite four
-#define OBJ_EVENT_GFX_LORELEI                    341
-#define OBJ_EVENT_GFX_BRUNO                      342
-#define OBJ_EVENT_GFX_AGATHA                     343
-#define OBJ_EVENT_GFX_LANCE                      344
-
-// Gym leaders - Johto
-#define OBJ_EVENT_GFX_FALKNER                    345
-#define OBJ_EVENT_GFX_BUGSY                      346
-#define OBJ_EVENT_GFX_WHITNEY                    347
-#define OBJ_EVENT_GFX_MORTY                      348
-#define OBJ_EVENT_GFX_CHUCK                      349
-#define OBJ_EVENT_GFX_JASMINE                    350
-#define OBJ_EVENT_GFX_PRYCE                      351
-#define OBJ_EVENT_GFX_CLAIR                      352
-// Elite four
-#define OBJ_EVENT_GFX_WILL                       353
-#define OBJ_EVENT_GFX_KAREN                      354
-
-// Gym leaders - Sinnoh
-#define OBJ_EVENT_GFX_ROARK                      355
-#define OBJ_EVENT_GFX_GARDENIA                   356
-#define OBJ_EVENT_GFX_MAYLENE                    357
-#define OBJ_EVENT_GFX_CRASHER_WAKE               358
-#define OBJ_EVENT_GFX_FANTINA                    359
-#define OBJ_EVENT_GFX_BYRON                      360
-#define OBJ_EVENT_GFX_CANDICE                    361
-#define OBJ_EVENT_GFX_VOLKNER                    362
-// Elite four
-#define OBJ_EVENT_GFX_AARON                      363
-#define OBJ_EVENT_GFX_BERTHA                     364
-#define OBJ_EVENT_GFX_FLINT                      365
-#define OBJ_EVENT_GFX_LUCIAN                     366
-#define OBJ_EVENT_GFX_CYNTHIA                    367
-
-// Frontier brains - Sinnoh/Johto
-#define OBJ_EVENT_GFX_ARGENTA                    368
-#define OBJ_EVENT_GFX_CAITLIN                    369
-#define OBJ_EVENT_GFX_DAHLIA                     370
-#define OBJ_EVENT_GFX_DARACH                     371
-#define OBJ_EVENT_GFX_PALMER                     372
-#define OBJ_EVENT_GFX_THORTON                    373
+#define OBJ_EVENT_GFX_ROCKET_GRUNT_M             287
+#define OBJ_EVENT_GFX_GIOVANNI                   288
 
 // Professors
-#define OBJ_EVENT_GFX_PROF_OAK                   374
-#define OBJ_EVENT_GFX_PROF_ELM                   375
-#define OBJ_EVENT_GFX_PROF_ROWAN                 376
-#define OBJ_EVENT_GFX_ROCKET_GRUNT_M             377
+#define OBJ_EVENT_GFX_PROF_OAK                   289
 
-// Unique NPCs - Hoenn
-#define OBJ_EVENT_GFX_MR_STONE                   378
+//News
+#define OBJ_EVENT_GFX_BACKPACKER_F               290
+#define OBJ_EVENT_GFX_BACKPACKER_M               291
+#define OBJ_EVENT_GFX_BUILDER                    292
 
-// NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
-//
-// Object event graphics ids are 1 byte in size (max value of 255), and the dynamic
-// graphics ids that start after NUM_OBJ_EVENT_GFX reach this limit. No graphics id
-// uses the value 239 itself, so removing the "+ 1" in OBJ_EVENT_GFX_VARS would
-// allow increasing NUM_OBJ_EVENT_GFX to 240. There are also a handful of unused
-// object graphics that can be removed. If more graphics are needed, anything that
-// stores graphics ids will need to be increased in size. See wiki entry below:
-// https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion
-#define NUM_OBJ_EVENT_GFX                        379
+// Elite 4 + champion
+#define OBJ_EVENT_GFX_STEVEN_MACH_BIKE           293
+#define OBJ_EVENT_GFX_STEVEN_ACRO_BIKE           294
+#define OBJ_EVENT_GFX_STEVEN_SURFING             295
+#define OBJ_EVENT_GFX_STEVEN_FIELD_MOVE          296
+#define OBJ_EVENT_GFX_STEVEN_FISHING             297
+#define OBJ_EVENT_GFX_STEVEN_WATERING            298
+
+// NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239. This run are overworld expansion.
+#define NUM_OBJ_EVENT_GFX                        299
 
 
 // These are dynamic object gfx ids.

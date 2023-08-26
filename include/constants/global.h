@@ -136,7 +136,8 @@
 #define STYLE_LUCAS         6
 #define STYLE_DAWN          7
 #define STYLE_KRIS          8
-#define PLAYER_STYLE_COUNT  9
+#define STYLE_STEVEN        9
+#define PLAYER_STYLE_COUNT  10
 
 #define BARD_SONG_LENGTH       6
 #define NUM_STORYTELLER_TALES  4

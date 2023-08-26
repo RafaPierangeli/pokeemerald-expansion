@@ -670,7 +670,7 @@ static void DestroyTextBox(u8 taskId)
 
 static void SanitiseCostumeId(void)
 {
-    if (gDisplayList[selection] <= 9) //ARRAY_COUNT(sPlayerAvatarGfxIds))
+    if (gDisplayList[selection] <= PLAYER_STYLE_COUNT) //ARRAY_COUNT(sPlayerAvatarGfxIds))
     {
         gSaveBlock2Ptr->costume = gDisplayList[selection];
         gSaveBlock2Ptr->playerGender = gCostumes[gDisplayList[selection]].gender;
