@@ -61,7 +61,7 @@ const struct Costume gCostumes[] =
         .description = gText_CostumeDescription_Kris,
         .overworld = OBJ_EVENT_GFX_KRIS,
         .fieldMove = OBJ_EVENT_GFX_KRIS,
-        .trainerFront = TRAINER_PIC_RS_MAY,
+        .trainerFront = TRAINER_PIC_KRYS,
         .trainerBack = TRAINER_BACK_PIC_RED,
     },
     [COSTUME_LYRA] = {
@@ -112,7 +112,7 @@ const struct Costume gCostumes[] =
         .description = gText_CostumeDescription_ProfessorBirch,
         .overworld = OBJ_EVENT_GFX_PROF_BIRCH,
         .fieldMove = OBJ_EVENT_GFX_PROF_BIRCH,
-        .trainerFront = TRAINER_PIC_RED,
+        .trainerFront = TRAINER_PIC_PROFBIRCH,
         .trainerBack = TRAINER_BACK_PIC_RED,
     },
 // Rivals
@@ -155,7 +155,7 @@ const struct Costume gCostumes[] =
         .description = gText_CostumeDescription_Giovanni,
         .overworld = OBJ_EVENT_GFX_GIOVANNI,
         .fieldMove = OBJ_EVENT_GFX_GIOVANNI,
-        .trainerFront = TRAINER_PIC_RED,
+        .trainerFront = TRAINER_PIC_GIOVANNI,
         .trainerBack = TRAINER_BACK_PIC_RED,
     },
     [COSTUME_AQUA_GRUNT_M] = {

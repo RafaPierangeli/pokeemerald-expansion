@@ -114,9 +114,12 @@
 #define TRAINER_PIC_LYRA                  94
 #define TRAINER_PIC_LUCAS                 95
 #define TRAINER_PIC_DAWN                  96
-#define TRAINER_PIC_PROFOAK               97
-#define TRAINER_PIC_ROCKET_F              98
-#define TRAINER_PIC_ROCKET_M              99
+#define TRAINER_PIC_KRYS                  97
+#define TRAINER_PIC_PROFOAK               98
+#define TRAINER_PIC_PROFBIRCH             99
+#define TRAINER_PIC_ROCKET_F             100
+#define TRAINER_PIC_ROCKET_M             101
+#define TRAINER_PIC_GIOVANNI             102
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
