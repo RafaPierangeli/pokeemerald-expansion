@@ -3233,6 +3233,24 @@ static const struct SpriteTemplate sTrainerBackSpriteTemplates[] =
         .affineAnims = gAffineAnims_BattleSpritePlayerSide,
         .callback = SpriteCB_BattleSpriteStartSlideLeft,
     },
+    [TRAINER_BACK_PIC_ETHAN] = {
+        .tileTag = TAG_NONE,
+        .paletteTag = 0,
+        .oam = &gOamData_BattleSpritePlayerSide,
+        .anims = NULL,
+        .images = gTrainerBackPicTable_Ethan,
+        .affineAnims = gAffineAnims_BattleSpritePlayerSide,
+        .callback = SpriteCB_BattleSpriteStartSlideLeft,
+    },
+    [TRAINER_BACK_PIC_LYRA] = {
+        .tileTag = TAG_NONE,
+        .paletteTag = 0,
+        .oam = &gOamData_BattleSpritePlayerSide,
+        .anims = NULL,
+        .images = gTrainerBackPicTable_Lyra,
+        .affineAnims = gAffineAnims_BattleSpritePlayerSide,
+        .callback = SpriteCB_BattleSpriteStartSlideLeft,
+    },
     [TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN] = {
         .tileTag = TAG_NONE,
         .paletteTag = 0,
@@ -8073,28 +8091,10 @@ u16 FacilityClassToPicIndex(u16 facilityClass)
 
 u16 PlayerGenderToFrontTrainerPicId(u8 playerGender)
 {
-    switch(playerGender)
-    {
-        case STYLE_BRENDAN:
-            return gFacilityClassToPicIndex[FACILITY_CLASS_BRENDAN];
-
-        case STYLE_MAY:
-            return gFacilityClassToPicIndex[FACILITY_CLASS_MAY];
-
-        case STYLE_RED:
-            return TRAINER_PIC_RED;
-
-        case STYLE_LEAF:
-            return TRAINER_PIC_LEAF;
-
-        case STYLE_ETHAN:
-            return TRAINER_PIC_ETHAN;
-
-        case STYLE_LYRA:
-            return TRAINER_PIC_LYRA;
-    };
-
-    return gFacilityClassToPicIndex[FACILITY_CLASS_WALLY];
+    if (playerGender != MALE)
+        return FacilityClassToPicIndex(FACILITY_CLASS_MAY);
+    else
+        return FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN);
 }
 
 void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)

@@ -46,9 +46,9 @@ const u8 gText_CostumeDescription_Red[] = _(
     "skills in order to become a Pokemon master.");
 
 const u8 gText_CostumeDescription_Leaf[] =    _(
-    "Leaf is the female player character in Pokémon\n"
-    "FireRed and LeafGreen. Her male counterpart is\n"
-    "Red.");
+    "Leaf is the female player character in\n"
+    "Pokémon FireRed and LeafGreen. Her male\n"
+    "counterpart is Red.");
 
 const u8 gText_CostumeDescription_Ethan[] =   _(
     "Ethan is a Pokémon trainer who started his\n"
@@ -107,8 +107,8 @@ const u8 gText_CostumeDescription_Silver[] =   _("Silver description");
 
 const u8 gText_CostumeDescription_Wally[] =    _(
     "Wally is sickly young boy who first appears\n"
-    "in Petalburg City, asking Norman, the Petal-\n"
-    "burg Gym Leader, to help him catch a Pokémon.");
+    "in Petalburg City, asking Norman, the Pe-\n"
+    "talburg Gym Leader, to help catch Pokémon.");
 
 // Elite 4 + champion
 const u8 gText_CostumeDescription_Steven[] =    _(
@@ -120,12 +120,12 @@ const u8 gText_CostumeDescription_Steven[] =    _(
 const u8 gText_CostumeDescription_RocketGruntM[] = _(
     "Rocket members act as fodder, enforcers,\n"
     "soldiers, workmen, crooks, and backup for\n"
-    "various leaders in the criminal organization.");
+    "various leaders in criminal organization.");
 
 const u8 gText_CostumeDescription_RocketGruntF[] = _(
     "Rocket members act as fodder, enforcers,\n"
     "soldiers, workmen, crooks, and backup for\n"
-    "various leaders in the criminal organization.");
+    "various leaders in criminal organization.");
 
 const u8 gText_CostumeDescription_Giovanni[] = _(
     "As the leader of the infamous Team Rocket\n"
@@ -134,13 +134,13 @@ const u8 gText_CostumeDescription_Giovanni[] = _(
 
 const u8 gText_CostumeDescription_AquaGruntM[] =   _(
     "All member of Team Aqua dresses sailor\n"
-    "uniforms, and they prefer to use poison/dark\n"
-    "and water-type Pokémon, Zubat and Poochyena.");
+    "uniforms, and they prefer to use poison,\n"
+    "dark and water-type Pokémon.");
 
 const u8 gText_CostumeDescription_AquaGruntF[] =   _(
     "All member of Team Aqua dresses sailor\n"
-    "uniforms, and they prefer to use poison/dark\n"
-    "and water-type Pokémon, Zubat and Poochyena.");
+    "uniforms, and they prefer to use poison,\n"
+    "dark and water-type Pokémon.");
 
 const u8 gText_CostumeDescription_Archie[] =       _(
     "Archie  is the head of Team Aqua. He is the\n"
@@ -149,13 +149,13 @@ const u8 gText_CostumeDescription_Archie[] =       _(
 
 const u8 gText_CostumeDescription_MagmaGruntM[] =  _(
     "All member of Team Magma dresses red\n"
-    "uniforms, and they prefer to use poison/dark\n"
-    "and fire-type Pokémon, Numel and Poochyena.");
+    "uniforms, and they prefer to use poison,\n"
+    "dark and fire-type Pokémon.");
 
 const u8 gText_CostumeDescription_MagmaGruntF[] =  _(
     "All member of Team Magma dresses red\n"
-    "uniforms, and they prefer to use poison/dark\n"
-    "and fire-type Pokémon, Numel and Poochyena.");
+    "uniforms, and they prefer to use poison,\n"
+    "dark and fire-type Pokémon.");
 
 const u8 gText_CostumeDescription_Maxie[] =        _(
     "Maxie is the head of Team Magma. He is the\n"

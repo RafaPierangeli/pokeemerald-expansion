@@ -299,3 +299,9 @@ const u32 gTrainerBackPicPalette_Ethan[] = INCBIN_U32("graphics/trainers/back_pi
 const u32 gTrainerFrontPic_Lyra[] = INCBIN_U32("graphics/trainers/front_pics/lyra_front_pic.4bpp.lz");
 const u32 gTrainerPalette_Lyra[] = INCBIN_U32("graphics/trainers/front_pics/lyra_front_pic.gbapal.lz");
 const u32 gTrainerBackPicPalette_Lyra[] = INCBIN_U32("graphics/trainers/back_pics/lyra_back_pic.gbapal.lz");
+
+const u32 gTrainerFrontPic_Lucas[] = INCBIN_U32("graphics/trainers/front_pics/lucas_front.4bpp.lz");
+const u32 gTrainerPalette_Lucas[] = INCBIN_U32("graphics/trainers/front_pics/lucas_front.gbapal.lz");
+
+const u32 gTrainerFrontPic_ProfOak[] = INCBIN_U32("graphics/trainers/front_pics/prof_oak.4bpp.lz");
+const u32 gTrainerPalette_ProfOak[] = INCBIN_U32("graphics/trainers/front_pics/prof_oak.gbapal.lz");

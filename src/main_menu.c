@@ -1260,9 +1260,16 @@ static void HighlightSelectedMainMenuItem(u8 menuType, u8 selectedMenuItem, s16 
 #define tLotadSpriteId data[9]
 #define tBrendanSpriteId data[10]
 #define tMaySpriteId data[11]
+#define tRedSpriteId data[12]
+#define tLeafSpriteId data[13]
+#define tStyleSelectId data[14]
 
 static void Task_NewGameBirchSpeech_Init(u8 taskId)
 {
+    gSaveBlock2Ptr->playerGender = STYLE_BRENDAN;
+    gSaveBlock2Ptr->playerStyle0 = 0;
+    gSaveBlock2Ptr->playerStyle1 = 0;
+
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
     InitBgFromTemplate(&sBirchBgTemplate);

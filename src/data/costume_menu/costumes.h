@@ -81,7 +81,7 @@ const struct Costume gCostumes[] =
         .description = gText_CostumeDescription_Lucas,
         .overworld = OBJ_EVENT_GFX_LUCAS,
         .fieldMove = OBJ_EVENT_GFX_LUCAS,
-        .trainerFront = TRAINER_PIC_RED,
+        .trainerFront = TRAINER_PIC_LUCAS,
         .trainerBack = TRAINER_BACK_PIC_RED,
     },
     [COSTUME_DAWN] = {
@@ -102,7 +102,7 @@ const struct Costume gCostumes[] =
         .description = gText_CostumeDescription_ProfessorOak,
         .overworld = OBJ_EVENT_GFX_PROF_OAK,
         .fieldMove = OBJ_EVENT_GFX_PROF_OAK,
-        .trainerFront = TRAINER_PIC_RED,
+        .trainerFront = TRAINER_PIC_PROFOAK,
         .trainerBack = TRAINER_BACK_PIC_RED,
     },
     [COSTUME_PROFESSOR_BIRCH] = {
