@@ -47,6 +47,11 @@ const struct CompressedSpriteSheet gTrainerBackPicTable[] =
         .size = TRAINER_PIC_SIZE * ARRAY_COUNT(gTrainerBackPicTable_Lyra),
         .tag = TRAINER_BACK_PIC_LYRA,
     },
+    [TRAINER_BACK_PIC_DAWN] = {
+        .data = (const u32 *)gTrainerBackPic_Dawn,
+        .size = TRAINER_PIC_SIZE * ARRAY_COUNT(gTrainerBackPicTable_Dawn),
+        .tag = TRAINER_BACK_PIC_DAWN,
+    },
     [TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN] = {
         .data = (const u32 *)gTrainerBackPic_RubySapphireBrendan,
         .size = TRAINER_PIC_SIZE * ARRAY_COUNT(gTrainerBackPicTable_RubySapphireBrendan),

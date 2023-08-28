@@ -94,7 +94,10 @@ const struct MonCoords gTrainerFrontPicCoords[] =
     [TRAINER_PIC_ETHAN] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_LYRA] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_LUCAS] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_DAWN] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_PROFOAK] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_ROCKET_F] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_ROCKET_M] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_RS_BRENDAN] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_RS_MAY] = {.size = 8, .y_offset = 1},
 };
@@ -197,7 +200,10 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
     TRAINER_SPRITE(ETHAN, gTrainerFrontPic_Ethan, TRAINER_PIC_SIZE),
     TRAINER_SPRITE(LYRA, gTrainerFrontPic_Lyra, TRAINER_PIC_SIZE),
     TRAINER_SPRITE(LUCAS, gTrainerFrontPic_Lucas, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(DAWN, gTrainerFrontPic_Dawn, TRAINER_PIC_SIZE),
     TRAINER_SPRITE(PROFOAK, gTrainerFrontPic_ProfOak, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(ROCKET_F, gTrainerFrontPic_Rocket_F, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(ROCKET_M, gTrainerFrontPic_Rocket_M, TRAINER_PIC_SIZE),
     TRAINER_SPRITE(RS_BRENDAN, gTrainerFrontPic_RubySapphireBrendan, TRAINER_PIC_SIZE),
     TRAINER_SPRITE(RS_MAY, gTrainerFrontPic_RubySapphireMay, TRAINER_PIC_SIZE),
 };
@@ -300,7 +306,10 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     TRAINER_PAL(ETHAN, gTrainerPalette_Ethan),
     TRAINER_PAL(LYRA, gTrainerPalette_Lyra),
     TRAINER_PAL(LUCAS, gTrainerPalette_Lucas),
+    TRAINER_PAL(DAWN, gTrainerPalette_Dawn),
     TRAINER_PAL(PROFOAK, gTrainerPalette_ProfOak),
+    TRAINER_PAL(ROCKET_F, gTrainerPalette_Rocket_F),
+    TRAINER_PAL(ROCKET_M, gTrainerPalette_Rocket_M),
     TRAINER_PAL(RS_BRENDAN, gTrainerPalette_RubySapphireBrendan),
     TRAINER_PAL(RS_MAY, gTrainerPalette_RubySapphireMay),
 };

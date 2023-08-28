@@ -145,7 +145,7 @@ const u8 gText_CostumeDescription_AquaGruntF[] =   _(
 const u8 gText_CostumeDescription_Archie[] =       _(
     "Archie  is the head of Team Aqua. He is the\n"
     "only character in the games to have the\n"
-    "Trainer classes Aqua Leader");
+    "Trainer classes Aqua Leader.");
 
 const u8 gText_CostumeDescription_MagmaGruntM[] =  _(
     "All member of Team Magma dresses red\n"

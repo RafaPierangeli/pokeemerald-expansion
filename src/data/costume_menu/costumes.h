@@ -91,7 +91,7 @@ const struct Costume gCostumes[] =
         .description = gText_CostumeDescription_Dawn,
         .overworld = OBJ_EVENT_GFX_DAWN,
         .fieldMove = OBJ_EVENT_GFX_DAWN,
-        .trainerFront = TRAINER_PIC_RED,
+        .trainerFront = TRAINER_PIC_DAWN,
         .trainerBack = TRAINER_BACK_PIC_RED,
     },
 // Professors
@@ -135,7 +135,7 @@ const struct Costume gCostumes[] =
         .description = gText_CostumeDescription_RocketGruntM,
         .overworld = OBJ_EVENT_GFX_ROCKET_GRUNT_M,
         .fieldMove = OBJ_EVENT_GFX_ROCKET_GRUNT_M,
-        .trainerFront = TRAINER_PIC_RED,
+        .trainerFront = TRAINER_PIC_ROCKET_M,
         .trainerBack = TRAINER_BACK_PIC_RED,
     },
     [COSTUME_ROCKET_GRUNT_F] = {
@@ -145,7 +145,7 @@ const struct Costume gCostumes[] =
         .description = gText_CostumeDescription_RocketGruntF,
         .overworld = OBJ_EVENT_GFX_ROCKET_GRUNT_F,
         .fieldMove = OBJ_EVENT_GFX_ROCKET_GRUNT_F,
-        .trainerFront = TRAINER_PIC_RED,
+        .trainerFront = TRAINER_PIC_ROCKET_F,
         .trainerBack = TRAINER_BACK_PIC_RED,
     },
     [COSTUME_GIOVANNI] = {

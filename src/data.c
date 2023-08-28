@@ -99,6 +99,15 @@ const struct SpriteFrameImage gTrainerBackPicTable_Lyra[] =
     gTrainerBackPic_Lyra + TRAINER_PIC_SIZE * 4, TRAINER_PIC_SIZE,
 };
 
+const struct SpriteFrameImage gTrainerBackPicTable_Dawn[] =
+{
+    gTrainerBackPic_Dawn + TRAINER_PIC_SIZE * 0, TRAINER_PIC_SIZE,
+    gTrainerBackPic_Dawn + TRAINER_PIC_SIZE * 1, TRAINER_PIC_SIZE,
+    gTrainerBackPic_Dawn + TRAINER_PIC_SIZE * 2, TRAINER_PIC_SIZE,
+    gTrainerBackPic_Dawn + TRAINER_PIC_SIZE * 3, TRAINER_PIC_SIZE,
+    gTrainerBackPic_Dawn + TRAINER_PIC_SIZE * 4, TRAINER_PIC_SIZE,
+};
+
 const struct SpriteFrameImage gTrainerBackPicTable_RubySapphireBrendan[] =
 {
     gTrainerBackPic_RubySapphireBrendan + TRAINER_PIC_SIZE * 0, TRAINER_PIC_SIZE,
