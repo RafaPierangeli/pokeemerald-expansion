@@ -3133,7 +3133,7 @@ const u8 gStatStageRatios[MAX_STAT_STAGE + 1][2] =
 
 // The classes used by other players in the Union Room.
 // These should correspond with the overworld graphics in sUnionRoomObjGfxIds
-const u16 gUnionRoomFacilityClasses[NUM_UNION_ROOM_CLASSES * GENDER_COUNT] =
+const u16 gLinkPlayerFacilityClasses[NUM_MALE_LINK_FACILITY_CLASSES + NUM_FEMALE_LINK_FACILITY_CLASSES] =
 {
     // Male classes
     FACILITY_CLASS_COOLTRAINER_M,
@@ -4042,7 +4042,7 @@ u16 GetUnionRoomTrainerPic(void)
 
     arrId = gLinkPlayers[linkId].trainerId % NUM_UNION_ROOM_CLASSES;
     arrId |= gLinkPlayers[linkId].gender * NUM_UNION_ROOM_CLASSES;
-    return FacilityClassToPicIndex(gUnionRoomFacilityClasses[arrId]);
+    return FacilityClassToPicIndex(gLinkPlayerFacilityClasses[arrId]);
 }
 
 u16 GetUnionRoomTrainerClass(void)
@@ -4057,7 +4057,7 @@ u16 GetUnionRoomTrainerClass(void)
 
     arrId = gLinkPlayers[linkId].trainerId % NUM_UNION_ROOM_CLASSES;
     arrId |= gLinkPlayers[linkId].gender * NUM_UNION_ROOM_CLASSES;
-    return gFacilityClassToTrainerClass[gUnionRoomFacilityClasses[arrId]];
+    return gFacilityClassToTrainerClass[gLinkPlayerFacilityClasses[arrId]];
 }
 
 void CreateEnemyEventMon(void)
@@ -8100,10 +8100,28 @@ u16 FacilityClassToPicIndex(u16 facilityClass)
 
 u16 PlayerGenderToFrontTrainerPicId(u8 playerGender)
 {
-    if (playerGender != MALE)
-        return FacilityClassToPicIndex(FACILITY_CLASS_MAY);
-    else
-        return FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN);
+    switch(playerGender)
+    {
+        case STYLE_BRENDAN:
+            return gFacilityClassToPicIndex[FACILITY_CLASS_BRENDAN];
+
+        case STYLE_MAY:
+            return gFacilityClassToPicIndex[FACILITY_CLASS_MAY];
+
+        case STYLE_RED:
+            return TRAINER_PIC_RED;
+
+        case STYLE_LEAF:
+            return TRAINER_PIC_LEAF;
+
+        case STYLE_ETHAN:
+            return TRAINER_PIC_ETHAN;
+
+        case STYLE_LYRA:
+            return TRAINER_PIC_LYRA;
+    };
+
+    return gFacilityClassToPicIndex[FACILITY_CLASS_WALLY];
 }
 
 void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)

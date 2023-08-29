@@ -1388,7 +1388,6 @@ void RemoveAllObjectEventsExceptPlayer(void)
 static u8 TrySetupObjectEventSprite(const struct ObjectEventTemplate *objectEventTemplate, struct SpriteTemplate *spriteTemplate, u8 mapNum, u8 mapGroup, s16 cameraX, s16 cameraY)
 {
     u8 spriteId;
-    u8 paletteSlot;
     u8 objectEventId;
     struct Sprite *sprite;
     struct ObjectEvent *objectEvent;
@@ -1583,7 +1582,6 @@ u8 CreateVirtualObject(u16 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevati
         sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
         sprite->y += sprite->centerToCornerVecY;
         sprite->oam.paletteNum = IndexOfSpritePaletteTag(spriteTemplate.paletteTag);
-
         sprite->coordOffsetEnabled = TRUE;
         sprite->sVirtualObjId = virtualObjId;
         sprite->sVirtualObjElev = elevation;
@@ -1731,7 +1729,7 @@ static void SpawnObjectEventOnReturnToField(u8 objectEventId, s16 x, s16 y)
         if (subspriteTables != NULL)
             SetSubspriteTables(sprite, subspriteTables);
 
-        sprite->oam.paletteNum = IndexOfSpritePaletteTag(spriteTemplate.paletteTag);;
+        sprite->oam.paletteNum = IndexOfSpritePaletteTag(spriteTemplate.paletteTag);
         sprite->coordOffsetEnabled = TRUE;
         sprite->sObjEventId = objectEventId;
         objectEvent->spriteId = i;

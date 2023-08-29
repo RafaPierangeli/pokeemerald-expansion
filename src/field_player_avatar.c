@@ -1287,7 +1287,8 @@ void StopPlayerAvatar(void)
 
 u16 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
 {
-    return sRivalAvatarGfxIds[state][gender];
+    //return sRivalAvatarGfxIds[state][gender];
+    return sPlayerAvatarGfxIds[state][gender];
 }
 
 u16 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state, u8 costumeId)
