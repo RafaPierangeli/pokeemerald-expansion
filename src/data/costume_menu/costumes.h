@@ -62,7 +62,7 @@ const struct Costume gCostumes[] =
         .overworld = OBJ_EVENT_GFX_KRIS,
         .fieldMove = OBJ_EVENT_GFX_KRIS,
         .trainerFront = TRAINER_PIC_KRYS,
-        .trainerBack = TRAINER_BACK_PIC_RED,
+        .trainerBack = TRAINER_BACK_PIC_KRYS,
     },
     [COSTUME_LYRA] = {
         .name = gText_CostumeName_Lyra,
@@ -82,7 +82,7 @@ const struct Costume gCostumes[] =
         .overworld = OBJ_EVENT_GFX_LUCAS,
         .fieldMove = OBJ_EVENT_GFX_LUCAS,
         .trainerFront = TRAINER_PIC_LUCAS,
-        .trainerBack = TRAINER_BACK_PIC_RED,
+        .trainerBack = TRAINER_BACK_PIC_LUCAS,
     },
     [COSTUME_DAWN] = {
         .name = gText_CostumeName_Dawn,
@@ -92,7 +92,7 @@ const struct Costume gCostumes[] =
         .overworld = OBJ_EVENT_GFX_DAWN,
         .fieldMove = OBJ_EVENT_GFX_DAWN,
         .trainerFront = TRAINER_PIC_DAWN,
-        .trainerBack = TRAINER_BACK_PIC_RED,
+        .trainerBack = TRAINER_BACK_PIC_DAWN,
     },
 // Professors
     [COSTUME_PROFESSOR_OAK] = {

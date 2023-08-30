@@ -128,11 +128,13 @@
 #define TRAINER_BACK_PIC_LEAF                   3
 #define TRAINER_BACK_PIC_ETHAN                  4
 #define TRAINER_BACK_PIC_LYRA                   5
-#define TRAINER_BACK_PIC_DAWN                   6
-#define TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN  7
-#define TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY      8
+#define TRAINER_BACK_PIC_LUCAS                  6
+#define TRAINER_BACK_PIC_DAWN                   7
+#define TRAINER_BACK_PIC_KRYS                   8
 #define TRAINER_BACK_PIC_STEVEN                 9
 #define TRAINER_BACK_PIC_WALLY                  10
+#define TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN  11
+#define TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY      12
 
 
 

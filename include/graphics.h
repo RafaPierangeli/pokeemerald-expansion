@@ -7303,7 +7303,9 @@ extern const u8 gTrainerBackPic_Red[];
 extern const u8 gTrainerBackPic_Leaf[];
 extern const u8 gTrainerBackPic_Ethan[];
 extern const u8 gTrainerBackPic_Lyra[];
+extern const u8 gTrainerBackPic_Lucas[];
 extern const u8 gTrainerBackPic_Dawn[];
+extern const u8 gTrainerBackPic_Krys[];
 extern const u8 gTrainerBackPic_RubySapphireBrendan[];
 extern const u8 gTrainerBackPic_RubySapphireMay[];
 extern const u8 gTrainerBackPic_Wally[];
@@ -7313,7 +7315,9 @@ extern const u32 gTrainerBackPicPalette_Red[];
 extern const u32 gTrainerBackPicPalette_Leaf[];
 extern const u32 gTrainerBackPicPalette_Ethan[];
 extern const u32 gTrainerBackPicPalette_Lyra[];
+extern const u32 gTrainerBackPicPalette_Lucas[];
 extern const u32 gTrainerBackPicPalette_Dawn[];
+extern const u32 gTrainerBackPicPalette_Krys[];
 
 // pokeblock
 extern const u32 gMenuPokeblock_Gfx[];
