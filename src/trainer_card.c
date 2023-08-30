@@ -306,7 +306,7 @@ static const u8 sTrainerPicFacilityClass[PLAYER_STYLE_COUNT] =
     [STYLE_LEAF] = FACILITY_CLASS_LEAF,
     [STYLE_ETHAN] = FACILITY_CLASS_ETHAN,
     [STYLE_LYRA] = FACILITY_CLASS_LYRA,
-    [STYLE_LUCAS] = FACILITY_CLASS_LYRA,
+    [STYLE_LUCAS] = FACILITY_CLASS_LUCAS,
     [STYLE_DAWN] = FACILITY_CLASS_DAWN,
     [STYLE_KRIS] = FACILITY_CLASS_KRYS,
     [STYLE_STEVEN] = FACILITY_CLASS_STEVEN,
@@ -763,7 +763,7 @@ static void TrainerCard_GenerateCardForPlayer(struct TrainerCard *trainerCard)
     if (trainerCard->hasAllFrontierSymbols)
         trainerCard->stars++;
 
-    if (trainerCard->gender % 2 == FEMALE)
+    if (trainerCard->gender % 2 == 1)
         trainerCard->facilityClass = gLinkPlayerFacilityClasses[(trainerCard->trainerId % NUM_FEMALE_LINK_FACILITY_CLASSES) + NUM_MALE_LINK_FACILITY_CLASSES];
     else
         trainerCard->facilityClass = gLinkPlayerFacilityClasses[trainerCard->trainerId % NUM_MALE_LINK_FACILITY_CLASSES];
@@ -779,7 +779,7 @@ void TrainerCard_GenerateCardForLinkPlayer(struct TrainerCard *trainerCard)
     if (trainerCard->linkHasAllFrontierSymbols)
         trainerCard->stars++;
 
-    if (trainerCard->gender % 2 == FEMALE)
+    if (trainerCard->gender % 2 == 1)
         trainerCard->facilityClass = gLinkPlayerFacilityClasses[(trainerCard->trainerId % NUM_FEMALE_LINK_FACILITY_CLASSES) + NUM_MALE_LINK_FACILITY_CLASSES];
     else
         trainerCard->facilityClass = gLinkPlayerFacilityClasses[trainerCard->trainerId % NUM_MALE_LINK_FACILITY_CLASSES];
@@ -1429,15 +1429,27 @@ static u8 SetCardBgsAndPals(void)
         {
             LoadPalette(sHoennTrainerCardPals[sData->trainerCard.stars], BG_PLTT_ID(0), 3 * PLTT_SIZE_4BPP);
             LoadPalette(sHoennTrainerCardBadges_Pal, BG_PLTT_ID(3), PLTT_SIZE_4BPP);
-            if (sData->trainerCard.gender != MALE)
+            if (sData->trainerCard.gender != 0 ) {
+                if (sData->trainerCard.gender != 2 ) {
+                if (sData->trainerCard.gender != 4 ) {
+                if (sData->trainerCard.gender != 6 ) {
+                if (sData->trainerCard.gender != 9 )
+            
                 LoadPalette(sHoennTrainerCardFemaleBg_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+            }}}}
         }
         else
         {
             LoadPalette(sKantoTrainerCardPals[sData->trainerCard.stars], BG_PLTT_ID(0), 3 * PLTT_SIZE_4BPP);
             LoadPalette(sKantoTrainerCardBadges_Pal, BG_PLTT_ID(3), PLTT_SIZE_4BPP);
-            if (sData->trainerCard.gender != MALE)
-                LoadPalette(sKantoTrainerCardFemaleBg_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+            if (sData->trainerCard.gender != 0 ) {
+                if (sData->trainerCard.gender != 2 ) {
+                if (sData->trainerCard.gender != 4 ) {
+                if (sData->trainerCard.gender != 6 ) {
+                if (sData->trainerCard.gender != 9 )
+            
+                LoadPalette(sHoennTrainerCardFemaleBg_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+            }}}}
         }
         LoadPalette(sTrainerCardStar_Pal, BG_PLTT_ID(4), PLTT_SIZE_4BPP);
         break;

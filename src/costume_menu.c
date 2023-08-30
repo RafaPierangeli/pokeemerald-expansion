@@ -674,6 +674,7 @@ static void SanitiseCostumeId(void)
     {
         gSaveBlock2Ptr->costume = gDisplayList[selection];
         gSaveBlock2Ptr->playerGender = gCostumes[gDisplayList[selection]].gender;
+        
     }
     else
     {
