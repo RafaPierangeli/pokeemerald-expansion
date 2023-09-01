@@ -1,3 +1,4 @@
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brendan;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanMachBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanSurfing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanFieldMove;
@@ -86,6 +87,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Teala;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreakableRock;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PushableBoulder;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MrBrineysBoat;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_May;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayMachBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayAcroBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MaySurfing;
@@ -244,78 +246,110 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvi
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan2;
 
 // Main characters
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedBike;
+// Red
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedAcroBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedUnderwater;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedFieldMove;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedFishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedDecorating;
 
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafBike;
+// Leaf
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafAcroBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafUnderwater;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafFieldMove;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafFishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafDecorating;
 
+// Ethan
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ethan;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanAcroBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanUnderwater;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanFieldMove;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanFishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EthanDecorating;
 
+// Kris
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kris;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisAcroBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisUnderwater;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisFieldMove;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisFishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisDecorating;
 
+// Lyra
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lyra;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LyraBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LyraMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LyraAcroBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LyraSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LyraUnderwater;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LyraFieldMove;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LyraFishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LyraWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LyraDecorating;
 
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brendan;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanBike;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_May;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayBike;
-
+// Lucas
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lucas;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasAcroBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasUnderwater;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasFieldMove;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasFishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasDecorating;
 
+// Dawn
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dawn;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnAcroBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnUnderwater;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnFieldMove;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnFishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnDecorating;
+
 // Professors
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfOak;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfElm;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfRowan;
-// Rivals
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blue;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Silver;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Barry;
+
 // Team Rocket
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketGruntF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giovanni;
 
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Placeholder;
-
+// Rivals
+// Steven
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Steven;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StevenBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StevenMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StevenAcroBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StevenSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StevenUnderwater;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StevenFieldMove;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StevenFishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StevenWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StevenDecorating;
+
+// Wally
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WallyMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WallyAcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WallySurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WallyUnderwater;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WallyFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WallyFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WallyWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WallyDecorating;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_Brendan,
@@ -559,74 +593,110 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_HOOH] =                     &gObjectEventGraphicsInfo_HoOh,
 
     // Main characters
+    //Red
     [OBJ_EVENT_GFX_RED_MACH_BIKE] =    &gObjectEventGraphicsInfo_RedMachBike,
     [OBJ_EVENT_GFX_RED_ACRO_BIKE] =    &gObjectEventGraphicsInfo_RedAcroBike,
     [OBJ_EVENT_GFX_RED_SURFING] =      &gObjectEventGraphicsInfo_RedSurfing,
+    [OBJ_EVENT_GFX_RED_UNDERWATER] =   &gObjectEventGraphicsInfo_RedUnderwater,
     [OBJ_EVENT_GFX_RED_FIELD_MOVE] =   &gObjectEventGraphicsInfo_RedFieldMove,
     [OBJ_EVENT_GFX_RED_FISHING] =      &gObjectEventGraphicsInfo_RedFishing,
     [OBJ_EVENT_GFX_RED_WATERING] =     &gObjectEventGraphicsInfo_RedWatering,
-//    [] = &gObjectEventGraphicsInfo_RedUnderwater,
-    [OBJ_EVENT_GFX_LEAF_MACH_BIKE] =   &gObjectEventGraphicsInfo_LeafMachBike,
-    [OBJ_EVENT_GFX_LEAF_ACRO_BIKE] =   &gObjectEventGraphicsInfo_LeafAcroBike,
-    [OBJ_EVENT_GFX_LEAF_SURFING] =     &gObjectEventGraphicsInfo_LeafSurfing,
-    [OBJ_EVENT_GFX_LEAF_FIELD_MOVE] =  &gObjectEventGraphicsInfo_LeafFieldMove,
-    [OBJ_EVENT_GFX_LEAF_FISHING] =     &gObjectEventGraphicsInfo_LeafFishing,
-    [OBJ_EVENT_GFX_LEAF_WATERING] =    &gObjectEventGraphicsInfo_LeafWatering,
-//    [] = &gObjectEventGraphicsInfo_LeafUnderwater,
-    [OBJ_EVENT_GFX_ETHAN] =            &gObjectEventGraphicsInfo_Ethan,
-    [OBJ_EVENT_GFX_ETHAN_MACH_BIKE] =  &gObjectEventGraphicsInfo_EthanMachBike,
-    [OBJ_EVENT_GFX_ETHAN_ACRO_BIKE] =  &gObjectEventGraphicsInfo_EthanAcroBike,
-    [OBJ_EVENT_GFX_ETHAN_SURFING] =    &gObjectEventGraphicsInfo_EthanSurfing,
-    [OBJ_EVENT_GFX_ETHAN_FIELD_MOVE] = &gObjectEventGraphicsInfo_EthanFieldMove,
-    [OBJ_EVENT_GFX_ETHAN_FISHING] =    &gObjectEventGraphicsInfo_EthanFishing,
-    [OBJ_EVENT_GFX_ETHAN_WATERING] =   &gObjectEventGraphicsInfo_EthanWatering,
-//    [] = &gObjectEventGraphicsInfo_EthanUnderwater,
-    [OBJ_EVENT_GFX_KRIS] = &gObjectEventGraphicsInfo_Kris,
-    [OBJ_EVENT_GFX_KRIS_MACH_BIKE] = &gObjectEventGraphicsInfo_KrisMachBike,
-    [OBJ_EVENT_GFX_KRIS_ACRO_BIKE] = &gObjectEventGraphicsInfo_KrisAcroBike,
-    [OBJ_EVENT_GFX_KRIS_SURFING] = &gObjectEventGraphicsInfo_KrisSurfing,
-    [OBJ_EVENT_GFX_KRIS_FIELD_MOVE] = &gObjectEventGraphicsInfo_KrisFieldMove,
-    [OBJ_EVENT_GFX_KRIS_FISHING] = &gObjectEventGraphicsInfo_KrisFishing,
-    [OBJ_EVENT_GFX_KRIS_WATERING] = &gObjectEventGraphicsInfo_KrisWatering,
-//    [] = &gObjectEventGraphicsInfo_KrisUnderwater,
-    [OBJ_EVENT_GFX_LYRA] = &gObjectEventGraphicsInfo_Lyra,
-    [OBJ_EVENT_GFX_LYRA_MACH_BIKE] = &gObjectEventGraphicsInfo_LyraMachBike,
-    [OBJ_EVENT_GFX_LYRA_ACRO_BIKE] = &gObjectEventGraphicsInfo_LyraAcroBike,
-    [OBJ_EVENT_GFX_LYRA_SURFING] = &gObjectEventGraphicsInfo_LyraSurfing,
-    [OBJ_EVENT_GFX_LYRA_FIELD_MOVE] = &gObjectEventGraphicsInfo_LyraFieldMove,
-    [OBJ_EVENT_GFX_LYRA_FISHING] = &gObjectEventGraphicsInfo_LyraFishing,
-    [OBJ_EVENT_GFX_LYRA_WATERING] = &gObjectEventGraphicsInfo_LyraWatering,
-//    [] = &gObjectEventGraphicsInfo_LyraUnderwater,
+    [OBJ_EVENT_GFX_RED_DECORATING] =   &gObjectEventGraphicsInfo_RedDecorating,
 
-    [OBJ_EVENT_GFX_LUCAS] = &gObjectEventGraphicsInfo_Lucas,
-    [OBJ_EVENT_GFX_LUCAS_MACH_BIKE] = &gObjectEventGraphicsInfo_LucasMachBike,
-    [OBJ_EVENT_GFX_LUCAS_ACRO_BIKE] = &gObjectEventGraphicsInfo_LucasAcroBike,
-    [OBJ_EVENT_GFX_LUCAS_SURFING] = &gObjectEventGraphicsInfo_LucasSurfing,
-    [OBJ_EVENT_GFX_LUCAS_FIELD_MOVE] = &gObjectEventGraphicsInfo_LucasFieldMove,
-    [OBJ_EVENT_GFX_LUCAS_FISHING] = &gObjectEventGraphicsInfo_LucasFishing,
-    [OBJ_EVENT_GFX_LUCAS_WATERING] = &gObjectEventGraphicsInfo_LucasWatering,
-//    [] = &gObjectEventGraphicsInfo_LucasUnderwater,
-    [OBJ_EVENT_GFX_DAWN] = &gObjectEventGraphicsInfo_Dawn,
-    [OBJ_EVENT_GFX_DAWN_MACH_BIKE] = &gObjectEventGraphicsInfo_DawnMachBike,
-    [OBJ_EVENT_GFX_DAWN_ACRO_BIKE] = &gObjectEventGraphicsInfo_DawnAcroBike,
-    [OBJ_EVENT_GFX_DAWN_SURFING] = &gObjectEventGraphicsInfo_DawnSurfing,
-    [OBJ_EVENT_GFX_DAWN_FIELD_MOVE] = &gObjectEventGraphicsInfo_DawnFieldMove,
-    [OBJ_EVENT_GFX_DAWN_FISHING] = &gObjectEventGraphicsInfo_DawnFishing,
-    [OBJ_EVENT_GFX_DAWN_WATERING] = &gObjectEventGraphicsInfo_DawnWatering,
+// Leaf
+    [OBJ_EVENT_GFX_LEAF_MACH_BIKE] =    &gObjectEventGraphicsInfo_LeafMachBike,
+    [OBJ_EVENT_GFX_LEAF_ACRO_BIKE] =    &gObjectEventGraphicsInfo_LeafAcroBike,
+    [OBJ_EVENT_GFX_LEAF_SURFING] =      &gObjectEventGraphicsInfo_LeafSurfing,
+    [OBJ_EVENT_GFX_LEAF_UNDERWATER] =   &gObjectEventGraphicsInfo_LeafUnderwater,
+    [OBJ_EVENT_GFX_LEAF_FIELD_MOVE] =   &gObjectEventGraphicsInfo_LeafFieldMove,
+    [OBJ_EVENT_GFX_LEAF_FISHING] =      &gObjectEventGraphicsInfo_LeafFishing,
+    [OBJ_EVENT_GFX_LEAF_WATERING] =     &gObjectEventGraphicsInfo_LeafWatering,
+    [OBJ_EVENT_GFX_LEAF_DECORATING] =   &gObjectEventGraphicsInfo_LeafDecorating,
+
+// Ethan
+    [OBJ_EVENT_GFX_ETHAN] =             &gObjectEventGraphicsInfo_Ethan,
+    [OBJ_EVENT_GFX_ETHAN_MACH_BIKE] =   &gObjectEventGraphicsInfo_EthanMachBike,
+    [OBJ_EVENT_GFX_ETHAN_ACRO_BIKE] =   &gObjectEventGraphicsInfo_EthanAcroBike,
+    [OBJ_EVENT_GFX_ETHAN_SURFING] =     &gObjectEventGraphicsInfo_EthanSurfing,
+    [OBJ_EVENT_GFX_ETHAN_UNDERWATER] =  &gObjectEventGraphicsInfo_EthanUnderwater,
+    [OBJ_EVENT_GFX_ETHAN_FIELD_MOVE] =  &gObjectEventGraphicsInfo_EthanFieldMove,
+    [OBJ_EVENT_GFX_ETHAN_FISHING] =     &gObjectEventGraphicsInfo_EthanFishing,
+    [OBJ_EVENT_GFX_ETHAN_WATERING] =    &gObjectEventGraphicsInfo_EthanWatering,
+    [OBJ_EVENT_GFX_ETHAN_DECORATING] =  &gObjectEventGraphicsInfo_EthanDecorating,
+
+// Kris
+    [OBJ_EVENT_GFX_KRIS] =              &gObjectEventGraphicsInfo_Kris,
+    [OBJ_EVENT_GFX_KRIS_MACH_BIKE] =    &gObjectEventGraphicsInfo_KrisMachBike,
+    [OBJ_EVENT_GFX_KRIS_ACRO_BIKE] =    &gObjectEventGraphicsInfo_KrisAcroBike,
+    [OBJ_EVENT_GFX_KRIS_SURFING] =      &gObjectEventGraphicsInfo_KrisSurfing,
+    [OBJ_EVENT_GFX_KRIS_UNDERWATER] =   &gObjectEventGraphicsInfo_KrisUnderwater,
+    [OBJ_EVENT_GFX_KRIS_FIELD_MOVE] =   &gObjectEventGraphicsInfo_KrisFieldMove,
+    [OBJ_EVENT_GFX_KRIS_FISHING] =      &gObjectEventGraphicsInfo_KrisFishing,
+    [OBJ_EVENT_GFX_KRIS_WATERING] =     &gObjectEventGraphicsInfo_KrisWatering,
+    [OBJ_EVENT_GFX_KRIS_DECORATING] =   &gObjectEventGraphicsInfo_KrisDecorating,
+
+// Lyra
+    [OBJ_EVENT_GFX_LYRA] =              &gObjectEventGraphicsInfo_Lyra,
+    [OBJ_EVENT_GFX_LYRA_MACH_BIKE] =    &gObjectEventGraphicsInfo_LyraMachBike,
+    [OBJ_EVENT_GFX_LYRA_ACRO_BIKE] =    &gObjectEventGraphicsInfo_LyraAcroBike,
+    [OBJ_EVENT_GFX_LYRA_SURFING] =      &gObjectEventGraphicsInfo_LyraSurfing,
+    [OBJ_EVENT_GFX_LYRA_UNDERWATER] =   &gObjectEventGraphicsInfo_LyraUnderwater,
+    [OBJ_EVENT_GFX_LYRA_FIELD_MOVE] =   &gObjectEventGraphicsInfo_LyraFieldMove,
+    [OBJ_EVENT_GFX_LYRA_FISHING] =      &gObjectEventGraphicsInfo_LyraFishing,
+    [OBJ_EVENT_GFX_LYRA_WATERING] =     &gObjectEventGraphicsInfo_LyraWatering,
+    [OBJ_EVENT_GFX_LYRA_DECORATING] =   &gObjectEventGraphicsInfo_LyraDecorating,
+
+// Lucas
+    [OBJ_EVENT_GFX_LUCAS] =             &gObjectEventGraphicsInfo_Lucas,
+    [OBJ_EVENT_GFX_LUCAS_MACH_BIKE] =   &gObjectEventGraphicsInfo_LucasMachBike,
+    [OBJ_EVENT_GFX_LUCAS_ACRO_BIKE] =   &gObjectEventGraphicsInfo_LucasAcroBike,
+    [OBJ_EVENT_GFX_LUCAS_SURFING] =     &gObjectEventGraphicsInfo_LucasSurfing,
+    [OBJ_EVENT_GFX_LUCAS_UNDERWATER] =  &gObjectEventGraphicsInfo_LucasUnderwater,
+    [OBJ_EVENT_GFX_LUCAS_FIELD_MOVE] =  &gObjectEventGraphicsInfo_LucasFieldMove,
+    [OBJ_EVENT_GFX_LUCAS_FISHING] =     &gObjectEventGraphicsInfo_LucasFishing,
+    [OBJ_EVENT_GFX_LUCAS_WATERING] =    &gObjectEventGraphicsInfo_LucasWatering,
+    [OBJ_EVENT_GFX_LUCAS_DECORATING] =  &gObjectEventGraphicsInfo_LucasDecorating,
+
+// Dawn
+    [OBJ_EVENT_GFX_DAWN] =              &gObjectEventGraphicsInfo_Dawn,
+    [OBJ_EVENT_GFX_DAWN_MACH_BIKE] =    &gObjectEventGraphicsInfo_DawnMachBike,
+    [OBJ_EVENT_GFX_DAWN_ACRO_BIKE] =    &gObjectEventGraphicsInfo_DawnAcroBike,
+    [OBJ_EVENT_GFX_DAWN_SURFING] =      &gObjectEventGraphicsInfo_DawnSurfing,
+    [OBJ_EVENT_GFX_DAWN_UNDERWATER] =   &gObjectEventGraphicsInfo_DawnUnderwater,
+    [OBJ_EVENT_GFX_DAWN_FIELD_MOVE] =   &gObjectEventGraphicsInfo_DawnFieldMove,
+    [OBJ_EVENT_GFX_DAWN_FISHING] =      &gObjectEventGraphicsInfo_DawnFishing,
+    [OBJ_EVENT_GFX_DAWN_WATERING] =     &gObjectEventGraphicsInfo_DawnWatering,
+    [OBJ_EVENT_GFX_DAWN_DECORATING] =   &gObjectEventGraphicsInfo_DawnDecorating,
+
 // Professors
-    [OBJ_EVENT_GFX_PROF_OAK] = &gObjectEventGraphicsInfo_ProfOak,
-// Team Rocket
-    [OBJ_EVENT_GFX_ROCKET_GRUNT_M] = &gObjectEventGraphicsInfo_RocketGruntM,
-    [OBJ_EVENT_GFX_ROCKET_GRUNT_F] = &gObjectEventGraphicsInfo_RocketGruntF,
-    [OBJ_EVENT_GFX_GIOVANNI] = &gObjectEventGraphicsInfo_Giovanni,
+    [OBJ_EVENT_GFX_PROF_OAK] =          &gObjectEventGraphicsInfo_ProfOak,
 
-// Elite 4 + champion - Hoen
+// Team Rocket
+    [OBJ_EVENT_GFX_ROCKET_GRUNT_M] =    &gObjectEventGraphicsInfo_RocketGruntM,
+    [OBJ_EVENT_GFX_ROCKET_GRUNT_F] =    &gObjectEventGraphicsInfo_RocketGruntF,
+    [OBJ_EVENT_GFX_GIOVANNI] =          &gObjectEventGraphicsInfo_Giovanni,
+
+// Rivals
+// Steven
     [OBJ_EVENT_GFX_STEVEN_MACH_BIKE] =  &gObjectEventGraphicsInfo_StevenMachBike,
     [OBJ_EVENT_GFX_STEVEN_ACRO_BIKE] =  &gObjectEventGraphicsInfo_StevenAcroBike,
     [OBJ_EVENT_GFX_STEVEN_SURFING] =    &gObjectEventGraphicsInfo_StevenSurfing,
+    [OBJ_EVENT_GFX_STEVEN_UNDERWATER] = &gObjectEventGraphicsInfo_StevenUnderwater,
     [OBJ_EVENT_GFX_STEVEN_FIELD_MOVE] = &gObjectEventGraphicsInfo_StevenFieldMove,
     [OBJ_EVENT_GFX_STEVEN_FISHING] =    &gObjectEventGraphicsInfo_StevenFishing,
     [OBJ_EVENT_GFX_STEVEN_WATERING] =   &gObjectEventGraphicsInfo_StevenWatering,
+    [OBJ_EVENT_GFX_STEVEN_DECORATING] = &gObjectEventGraphicsInfo_StevenDecorating,
+
+// Wally
+    [OBJ_EVENT_GFX_WALLY_MACH_BIKE] =   &gObjectEventGraphicsInfo_WallyMachBike,
+    [OBJ_EVENT_GFX_WALLY_ACRO_BIKE] =   &gObjectEventGraphicsInfo_WallyAcroBike,
+    [OBJ_EVENT_GFX_WALLY_SURFING] =     &gObjectEventGraphicsInfo_WallySurfing,
+    [OBJ_EVENT_GFX_WALLY_UNDERWATER] =  &gObjectEventGraphicsInfo_WallyUnderwater,
+    [OBJ_EVENT_GFX_WALLY_FIELD_MOVE] =  &gObjectEventGraphicsInfo_WallyFieldMove,
+    [OBJ_EVENT_GFX_WALLY_FISHING] =     &gObjectEventGraphicsInfo_WallyFishing,
+    [OBJ_EVENT_GFX_WALLY_WATERING] =    &gObjectEventGraphicsInfo_WallyWatering,
+    [OBJ_EVENT_GFX_WALLY_DECORATING] =  &gObjectEventGraphicsInfo_WallyDecorating,
+
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

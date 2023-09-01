@@ -128,6 +128,8 @@ static const u16 sRegionMapPlayerIcon_MayPal[] = INCBIN_U16("graphics/pokenav/re
 static const u8 sRegionMapPlayerIcon_MayGfx[] = INCBIN_U8("graphics/pokenav/region_map/may_icon.4bpp");
 static const u16 sRegionMapPlayerIcon_RedPal[] = INCBIN_U16("graphics/pokenav/region_map/red_icon.gbapal");
 static const u8 sRegionMapPlayerIcon_RedGfx[] = INCBIN_U8("graphics/pokenav/region_map/red_icon.4bpp");
+static const u16 sRegionMapPlayerIcon_WallyPal[] = INCBIN_U16("graphics/pokenav/region_map/wally_icon.gbapal");
+static const u8 sRegionMapPlayerIcon_WallyGfx[] = INCBIN_U8("graphics/pokenav/region_map/wally_icon.4bpp");
 
 #include "data/region_map/region_map_layout.h"
 #include "data/region_map/region_map_entries.h"
@@ -1469,6 +1471,46 @@ void CreateRegionMapPlayerIcon(u16 tileTag, u16 paletteTag)
     {
         sheet.data = sRegionMapPlayerIcon_RedGfx;
         palette.data = sRegionMapPlayerIcon_RedPal; 
+    }
+    else if (gSaveBlock2Ptr->costume == STYLE_LEAF)
+    {
+        sheet.data = sRegionMapPlayerIcon_RedGfx;
+        palette.data = sRegionMapPlayerIcon_RedPal; 
+    }
+    else if (gSaveBlock2Ptr->costume == STYLE_ETHAN)
+    {
+        sheet.data = sRegionMapPlayerIcon_RedGfx;
+        palette.data = sRegionMapPlayerIcon_RedPal; 
+    }
+    else if (gSaveBlock2Ptr->costume == STYLE_LYRA)
+    {
+        sheet.data = sRegionMapPlayerIcon_RedGfx;
+        palette.data = sRegionMapPlayerIcon_RedPal; 
+    }
+    else if (gSaveBlock2Ptr->costume == STYLE_LUCAS)
+    {
+        sheet.data = sRegionMapPlayerIcon_RedGfx;
+        palette.data = sRegionMapPlayerIcon_RedPal; 
+    }
+    else if (gSaveBlock2Ptr->costume == STYLE_DAWN)
+    {
+        sheet.data = sRegionMapPlayerIcon_RedGfx;
+        palette.data = sRegionMapPlayerIcon_RedPal; 
+    }
+    else if (gSaveBlock2Ptr->costume == STYLE_KRIS)
+    {
+        sheet.data = sRegionMapPlayerIcon_RedGfx;
+        palette.data = sRegionMapPlayerIcon_RedPal; 
+    }
+    else if (gSaveBlock2Ptr->costume == STYLE_STEVEN)
+    {
+        sheet.data = sRegionMapPlayerIcon_RedGfx;
+        palette.data = sRegionMapPlayerIcon_RedPal; 
+    }
+    else if (gSaveBlock2Ptr->costume == STYLE_WALLY)
+    {
+        sheet.data = sRegionMapPlayerIcon_WallyGfx;
+        palette.data = sRegionMapPlayerIcon_WallyPal; 
     }
     LoadSpriteSheet(&sheet);
     LoadSpritePalette(&palette);

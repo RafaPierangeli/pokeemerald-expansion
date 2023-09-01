@@ -15,14 +15,9 @@ const u8 gText_CostumeName_Lucas[] = _("Lucas");
 const u8 gText_CostumeName_Dawn[] = _("Dawn");
 // Professors
 const u8 gText_CostumeName_ProfessorOak[] = _("Professor Oak");
-const u8 gText_CostumeName_ProfessorElm[] = _("Professor Elm");
 const u8 gText_CostumeName_ProfessorBirch[] = _("Professor Birch");
-const u8 gText_CostumeName_ProfessorRowan[] = _("Professor Rowan");
 // Rivals
-const u8 gText_CostumeName_GarryOak[] = _("Garry Oak");
-const u8 gText_CostumeName_Silver[] = _("Silver");
 const u8 gText_CostumeName_Wally[] = _("Wally");
-const u8 gText_CostumeName_Barry[] = _("Barry");
 // Standard Trainers
 // Villainous team
 const u8 gText_CostumeName_RocketGruntM[] = _("Rocket Grunt M");

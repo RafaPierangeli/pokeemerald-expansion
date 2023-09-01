@@ -245,80 +245,104 @@
 #define OBJ_EVENT_GFX_RED_MACH_BIKE              239
 #define OBJ_EVENT_GFX_RED_ACRO_BIKE              240
 #define OBJ_EVENT_GFX_RED_SURFING                241
-#define OBJ_EVENT_GFX_RED_FIELD_MOVE             242
-#define OBJ_EVENT_GFX_RED_FISHING                243
-#define OBJ_EVENT_GFX_RED_WATERING               244
+#define OBJ_EVENT_GFX_RED_UNDERWATER             242
+#define OBJ_EVENT_GFX_RED_FIELD_MOVE             243
+#define OBJ_EVENT_GFX_RED_FISHING                244
+#define OBJ_EVENT_GFX_RED_WATERING               245
+#define OBJ_EVENT_GFX_RED_DECORATING             246
 
-#define OBJ_EVENT_GFX_LEAF_MACH_BIKE             245
-#define OBJ_EVENT_GFX_LEAF_ACRO_BIKE             246
-#define OBJ_EVENT_GFX_LEAF_SURFING               247
-#define OBJ_EVENT_GFX_LEAF_FIELD_MOVE            248
-#define OBJ_EVENT_GFX_LEAF_FISHING               249
-#define OBJ_EVENT_GFX_LEAF_WATERING              250
+#define OBJ_EVENT_GFX_LEAF_MACH_BIKE             247
+#define OBJ_EVENT_GFX_LEAF_ACRO_BIKE             248
+#define OBJ_EVENT_GFX_LEAF_SURFING               249
+#define OBJ_EVENT_GFX_LEAF_UNDERWATER            250
+#define OBJ_EVENT_GFX_LEAF_FIELD_MOVE            251
+#define OBJ_EVENT_GFX_LEAF_FISHING               252
+#define OBJ_EVENT_GFX_LEAF_WATERING              253
+#define OBJ_EVENT_GFX_LEAF_DECORATING            254
 
-#define OBJ_EVENT_GFX_ETHAN                      251
-#define OBJ_EVENT_GFX_ETHAN_MACH_BIKE            252
-#define OBJ_EVENT_GFX_ETHAN_ACRO_BIKE            253
-#define OBJ_EVENT_GFX_ETHAN_SURFING              254
-#define OBJ_EVENT_GFX_ETHAN_FIELD_MOVE           255
-#define OBJ_EVENT_GFX_ETHAN_FISHING              256
-#define OBJ_EVENT_GFX_ETHAN_WATERING             257
+#define OBJ_EVENT_GFX_ETHAN                      255
+#define OBJ_EVENT_GFX_ETHAN_MACH_BIKE            256
+#define OBJ_EVENT_GFX_ETHAN_ACRO_BIKE            257
+#define OBJ_EVENT_GFX_ETHAN_SURFING              258
+#define OBJ_EVENT_GFX_ETHAN_UNDERWATER           259
+#define OBJ_EVENT_GFX_ETHAN_FIELD_MOVE           260
+#define OBJ_EVENT_GFX_ETHAN_FISHING              261
+#define OBJ_EVENT_GFX_ETHAN_WATERING             262
+#define OBJ_EVENT_GFX_ETHAN_DECORATING           263
 
-#define OBJ_EVENT_GFX_KRIS                       258
-#define OBJ_EVENT_GFX_KRIS_MACH_BIKE             259
-#define OBJ_EVENT_GFX_KRIS_ACRO_BIKE             260
-#define OBJ_EVENT_GFX_KRIS_SURFING               261
-#define OBJ_EVENT_GFX_KRIS_FIELD_MOVE            262
-#define OBJ_EVENT_GFX_KRIS_FISHING               263
-#define OBJ_EVENT_GFX_KRIS_WATERING              264
+#define OBJ_EVENT_GFX_KRIS                       264
+#define OBJ_EVENT_GFX_KRIS_MACH_BIKE             265
+#define OBJ_EVENT_GFX_KRIS_ACRO_BIKE             266
+#define OBJ_EVENT_GFX_KRIS_SURFING               267
+#define OBJ_EVENT_GFX_KRIS_UNDERWATER            268
+#define OBJ_EVENT_GFX_KRIS_FIELD_MOVE            269
+#define OBJ_EVENT_GFX_KRIS_FISHING               270
+#define OBJ_EVENT_GFX_KRIS_WATERING              271
+#define OBJ_EVENT_GFX_KRIS_DECORATING            272
 
-#define OBJ_EVENT_GFX_LYRA                       265
-#define OBJ_EVENT_GFX_LYRA_MACH_BIKE             266
-#define OBJ_EVENT_GFX_LYRA_ACRO_BIKE             267
-#define OBJ_EVENT_GFX_LYRA_SURFING               268
-#define OBJ_EVENT_GFX_LYRA_FIELD_MOVE            269
-#define OBJ_EVENT_GFX_LYRA_FISHING               270
-#define OBJ_EVENT_GFX_LYRA_WATERING              271
+#define OBJ_EVENT_GFX_LYRA                       273
+#define OBJ_EVENT_GFX_LYRA_MACH_BIKE             274
+#define OBJ_EVENT_GFX_LYRA_ACRO_BIKE             275
+#define OBJ_EVENT_GFX_LYRA_SURFING               276
+#define OBJ_EVENT_GFX_LYRA_UNDERWATER            277
+#define OBJ_EVENT_GFX_LYRA_FIELD_MOVE            278
+#define OBJ_EVENT_GFX_LYRA_FISHING               279
+#define OBJ_EVENT_GFX_LYRA_WATERING              280
+#define OBJ_EVENT_GFX_LYRA_DECORATING            281
 
-#define OBJ_EVENT_GFX_LUCAS                      272
-#define OBJ_EVENT_GFX_LUCAS_MACH_BIKE            273
-#define OBJ_EVENT_GFX_LUCAS_ACRO_BIKE            274
-#define OBJ_EVENT_GFX_LUCAS_SURFING              275
-#define OBJ_EVENT_GFX_LUCAS_FIELD_MOVE           276
-#define OBJ_EVENT_GFX_LUCAS_FISHING              277
-#define OBJ_EVENT_GFX_LUCAS_WATERING             278
+#define OBJ_EVENT_GFX_LUCAS                      282
+#define OBJ_EVENT_GFX_LUCAS_MACH_BIKE            283
+#define OBJ_EVENT_GFX_LUCAS_ACRO_BIKE            284
+#define OBJ_EVENT_GFX_LUCAS_SURFING              285
+#define OBJ_EVENT_GFX_LUCAS_UNDERWATER           286
+#define OBJ_EVENT_GFX_LUCAS_FIELD_MOVE           287
+#define OBJ_EVENT_GFX_LUCAS_FISHING              288
+#define OBJ_EVENT_GFX_LUCAS_WATERING             289
+#define OBJ_EVENT_GFX_LUCAS_DECORATING           290
 
-#define OBJ_EVENT_GFX_DAWN                       279
-#define OBJ_EVENT_GFX_DAWN_MACH_BIKE             280
-#define OBJ_EVENT_GFX_DAWN_ACRO_BIKE             281
-#define OBJ_EVENT_GFX_DAWN_SURFING               282
-#define OBJ_EVENT_GFX_DAWN_FIELD_MOVE            283
-#define OBJ_EVENT_GFX_DAWN_FISHING               284
-#define OBJ_EVENT_GFX_DAWN_WATERING              285
+//Dawn
+#define OBJ_EVENT_GFX_DAWN                       291
+#define OBJ_EVENT_GFX_DAWN_MACH_BIKE             292
+#define OBJ_EVENT_GFX_DAWN_ACRO_BIKE             293
+#define OBJ_EVENT_GFX_DAWN_SURFING               294
+#define OBJ_EVENT_GFX_DAWN_UNDERWATER            295
+#define OBJ_EVENT_GFX_DAWN_FIELD_MOVE            296
+#define OBJ_EVENT_GFX_DAWN_FISHING               297
+#define OBJ_EVENT_GFX_DAWN_WATERING              298
+#define OBJ_EVENT_GFX_DAWN_DECORATING            299
 
-// Team Rocket
-#define OBJ_EVENT_GFX_ROCKET_GRUNT_F             286
-#define OBJ_EVENT_GFX_ROCKET_GRUNT_M             287
-#define OBJ_EVENT_GFX_GIOVANNI                   288
-
-// Professors
-#define OBJ_EVENT_GFX_PROF_OAK                   289
-
-//News
-#define OBJ_EVENT_GFX_BACKPACKER_F               290
-#define OBJ_EVENT_GFX_BACKPACKER_M               291
-#define OBJ_EVENT_GFX_BUILDER                    292
+// Rivals
+// Wally
+#define OBJ_EVENT_GFX_WALLY_MACH_BIKE            300
+#define OBJ_EVENT_GFX_WALLY_ACRO_BIKE            301
+#define OBJ_EVENT_GFX_WALLY_SURFING              302
+#define OBJ_EVENT_GFX_WALLY_UNDERWATER           303
+#define OBJ_EVENT_GFX_WALLY_FIELD_MOVE           304
+#define OBJ_EVENT_GFX_WALLY_FISHING              305
+#define OBJ_EVENT_GFX_WALLY_WATERING             306
+#define OBJ_EVENT_GFX_WALLY_DECORATING           307
 
 // Elite 4 + champion
-#define OBJ_EVENT_GFX_STEVEN_MACH_BIKE           293
-#define OBJ_EVENT_GFX_STEVEN_ACRO_BIKE           294
-#define OBJ_EVENT_GFX_STEVEN_SURFING             295
-#define OBJ_EVENT_GFX_STEVEN_FIELD_MOVE          296
-#define OBJ_EVENT_GFX_STEVEN_FISHING             297
-#define OBJ_EVENT_GFX_STEVEN_WATERING            298
+// Steven
+#define OBJ_EVENT_GFX_STEVEN_MACH_BIKE           308
+#define OBJ_EVENT_GFX_STEVEN_ACRO_BIKE           309
+#define OBJ_EVENT_GFX_STEVEN_SURFING             310
+#define OBJ_EVENT_GFX_STEVEN_UNDERWATER          311
+#define OBJ_EVENT_GFX_STEVEN_FIELD_MOVE          312
+#define OBJ_EVENT_GFX_STEVEN_FISHING             313
+#define OBJ_EVENT_GFX_STEVEN_WATERING            314
+#define OBJ_EVENT_GFX_STEVEN_DECORATING          315
+
+// Professors
+#define OBJ_EVENT_GFX_PROF_OAK                   316
+
+// Team Rocket
+#define OBJ_EVENT_GFX_ROCKET_GRUNT_F             317
+#define OBJ_EVENT_GFX_ROCKET_GRUNT_M             318
+#define OBJ_EVENT_GFX_GIOVANNI                   319
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239. This run are overworld expansion.
-#define NUM_OBJ_EVENT_GFX                        299
+#define NUM_OBJ_EVENT_GFX                        320
 
 
 // These are dynamic object gfx ids.
