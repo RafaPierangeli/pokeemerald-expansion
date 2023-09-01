@@ -116,7 +116,7 @@ static const union AnimCmd *const sBackAnims_Lucas[] =
     sAnimCmd_Red_1,
 };
 
-static const union AnimCmd *const sBackAnims_Krys[] =
+static const union AnimCmd *const sBackAnims_Kris[] =
 {
     sAnim_GeneralFrame0,
     sAnimCmd_Red_1,
@@ -156,7 +156,7 @@ const union AnimCmd *const *const gTrainerBackAnimsPtrTable[] =
     [TRAINER_BACK_PIC_LYRA] = sBackAnims_Lyra,
     [TRAINER_BACK_PIC_LUCAS] = sBackAnims_Lucas,
     [TRAINER_BACK_PIC_DAWN] = sBackAnims_Dawn,
-    [TRAINER_BACK_PIC_KRYS] = sBackAnims_Krys,
+    [TRAINER_BACK_PIC_KRIS] = sBackAnims_Kris,
     [TRAINER_BACK_PIC_STEVEN] = sBackAnims_Steven,
     [TRAINER_BACK_PIC_WALLY] = sBackAnims_Wally,
     [TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN] = sBackAnims_RubySapphireBrendan,

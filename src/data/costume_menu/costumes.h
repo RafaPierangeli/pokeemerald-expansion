@@ -61,8 +61,8 @@ const struct Costume gCostumes[] =
         .description = gText_CostumeDescription_Kris,
         .overworld = OBJ_EVENT_GFX_KRIS,
         .fieldMove = OBJ_EVENT_GFX_KRIS,
-        .trainerFront = TRAINER_PIC_KRYS,
-        .trainerBack = TRAINER_BACK_PIC_KRYS,
+        .trainerFront = TRAINER_PIC_KRIS,
+        .trainerBack = TRAINER_BACK_PIC_KRIS,
     },
     [COSTUME_LYRA] = {
         .name = gText_CostumeName_Lyra,

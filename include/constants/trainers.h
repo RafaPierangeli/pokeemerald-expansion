@@ -130,7 +130,7 @@
 #define TRAINER_BACK_PIC_LYRA                   5
 #define TRAINER_BACK_PIC_LUCAS                  6
 #define TRAINER_BACK_PIC_DAWN                   7
-#define TRAINER_BACK_PIC_KRYS                   8
+#define TRAINER_BACK_PIC_KRIS                   8
 #define TRAINER_BACK_PIC_STEVEN                 9
 #define TRAINER_BACK_PIC_WALLY                  10
 #define TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN  11
@@ -224,7 +224,7 @@
 #define FACILITY_CLASS_LYRA                  0x53
 #define FACILITY_CLASS_LUCAS                 0x54
 #define FACILITY_CLASS_DAWN                  0x55
-#define FACILITY_CLASS_KRYS                  0x56
+#define FACILITY_CLASS_KRIS                  0x56
 
 #define FACILITY_CLASSES_COUNT               0x57
 
