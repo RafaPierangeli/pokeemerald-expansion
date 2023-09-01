@@ -108,13 +108,13 @@ const struct SpriteFrameImage gTrainerBackPicTable_Lucas[] =
     gTrainerBackPic_Lucas + TRAINER_PIC_SIZE * 4, TRAINER_PIC_SIZE,
 };
 
-const struct SpriteFrameImage gTrainerBackPicTable_Krys[] =
+const struct SpriteFrameImage gTrainerBackPicTable_Kris[] =
 {
-    gTrainerBackPic_Krys + TRAINER_PIC_SIZE * 0, TRAINER_PIC_SIZE,
-    gTrainerBackPic_Krys + TRAINER_PIC_SIZE * 1, TRAINER_PIC_SIZE,
-    gTrainerBackPic_Krys + TRAINER_PIC_SIZE * 2, TRAINER_PIC_SIZE,
-    gTrainerBackPic_Krys + TRAINER_PIC_SIZE * 3, TRAINER_PIC_SIZE,
-    gTrainerBackPic_Krys + TRAINER_PIC_SIZE * 4, TRAINER_PIC_SIZE,
+    gTrainerBackPic_Kris + TRAINER_PIC_SIZE * 0, TRAINER_PIC_SIZE,
+    gTrainerBackPic_Kris + TRAINER_PIC_SIZE * 1, TRAINER_PIC_SIZE,
+    gTrainerBackPic_Kris + TRAINER_PIC_SIZE * 2, TRAINER_PIC_SIZE,
+    gTrainerBackPic_Kris + TRAINER_PIC_SIZE * 3, TRAINER_PIC_SIZE,
+    gTrainerBackPic_Kris + TRAINER_PIC_SIZE * 4, TRAINER_PIC_SIZE,
 };
 
 const struct SpriteFrameImage gTrainerBackPicTable_Dawn[] =

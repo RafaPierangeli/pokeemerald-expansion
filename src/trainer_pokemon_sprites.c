@@ -381,10 +381,13 @@ u16 PlayerGenderToFrontTrainerPicId_Debug(u8 gender, bool8 getClass)
                 return gFacilityClassToPicIndex[FACILITY_CLASS_DAWN];
             
             case STYLE_KRIS:
-                return gFacilityClassToPicIndex[FACILITY_CLASS_KRYS];
+                return gFacilityClassToPicIndex[FACILITY_CLASS_KRIS];
             
             case STYLE_STEVEN:
                 return gFacilityClassToPicIndex[FACILITY_CLASS_STEVEN];
+
+            case STYLE_WALLY:
+                return gFacilityClassToPicIndex[FACILITY_CLASS_WALLY];
         };
     }
     return gender;

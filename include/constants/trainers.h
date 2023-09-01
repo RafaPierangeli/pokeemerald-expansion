@@ -114,7 +114,7 @@
 #define TRAINER_PIC_LYRA                  94
 #define TRAINER_PIC_LUCAS                 95
 #define TRAINER_PIC_DAWN                  96
-#define TRAINER_PIC_KRYS                  97
+#define TRAINER_PIC_KRIS                  97
 #define TRAINER_PIC_PROFOAK               98
 #define TRAINER_PIC_PROFBIRCH             99
 #define TRAINER_PIC_ROCKET_F             100

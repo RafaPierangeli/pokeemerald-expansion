@@ -8137,6 +8137,18 @@ u16 PlayerGenderToFrontTrainerPicId(u8 playerGender)
 
         case STYLE_LYRA:
             return TRAINER_PIC_LYRA;
+
+        case STYLE_LUCAS:
+            return TRAINER_PIC_LUCAS;
+
+        case STYLE_DAWN:
+            return TRAINER_PIC_DAWN;
+
+        case STYLE_KRIS:
+            return TRAINER_PIC_KRIS;
+
+        case STYLE_STEVEN:
+            return TRAINER_PIC_STEVEN;
     };
 
     return gFacilityClassToPicIndex[FACILITY_CLASS_WALLY];
