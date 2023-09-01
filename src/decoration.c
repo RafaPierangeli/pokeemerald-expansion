@@ -2306,7 +2306,7 @@ static void SetUpPuttingAwayDecorationPlayerAvatar(void)
     sDecor_CameraSpriteObjectIdx1 = gSprites[gFieldCamera.spriteId].data[0];
     LoadPlayerSpritePalette();
     gFieldCamera.spriteId = CreateSprite(&sPuttingAwayCursorSpriteTemplate, 120, 80, 0);
-    if (gSaveBlock2Ptr->costume == MALE)
+    if (gSaveBlock2Ptr->costume == STYLE_BRENDAN)
         sDecor_CameraSpriteObjectIdx2 = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_BRENDAN_DECORATING, SpriteCallbackDummy, 136, 72, 0);
     else if (gSaveBlock2Ptr->costume == STYLE_RED)
         sDecor_CameraSpriteObjectIdx2 = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_RED_DECORATING, SpriteCallbackDummy, 136, 72, 0);
