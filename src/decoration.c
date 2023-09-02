@@ -1400,8 +1400,8 @@ static void SetUpPlacingDecorationPlayerAvatar(u8 taskId, struct PlaceDecoration
         sDecor_CameraSpriteObjectIdx2 = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_BRENDAN_DECORATING, SpriteCallbackDummy, x, 72, 0);
     else if (gSaveBlock2Ptr->costume == STYLE_RED)
         sDecor_CameraSpriteObjectIdx2 = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_RED_DECORATING, SpriteCallbackDummy, x, 72, 0);
-    else if (gSaveBlock2Ptr->costume == STYLE_MAY)
-        sDecor_CameraSpriteObjectIdx2 = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_MAY_DECORATING, SpriteCallbackDummy, x, 72, 0);
+    else if (gSaveBlock2Ptr->costume == STYLE_LEAF)
+        sDecor_CameraSpriteObjectIdx2 = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_LEAF_DECORATING, SpriteCallbackDummy, x, 72, 0);
     else if (gSaveBlock2Ptr->costume == STYLE_ETHAN)
         sDecor_CameraSpriteObjectIdx2 = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_ETHAN_DECORATING, SpriteCallbackDummy, x, 72, 0);
     else if (gSaveBlock2Ptr->costume == STYLE_LYRA)

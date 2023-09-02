@@ -128,6 +128,8 @@ static const u16 sRegionMapPlayerIcon_MayPal[] = INCBIN_U16("graphics/pokenav/re
 static const u8 sRegionMapPlayerIcon_MayGfx[] = INCBIN_U8("graphics/pokenav/region_map/may_icon.4bpp");
 static const u16 sRegionMapPlayerIcon_RedPal[] = INCBIN_U16("graphics/pokenav/region_map/red_icon.gbapal");
 static const u8 sRegionMapPlayerIcon_RedGfx[] = INCBIN_U8("graphics/pokenav/region_map/red_icon.4bpp");
+static const u16 sRegionMapPlayerIcon_LeafPal[] = INCBIN_U16("graphics/pokenav/region_map/leaf_icon.gbapal");
+static const u8 sRegionMapPlayerIcon_LeafGfx[] = INCBIN_U8("graphics/pokenav/region_map/leaf_icon.4bpp");
 static const u16 sRegionMapPlayerIcon_WallyPal[] = INCBIN_U16("graphics/pokenav/region_map/wally_icon.gbapal");
 static const u8 sRegionMapPlayerIcon_WallyGfx[] = INCBIN_U8("graphics/pokenav/region_map/wally_icon.4bpp");
 
@@ -1474,8 +1476,8 @@ void CreateRegionMapPlayerIcon(u16 tileTag, u16 paletteTag)
     }
     else if (gSaveBlock2Ptr->costume == STYLE_LEAF)
     {
-        sheet.data = sRegionMapPlayerIcon_RedGfx;
-        palette.data = sRegionMapPlayerIcon_RedPal; 
+        sheet.data = sRegionMapPlayerIcon_LeafGfx;
+        palette.data = sRegionMapPlayerIcon_LeafPal; 
     }
     else if (gSaveBlock2Ptr->costume == STYLE_ETHAN)
     {

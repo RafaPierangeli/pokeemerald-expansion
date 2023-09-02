@@ -1386,7 +1386,8 @@ static void Task_Scene2_CreateSprites(u8 taskId)
         case STYLE_RED: 
         case STYLE_ETHAN:
         case STYLE_LUCAS:
-        case STYLE_STEVEN: 
+        case STYLE_STEVEN:
+        case STYLE_WALLY:
             LoadCompressedSpriteSheet(gSpriteSheet_IntroBrendan);
             break;
 
@@ -1419,7 +1420,8 @@ static void Task_Scene2_CreateSprites(u8 taskId)
         case STYLE_RED: 
         case STYLE_ETHAN:
         case STYLE_LUCAS:
-        case STYLE_STEVEN: 
+        case STYLE_STEVEN:
+        case STYLE_WALLY: 
             spriteId = CreateIntroBrendanSprite(DISPLAY_WIDTH + 32, 100);
             break;
 
