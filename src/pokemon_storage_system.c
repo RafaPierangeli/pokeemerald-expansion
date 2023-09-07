@@ -5757,7 +5757,7 @@ static void InitBoxTitle(u8 boxId)
 
     sStorage->boxTitlePal[14] = sBoxTitleColors[wallpaperId][0]; // Shadow color
     sStorage->boxTitlePal[15] = sBoxTitleColors[wallpaperId][1]; // Text Color
-    //LoadSpritePalettes(palettes);
+    LoadSpritePalettes(palettes);
     sStorage->wallpaperPalBits = 0x3f0;
 
     tagIndex = IndexOfSpritePaletteTag(PALTAG_BOX_TITLE);
@@ -5814,13 +5814,13 @@ static void CreateIncomingBoxTitle(u8 boxId, s8 direction)
         spriteSheet.tag = GFXTAG_BOX_TITLE_ALT;
         palOffset = sStorage->boxTitlePalOffset;
         template.tileTag = GFXTAG_BOX_TITLE_ALT;
-        //template.paletteTag = PALTAG_BOX_TITLE;
+        template.paletteTag = PALTAG_BOX_TITLE;
     }
 
     StringCopyPadded(sStorage->boxTitleText, GetBoxNamePtr(boxId), 0, BOX_NAME_LENGTH);
     DrawTextWindowAndBufferTiles(sStorage->boxTitleText, sStorage->boxTitleTiles, 0, 0, 2);
     LoadSpriteSheet(&spriteSheet);
-    //LoadPalette(sBoxTitleColors[GetBoxWallpaper(boxId)], palOffset, sizeof(sBoxTitleColors[0]));
+    LoadPalette(sBoxTitleColors[GetBoxWallpaper(boxId)], palOffset, sizeof(sBoxTitleColors[0]));
     x = GetBoxTitleBaseX(GetBoxNamePtr(boxId));
     adjustedX = x;
     adjustedX += direction * 192;
@@ -5887,10 +5887,10 @@ static void CycleBoxTitleColor(void)
 {
     u8 boxId = StorageGetCurrentBox();
     u8 wallpaperId = GetBoxWallpaper(boxId);
-    //if (sStorage->boxTitleCycleId == 0)
-    //    CpuCopy16(sBoxTitleColors[wallpaperId], &gPlttBufferUnfaded[sStorage->boxTitlePalOffset], PLTT_SIZEOF(2));
-    //else
-    //   CpuCopy16(sBoxTitleColors[wallpaperId], &gPlttBufferUnfaded[sStorage->boxTitleAltPalOffset], PLTT_SIZEOF(2));
+    if (sStorage->boxTitleCycleId == 0)
+        CpuCopy16(sBoxTitleColors[wallpaperId], &gPlttBufferUnfaded[sStorage->boxTitlePalOffset], PLTT_SIZEOF(2));
+    else
+       CpuCopy16(sBoxTitleColors[wallpaperId], &gPlttBufferUnfaded[sStorage->boxTitleAltPalOffset], PLTT_SIZEOF(2));
 }
 
 static s16 GetBoxTitleBaseX(const u8 *string)
