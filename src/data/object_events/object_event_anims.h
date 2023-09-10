@@ -1185,27 +1185,67 @@ static const union AnimCmd sAnim_GoFastestEast_Asymmetric[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_RunSouth_Asymmetric[] =
+{
+    ANIMCMD_FRAME(15, 5),
+    ANIMCMD_FRAME(12, 3),
+    ANIMCMD_FRAME(16, 5),
+    ANIMCMD_FRAME(12, 3),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_RunNorth_Asymmetric[] =
+{
+    ANIMCMD_FRAME(17, 5),
+    ANIMCMD_FRAME(13, 3),
+    ANIMCMD_FRAME(18, 5),
+    ANIMCMD_FRAME(13, 3),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_RunWest_Asymmetric[] =
+{
+    ANIMCMD_FRAME(19, 5),
+    ANIMCMD_FRAME(14, 3),
+    ANIMCMD_FRAME(20, 5),
+    ANIMCMD_FRAME(14, 3),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_RunEast_Asymmetric[] =
+{
+    ANIMCMD_FRAME(22, 5),
+    ANIMCMD_FRAME(21, 3),
+    ANIMCMD_FRAME(23, 5),
+    ANIMCMD_FRAME(21, 3),
+    ANIMCMD_JUMP(0),
+};
+
 static const union AnimCmd *const sAnimTable_Standard_Asymmetric[] = {
     [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
     [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth,
     [ANIM_STD_FACE_WEST] = sAnim_FaceWest,
     [ANIM_STD_FACE_EAST] = sAnim_FaceEast_Asymmetric,
     [ANIM_STD_GO_SOUTH] = sAnim_GoSouth,
-    [ANIM_STD_GO_NORTH] = sAnim_GoEast,
+    [ANIM_STD_GO_NORTH] = sAnim_GoNorth,
     [ANIM_STD_GO_WEST] = sAnim_GoWest,
     [ANIM_STD_GO_EAST] = sAnim_GoEast_Asymmetric,
     [ANIM_STD_GO_FAST_SOUTH] = sAnim_GoFastSouth,
-    [ANIM_STD_GO_FAST_NORTH] = sAnim_GoFastEast,
+    [ANIM_STD_GO_FAST_NORTH] = sAnim_GoFastNorth,
     [ANIM_STD_GO_FAST_WEST] = sAnim_GoFastWest,
     [ANIM_STD_GO_FAST_EAST] = sAnim_GoFastEast_Asymmetric,
     [ANIM_STD_GO_FASTER_SOUTH] = sAnim_GoFasterSouth,
-    [ANIM_STD_GO_FASTER_NORTH] = sAnim_GoFasterEast,
+    [ANIM_STD_GO_FASTER_NORTH] = sAnim_GoFasterNorth,
     [ANIM_STD_GO_FASTER_WEST] = sAnim_GoFasterWest,
     [ANIM_STD_GO_FASTER_EAST] = sAnim_GoFasterEast_Asymmetric,
     [ANIM_STD_GO_FASTEST_SOUTH] = sAnim_GoFastestSouth,
-    [ANIM_STD_GO_FASTEST_NORTH] = sAnim_GoFastestEast,
+    [ANIM_STD_GO_FASTEST_NORTH] = sAnim_GoFastestNorth,
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_GoFastestWest,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast_Asymmetric,
+    [ANIM_RUN_SOUTH] = sAnim_RunSouth_Asymmetric,
+    [ANIM_RUN_NORTH] = sAnim_RunNorth_Asymmetric,
+    [ANIM_RUN_WEST] = sAnim_RunWest_Asymmetric,
+    [ANIM_RUN_EAST] = sAnim_RunEast_Asymmetric,
 };
 
 // For animations with alternating steps

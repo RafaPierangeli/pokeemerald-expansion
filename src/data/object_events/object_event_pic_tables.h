@@ -2776,6 +2776,9 @@ static const struct SpriteFrameImage sPicTable_Lyra[] = {
     overworld_frame(gObjectEventPic_Lyra, 2, 4, 6),
     overworld_frame(gObjectEventPic_Lyra, 2, 4, 7),
     overworld_frame(gObjectEventPic_Lyra, 2, 4, 8),
+    overworld_frame(gObjectEventPic_Lyra, 2, 4, 9),
+    overworld_frame(gObjectEventPic_Lyra, 2, 4, 10),
+    overworld_frame(gObjectEventPic_Lyra, 2, 4, 11),
     overworld_frame(gObjectEventPic_LyraRunning, 2, 4, 0),
     overworld_frame(gObjectEventPic_LyraRunning, 2, 4, 1),
     overworld_frame(gObjectEventPic_LyraRunning, 2, 4, 2),
@@ -2785,6 +2788,9 @@ static const struct SpriteFrameImage sPicTable_Lyra[] = {
     overworld_frame(gObjectEventPic_LyraRunning, 2, 4, 6),
     overworld_frame(gObjectEventPic_LyraRunning, 2, 4, 7),
     overworld_frame(gObjectEventPic_LyraRunning, 2, 4, 8),
+    overworld_frame(gObjectEventPic_LyraRunning, 2, 4, 9),
+    overworld_frame(gObjectEventPic_LyraRunning, 2, 4, 10),
+    overworld_frame(gObjectEventPic_LyraRunning, 2, 4, 11),
 };
 
 static const struct SpriteFrameImage sPicTable_LyraMachBike[] = {
