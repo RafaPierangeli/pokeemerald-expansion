@@ -2848,6 +2848,9 @@ static const struct SpriteFrameImage sPicTable_LyraSurfing[] = {
     overworld_frame(gObjectEventPic_LyraSurfing, 4, 4, 1),
     overworld_frame(gObjectEventPic_LyraSurfing, 4, 4, 3),
     overworld_frame(gObjectEventPic_LyraSurfing, 4, 4, 5),
+    overworld_frame(gObjectEventPic_LyraSurfing, 4, 4, 6),
+    overworld_frame(gObjectEventPic_LyraSurfing, 4, 4, 6),
+    overworld_frame(gObjectEventPic_LyraSurfing, 4, 4, 7),
 };
 
 static const struct SpriteFrameImage sPicTable_LyraUnderwater[] = {
@@ -2860,6 +2863,7 @@ static const struct SpriteFrameImage sPicTable_LyraUnderwater[] = {
     overworld_frame(gObjectEventPic_LyraUnderwater, 4, 4, 1),
     overworld_frame(gObjectEventPic_LyraUnderwater, 4, 4, 2),
     overworld_frame(gObjectEventPic_LyraUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_LyraUnderwater, 4, 4, 3),
 };
 
 static const struct SpriteFrameImage sPicTable_LyraFieldMove[] = {
@@ -2883,6 +2887,10 @@ static const struct SpriteFrameImage sPicTable_LyraFishing[] = {
     overworld_frame(gObjectEventPic_LyraFishing, 4, 4, 9),
     overworld_frame(gObjectEventPic_LyraFishing, 4, 4, 10),
     overworld_frame(gObjectEventPic_LyraFishing, 4, 4, 11),
+    overworld_frame(gObjectEventPic_LyraFishing, 4, 4, 12),
+    overworld_frame(gObjectEventPic_LyraFishing, 4, 4, 13),
+    overworld_frame(gObjectEventPic_LyraFishing, 4, 4, 14),
+    overworld_frame(gObjectEventPic_LyraFishing, 4, 4, 15),
 };
 
 static const struct SpriteFrameImage sPicTable_LyraWatering[] = {
@@ -2895,6 +2903,8 @@ static const struct SpriteFrameImage sPicTable_LyraWatering[] = {
     overworld_frame(gObjectEventPic_LyraWatering, 4, 4, 3),
     overworld_frame(gObjectEventPic_LyraWatering, 4, 4, 5),
     overworld_frame(gObjectEventPic_LyraWatering, 4, 4, 5),
+    overworld_frame(gObjectEventPic_LyraWatering, 4, 4, 6),
+    overworld_frame(gObjectEventPic_LyraWatering, 4, 4, 7),
 };
 
 static const struct SpriteFrameImage sPicTable_LyraDecorating[] = {
