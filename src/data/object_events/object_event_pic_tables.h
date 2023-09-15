@@ -3015,6 +3015,7 @@ static const struct SpriteFrameImage sPicTable_LucasFieldMove[] = {
     overworld_frame(gObjectEventPic_LucasFieldMove, 4, 4, 1),
     overworld_frame(gObjectEventPic_LucasFieldMove, 4, 4, 2),
     overworld_frame(gObjectEventPic_LucasFieldMove, 4, 4, 3),
+    overworld_frame(gObjectEventPic_LucasFieldMove, 4, 4, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_LucasFishing[] = {

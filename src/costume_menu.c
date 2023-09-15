@@ -315,10 +315,11 @@ void CB2_CostumeMenu(void)
             gMain.state++;
             break;
         case 2:
-            BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
             SetVBlankCallback(VBlankCallback);
             SetMainCallback2(CostumeMenu_MainCallback);
             CreateTask(HandleKeyPresses, 0);
+            gMain.state++;
             break;
     }
 }
@@ -357,7 +358,7 @@ static void HandleKeyPresses(u8 taskId)
         }
         if (gMain.newKeys & (B_BUTTON | START_BUTTON) && !IsSEPlaying())
         {
-            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
             PlaySE(SE_PC_OFF);
             gTasks[taskId].func = CloseMenuScreen;
         }

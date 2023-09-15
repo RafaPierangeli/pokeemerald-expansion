@@ -130,6 +130,8 @@ static const u16 sRegionMapPlayerIcon_RedPal[] = INCBIN_U16("graphics/pokenav/re
 static const u8 sRegionMapPlayerIcon_RedGfx[] = INCBIN_U8("graphics/pokenav/region_map/red_icon.4bpp");
 static const u16 sRegionMapPlayerIcon_LeafPal[] = INCBIN_U16("graphics/pokenav/region_map/leaf_icon.gbapal");
 static const u8 sRegionMapPlayerIcon_LeafGfx[] = INCBIN_U8("graphics/pokenav/region_map/leaf_icon.4bpp");
+static const u16 sRegionMapPlayerIcon_LucasPal[] = INCBIN_U16("graphics/pokenav/region_map/lucas_icon.gbapal");
+static const u8 sRegionMapPlayerIcon_LucasGfx[] = INCBIN_U8("graphics/pokenav/region_map/lucas_icon.4bpp");
 static const u16 sRegionMapPlayerIcon_LyraPal[] = INCBIN_U16("graphics/pokenav/region_map/lyra_icon.gbapal");
 static const u8 sRegionMapPlayerIcon_LyraGfx[] = INCBIN_U8("graphics/pokenav/region_map/lyra_icon.4bpp");
 static const u16 sRegionMapPlayerIcon_WallyPal[] = INCBIN_U16("graphics/pokenav/region_map/wally_icon.gbapal");
@@ -1493,8 +1495,8 @@ void CreateRegionMapPlayerIcon(u16 tileTag, u16 paletteTag)
     }
     else if (gSaveBlock2Ptr->costume == STYLE_LUCAS)
     {
-        sheet.data = sRegionMapPlayerIcon_RedGfx;
-        palette.data = sRegionMapPlayerIcon_RedPal; 
+        sheet.data = sRegionMapPlayerIcon_LucasGfx;
+        palette.data = sRegionMapPlayerIcon_LucasPal; 
     }
     else if (gSaveBlock2Ptr->costume == STYLE_DAWN)
     {
