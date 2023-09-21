@@ -2732,6 +2732,7 @@ static const struct SpriteFrameImage sPicTable_KrisFieldMove[] = {
     overworld_frame(gObjectEventPic_KrisFieldMove, 4, 4, 1),
     overworld_frame(gObjectEventPic_KrisFieldMove, 4, 4, 2),
     overworld_frame(gObjectEventPic_KrisFieldMove, 4, 4, 3),
+    overworld_frame(gObjectEventPic_KrisFieldMove, 4, 4, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_KrisFishing[] = {
@@ -3146,6 +3147,7 @@ static const struct SpriteFrameImage sPicTable_DawnFieldMove[] = {
     overworld_frame(gObjectEventPic_DawnFieldMove, 4, 4, 1),
     overworld_frame(gObjectEventPic_DawnFieldMove, 4, 4, 2),
     overworld_frame(gObjectEventPic_DawnFieldMove, 4, 4, 3),
+    overworld_frame(gObjectEventPic_DawnFieldMove, 4, 4, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_DawnFishing[] = {

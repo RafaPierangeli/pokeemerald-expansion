@@ -10,7 +10,7 @@ const struct Costume gCostumes[] =
         .hidden = FALSE,
         .description = gText_CostumeDescription_Brendan,
         .overworld = OBJ_EVENT_GFX_BRENDAN_NORMAL,
-        .fieldMove = OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE,
+        .fieldMove = OBJ_EVENT_GFX_BRENDAN_NORMAL,
         .trainerFront = TRAINER_PIC_BRENDAN,
         .trainerBack = TRAINER_BACK_PIC_BRENDAN,
     },
