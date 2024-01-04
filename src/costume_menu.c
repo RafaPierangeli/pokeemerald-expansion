@@ -26,7 +26,7 @@ extern const struct CompressedSpriteSheet gTrainerFrontPicTable[];
 extern const struct CompressedSpriteSheet gTrainerBackPicTable[];
 extern const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[];
 extern const struct CompressedSpritePalette gTrainerBackPicPaletteTable[];
-extern const u16 sPlayerAvatarGfxIds[][8];
+extern const u16 sPlayerAvatarGfxIds[8][PLAYER_STYLE_COUNT];
 
 static EWRAM_DATA struct SpriteTemplate sSpriteTemplateBase = {};
 static EWRAM_DATA u8 gDisplayList[NUMBER_OF_COSTUMES] = {0};
